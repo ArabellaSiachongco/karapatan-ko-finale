@@ -2,10 +2,8 @@
     display: flex;
     height: 100vh;
     width: 100vw;
-    box-sizing: border-box;
     font-family: Outfit;
     animation: fadeIn 1.5s;
-    /* overflow: hidden; */
     color-scheme: dark;
 }
 
@@ -14,6 +12,8 @@
     min-height: 100vh;
     padding-bottom: 15vh;
     position: relative;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 .Ai_main .Ai_nav {
@@ -42,8 +42,7 @@
 .Ai_main .Ai_greet {
     font-size: 56px;
     font-weight: 500;
-    color: #c4c7c5;
-    padding: 20px;
+    color: black;
 }
 
 .Ai_main .Ai_greet span {
@@ -103,33 +102,42 @@
 }
 
 .Ai_result {
-    padding: 0px 5%;
-    max-height: 70vh;
-    overflow-y: scroll;
-    color: white;
-}
-
-.Ai_result::-webkit-scrollbar {
-    display: none;
+    padding: 0px 15px;
+    max-height: 50vh; 
+    overflow-y: auto;
+    color: black;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
 }
 
 .Ai_result-title {
-    margin: 40px 0px;
+    margin: 30px 0px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+.result-data {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.typing-loader {
+    margin-top: 10px; 
+}
+
+.result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 0;
+}
+
 .Ai_result img {
     width: 40px;
     border-radius: 50%;
-}
-
-.Ai_result-data {
-    display: flex;
-    align-items: start;
-    gap: 20px;
-}
+    }
 
 .Ai_loader {
     width: 100%;
@@ -158,27 +166,6 @@
     }
 }
 
-/* Add this to your CSS file */
-@keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  .typing-effect {
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Keep text in one line */
-    animation: typing 3s steps(40, end); /* Adjust duration as needed */
-  }
-
-.Ai_result-data p {
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 1.8;
-}
 
 @media (max-width: 600px) {
     .Ai_main-bottom input {

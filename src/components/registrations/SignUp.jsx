@@ -183,10 +183,9 @@ const SignUp = () => {
                         )}
                       </div>
                     </div>
-                    {/* {/* style={{ display: "none" }} value={role} */}
-                    <div >
+                    <div style={{ display: "none" }} value={role}>
                       <label htmlFor="role">Role</label>
-                      <input type="text" id="role" className="text-input"  />
+                      <input type="text" id="role" className="text-input" />
                     </div>
                     {error && <p className="error-message text-red-500">{error}</p>}
                     <button type="submit" className="primary-btn">

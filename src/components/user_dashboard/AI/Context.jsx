@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import run from "../config/gemini";
+import run from "../../database/gemini";
 
 export const Context = createContext();
 
@@ -26,7 +26,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const onSent = async (prompt) => {
-    setResultData(""); // Clear previous result
+    setResultData("");
     setLoading(true);
     setShowResult(true);
 
@@ -44,38 +44,15 @@ const ContextProvider = ({ children }) => {
       }
 
       let formattedResponse = response
-        .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Bold formatting
-        .replace(/\*(.*?)\*/g, "<i>$1</i>") // Italics
-        .replace(/\n/g, "<br>"); // Preserve line breaks
+        .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+        .replace(/\*(.*?)\*/g, "<i>$1</i>")
+        .replace(/\n/g, "<br>");
 
-      const words = formattedResponse.split(" ");
-      const chunkSize = 5; 
-
-      let accumulatedResponse = "";
-
-      words.forEach((word, i) => {
-        setTimeout(() => { 
-          accumulatedResponse += " " + word;
-          setResultData(accumulatedResponse.trim()); 
-        }, 50 * i); 
+      setResultData(formattedResponse);
+      setSelectedMessage({
+        message: userPrompt,
+        response: formattedResponse,
       });
-
-      setTimeout(
-        () => {
-          setResultData(formattedResponse); 
-        },
-        50 * words.length + 500
-      );
-
-      setTimeout(
-        () => {
-          setSelectedMessage({
-            message: userPrompt,
-            response: formattedResponse,
-          });
-        },
-        100 * (words.length / chunkSize)
-      );
     } catch (error) {
       console.error("Error fetching response:", error);
     } finally {
@@ -96,6 +73,7 @@ const ContextProvider = ({ children }) => {
         loading,
         setLoading,
         resultData,
+        setResultData,
         input,
         setInput,
         newChat,

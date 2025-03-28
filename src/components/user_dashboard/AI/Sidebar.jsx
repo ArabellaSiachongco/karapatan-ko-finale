@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './Sidebar.css';
-import { Context } from '../context/Context';
+import '../../layouts/Sidebar.css';
+import { Context } from './Context';
 import { getFirestore, collection, query, orderBy, limit, onSnapshot } from "firebase/firestore";
 
 const Sidebar = ({ children }) => {

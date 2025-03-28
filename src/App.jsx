@@ -19,7 +19,7 @@ import Admin_Magalgalit from "./components/admin_dashboard/Admin_profile/Admin_M
 
 import Navbar from "./components/user_dashboard/Navbar";
 import Lawyer from "./components/user_dashboard/about_lawyers/Lawyer";
-import AI from "./components/user_dashboard/AI/gemini/Gemini_main";
+import AI from "./components/user_dashboard/AI/Gemini_main";
 import NavbarTop from "./components/user_dashboard/NavbarTop";
 import Message from "./components/user_dashboard/Message";
 import Forms from "./components/user_dashboard/Forms";
@@ -94,7 +94,7 @@ const NavbarWrapper = ({ children }) => {
   location.pathname.startsWith("/familyOne")
   // location.pathname.startsWith("/family");  
   
-  const showNavbarTop = location.pathname.startsWith("/lawyer-status") || location.pathname.startsWith("/appointment") || location.pathname.startsWith("/lawyer-appoinments") || location.pathname.startsWith("/forms");
+  const showNavbarTop = location.pathname.startsWith("/lawyer-status") || location.pathname.startsWith("/appointment") || location.pathname.startsWith("/lawyer-appoinments") || location.pathname.startsWith("/forms") || location.pathname.startsWith("/ai");
   return (
     <>
       {showNavbar && <Navbar />}
