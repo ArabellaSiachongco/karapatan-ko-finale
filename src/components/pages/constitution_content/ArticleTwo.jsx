@@ -38,6 +38,54 @@ const ArticleTwo = () => {
     navigate("/articleOne");
   };
 
+  const speakText = (word, definition) => {
+    try {
+      if (!word) {
+        throw new Error("No word provided for speech synthesis.");
+      }
+  
+      let textToSpeak = word; // Start with the selected word
+      if (definition) {
+        textToSpeak += `. Definition: ${definition}`; // Add definition
+      }
+  
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.lang = "en-US";
+  
+      // Get available voices
+      let voices = speechSynthesis.getVoices();
+  
+      // Find a female voice
+      let femaleVoice = voices.find(voice => 
+        voice.name.includes("Female") || 
+        voice.name.includes("Samantha") || 
+        voice.name.includes("Google UK English Female")
+      );
+  
+      // Set the voice (fallback to first available if no female voice is found)
+      utterance.voice = femaleVoice || voices[0] || null;
+  
+      // If no voices are available, wait for them to load
+      if (voices.length === 0) {
+        speechSynthesis.onvoiceschanged = () => {
+          voices = speechSynthesis.getVoices();
+          femaleVoice = voices.find(voice => 
+            voice.name.includes("Female") || 
+            voice.name.includes("Samantha") || 
+            voice.name.includes("Google UK English Female")
+          );
+          utterance.voice = femaleVoice || voices[0] || null;
+          speechSynthesis.speak(utterance);
+        };
+      } else {
+        speechSynthesis.speak(utterance);
+      }
+  
+    } catch (error) {
+      console.error("Speech synthesis error:", error);
+    }
+  };
+
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
       <ScrollWrapper>
@@ -96,8 +144,20 @@ const ArticleTwo = () => {
             >
               <div className="flex items-center justify-between">
                 <p className={styles.dictionaryText}>{selectedWord}</p>
-                {/* Icon aligned to the right */}
-                <i className="fas fa-volume-up ml-5 text-gray-600"></i>
+                <button
+                  onClick={() => {
+                    console.log(
+                      "🔍 Volume icon clicked! Word:",
+                      selectedWord,
+                      "| Definition:",
+                      definition
+                    );
+                    speakText(selectedWord, definition);
+                  }}
+                  className="bg-transparent border-none p-0 m-0 cursor-pointer"
+                >
+                  <i className="fas fa-volume-up ml-5 text-gray-600 cursor-pointer"></i>
+                </button>
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>

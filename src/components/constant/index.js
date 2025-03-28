@@ -149,7 +149,7 @@ const lawyerProfiles = [
     },
     // No. 7, 2/F Israel Bldg., Gibraltar Road, Baguio City 2600
     {
-        image: "/profile1.jpg",
+        image: "/magalgalit_eme.jpg",
         name: "Noel Magalgalit",
         nickname:"Atty. Magalgalit",
         title: "Civil Law",
@@ -163,7 +163,7 @@ const lawyerProfiles = [
         btn: "/appointmentLawyer2",
     },
     {
-        image: "/profile1.jpg",
+        image: "/profile2.png",
         name: "Jess B. Evasco",
         nickname:"Atty. Evasco",
         title: "Criminal Law",
