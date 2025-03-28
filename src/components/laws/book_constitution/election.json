@@ -1,0 +1,90 @@
+{
+  "election": [
+    {
+      "id": "commission_on_elections",
+      "title": "The Commission on Elections",
+      "subtitle": "ARTICLE IX - C",
+      "sections": [
+        {
+          "name": "Section 1",
+          "paragraph": [
+            "(1) There shall be a Commission on Elections composed of a Chairman and six Commissioners who shall be natural-born citizens of the Philippines and, at the time of their appointment, at least thirty-five years of age, holders of a college degree, and must not have been candidates for any elective position in the immediately preceding elections. However, a majority thereof, including the Chairman, shall be Members of the Philippine Bar who have been engaged in the practice of law for at least ten years.",
+            "(2) The Chairman and the Commissioners shall be appointed by the President with the consent of the Commission on Appointments for a term of seven years without reappointment. Of those first appointed, three Members shall hold office for seven years, two Members for five years, and the last Members for three years, without reappointment. Appointment to any vacancy shall be only for the unexpired term of the predecessor. In no case shall any Member be appointed or designated in a temporary or acting capacity."
+          ]
+        },
+        {
+          "name": "Section 2",
+          "paragraph": [
+            "(1) Enforce and administer all laws and regulations relative to the conduct of an election, plebiscite, initiative, referendum, and recall.",
+            "(2) Exercise exclusive original jurisdiction over all contests relating to the elections, returns, and qualifications of all elective regional, provincial, and city officials, and appellate jurisdiction over all contests involving elective municipal officials decided by trial courts of general jurisdiction, or involving elective barangay officials decided by trial courts of limited jurisdiction.",
+            "Decisions, final orders, or rulings of the Commission on election contests involving elective municipal and barangay offices shall be final, executory, and not appealable.",
+            "(3) Decide, except those involving the right to vote, all questions affecting elections, including determination of the number and location of polling places, appointment of election officials and inspectors, and registration of voters.",
+            "(4) Deputize, with the concurrence of the President, law enforcement agencies and instrumentalities of the Government, including the Armed Forces of the Philippines, for the exclusive purpose of ensuring free, orderly, honest, peaceful, and credible elections.",
+            "(5) Register, after sufficient publication, political parties, organizations, or coalitions which, in addition to other requirements, must present their platform or program of government; and accredit citizens’ arms of the Commission on Elections. Religious denominations and sects shall not be registered. Those which seek to achieve their goals through violence or unlawful means, or refuse to uphold and adhere to this Constitution, or which are supported by any foreign government shall likewise be refused registration.",
+            "Financial contributions from foreign governments and their agencies to political parties, organizations, coalitions, or candidates related to elections constitute interference in national affairs, and, when accepted, shall be an additional ground for the cancellation of their registration with the Commission, in addition to other penalties that may be prescribed by law.",
+            "(6) File, upon a verified complaint, or on its own initiative, petitions in court for inclusion or exclusion of voters; investigate and, where appropriate, prosecute cases of violations of election laws, including acts or omissions constituting election frauds, offenses, and malpractices.",
+            "(7) Recommend to the Congress effective measures to minimize election spending, including limitation of places where propaganda materials shall be posted, and to prevent and penalize all forms of election frauds, offenses, malpractices, and nuisance candidacies.",
+            "(8) Recommend to the President the removal of any officer or employee it has deputized, or the imposition of any other disciplinary action, for violation or disregard of, or disobedience to its directive, order, or decision.",
+            "(9) Submit to the President and the Congress a comprehensive report on the conduct of each election, plebiscite, initiative, referendum, or recall."
+          ]
+        },
+        {
+          "name": "Section 3",
+          "paragraph": [
+            "The Commission on Elections may sit en banc or in two divisions, and shall promulgate its rules of procedure in order to expedite disposition of election cases, including pre-proclamation controversies. All such election cases shall be heard and decided in division, provided that motions for reconsideration of decisions shall be decided by the Commission en banc."
+          ]
+        },
+        {
+          "name": "Section 4",
+          "paragraph": [
+            "The Commission may, during the election period, supervise or regulate the enjoyment or utilization of all franchises or permits for the operation of transportation and other public utilities, media of communication or information, all grants, special privileges, or concessions granted by the Government or any subdivision, agency, or instrumentality thereof, including any government-owned or controlled corporation or its subsidiary.",
+            "Such supervision or regulation shall aim to ensure equal opportunity, time, and space, and the right to reply, including reasonable, equal rates therefor, for public information campaigns and forums among candidates in connection with the objective of holding free, orderly, honest, peaceful, and credible elections."
+          ]
+        },
+        {
+          "name": "Section 5",
+          "paragraph": [
+            "No pardon, amnesty, parole, or suspension of sentence for violation of election laws, rules, and regulations shall be granted by the President without the favorable recommendation of the Commission."
+          ]
+        },
+        {
+          "name": "Section 6",
+          "paragraph": [
+            "A free and open party system shall be allowed to evolve according to the free choice of the people, subject to the provisions of this Article."
+          ]
+        },
+        {
+          "name": "Section 7",
+          "paragraph": [
+            "No votes cast in favor of a political party, organization, or coalition shall be valid, except for those registered under the party-list system as provided in this Constitution."
+          ]
+        },
+        {
+          "name": "Section 8",
+          "paragraph": [
+            "Political parties, or organizations or coalitions registered under the party-list system, shall not be represented in the voters’ registration boards, boards of election inspectors, boards of canvassers, or other similar bodies.",
+            "However, they shall be entitled to appoint poll watchers in accordance with law."
+          ]
+        },
+        {
+          "name": "Section 9",
+          "paragraph": [
+            "Unless otherwise fixed by the Commission in special cases, the election period shall commence ninety days before the day of the election and shall end thirty days after."
+          ]
+        },
+        {
+          "name": "Section 10",
+          "paragraph": [
+            "Bona fide candidates for any public office shall be free from any form of harassment and discrimination."
+          ]
+        },
+        {
+          "name": "Section 11",
+          "paragraph": [
+            "Funds certified by the Commission as necessary to defray the expenses for holding regular and special elections, plebiscites, initiatives, referenda, and recalls, shall be provided in the regular or special appropriations and, once approved, shall be released automatically upon certification by the Chairman of the Commission."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "chapter": "Property Regime of Unions Without Marriage",
+    "articles": [
+      {
+        "article": 147,
+        "content": {
+          "description": "When a man and a woman who are capacitated to marry each other, live exclusively with each other as husband and wife without the benefit of marriage or under a void marriage, their wages and salaries shall be owned by them in equal shares and the property acquired by both of them through their work or industry shall be governed by the rules on co-ownership.",
+          "presumption": "In the absence of proof to the contrary, properties acquired while they lived together shall be presumed to have been obtained by their joint efforts, work or industry, and shall be owned by them in equal shares.",
+          "contribution": "A party who did not participate in the acquisition by the other party of any property shall be deemed to have contributed jointly in the acquisition thereof if the former's efforts consisted in the care and maintenance of the family and of the household.",
+          "encumbrance": "Neither party can encumber or dispose by acts inter vivos of his or her share in the property acquired during cohabitation and owned in common, without the consent of the other, until after the termination of their cohabitation.",
+          "forfeiture": "When only one of the parties to a void marriage is in good faith, the share of the party in bad faith in the co-ownership shall be forfeited in favor of their common children. If there are no descendants, such share shall belong to the innocent party. The forfeiture shall take place upon termination of the cohabitation."
+        }
+      },
+      {
+        "article": 148,
+        "content": {
+          "description": "In cases of cohabitation not falling under the preceding Article, only the properties acquired by both of the parties through their actual joint contribution of money, property, or industry shall be owned by them in common in proportion to their respective contributions.",
+          "presumption": "In the absence of proof to the contrary, their contributions and corresponding shares are presumed to be equal.",
+          "joint_deposits": "The same rule and presumption shall apply to joint deposits of money and evidences of credit.",
+          "valid_marriage": "If one of the parties is validly married to another, his or her share in the co-ownership shall accrue to the absolute community or conjugal partnership existing in such valid marriage.",
+          "bad_faith": "If the party who acted in bad faith is not validly married to another, his or her share shall be forfeited as provided in the last paragraph of the preceding Article.",
+          "both_bad_faith": "The foregoing rules on forfeiture shall likewise apply even if both parties are in bad faith."
+        }
+      }
+    ]
+  }
+  

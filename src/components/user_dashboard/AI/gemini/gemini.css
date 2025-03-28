@@ -1,0 +1,233 @@
+.Ai_layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    font-family: Outfit;
+    animation: fadeIn 1.5s;
+    /* overflow: hidden; */
+    color-scheme: dark;
+}
+
+.Ai_main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.Ai_main .Ai_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: white;
+}
+
+.Ai_main .Ai_nav img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.Ai_main-container {
+    max-width: 900px;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+}
+
+.Ai_main .Ai_greet {
+    font-size: 56px;
+    font-weight: 500;
+    color: #c4c7c5;
+    padding: 20px;
+}
+
+.Ai_main .Ai_greet span {
+    background: -webkit-linear-gradient(16deg, #ffd84b, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Ai_main-bottom {
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+    bottom: 0;
+    /* left: 50%; */
+    /* transform: translateX(-50%);   */
+}
+
+.Ai_search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.Ai_search-box img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.Ai_search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+    color: black;
+}
+
+.Ai_search-box div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Ai_main .Ai_bottom-info {
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+}
+
+.Ai_result {
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    color: white;
+}
+
+.Ai_result::-webkit-scrollbar {
+    display: none;
+}
+
+.Ai_result-title {
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Ai_result img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.Ai_result-data {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.Ai_loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Ai_loader hr {
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: -webkit-linear-gradient(16deg, #ffd84b, #ff5546);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: Ai_loader 3s infinite linear;
+}
+
+@keyframes Ai_loader {
+    0% {
+        background-position: -800px 0px;
+    }
+
+    100% {
+        background-position: 800px 0px;
+    }
+}
+
+/* Add this to your CSS file */
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .typing-effect {
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Keep text in one line */
+    animation: typing 3s steps(40, end); /* Adjust duration as needed */
+  }
+
+.Ai_result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .Ai_main-bottom input {
+        flex: none;
+        width: 150px;
+    }
+
+    .Ai_main-bottom img {
+        width: 20px;
+    }
+
+    .Ai_search-box {
+        padding: 5px 10px;
+    }
+
+    .Ai_search-box div {
+        gap: 5px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.dark-mode {
+    background-color: white;
+    color: #ffffff;
+}
+
+.dark-mode .Ai_main,
+.dark-mode .Ai_layout {
+    background-color: white;
+    color: white;
+}
+
+.dark-mode .Ai_result-data {
+    color: white;
+}
+
+.dark-mode .Ai_result-title {
+    color: white;
+}
+
+.dark-mode .Ai_bottom-info {
+    color: black;
+}

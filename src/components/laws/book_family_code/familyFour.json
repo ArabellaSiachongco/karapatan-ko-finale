@@ -1,0 +1,98 @@
+{
+  "Title": "TITLE II - LEGAL SEPARATION",
+  "Articles": [
+    {
+      "Article": 55,
+      "Description": "A petition for legal separation may be filed on any of the following grounds:",
+      "Grounds": [
+        "Repeated physical violence or grossly abusive conduct directed against the petitioner, a common child, or a child of the petitioner",
+        "Physical violence or moral pressure to compel the petitioner to change religious or political affiliation",
+        "Attempt of respondent to corrupt or induce the petitioner, a common child, or a child of the petitioner, to engage in prostitution, or connivance in such corruption or inducement",
+        "Final judgment sentencing the respondent to imprisonment of more than six years, even if pardoned",
+        "Drug addiction or habitual alcoholism of the respondent",
+        "Lesbianism or homosexuality of the respondent",
+        "Contracting by the respondent of a subsequent bigamous marriage, whether in the Philippines or abroad",
+        "Sexual infidelity or perversion",
+        "Attempt by the respondent against the life of the petitioner",
+        "Abandonment of petitioner by respondent without justifiable cause for more than one year"
+      ],
+      "Note": "For purposes of this Article, the term 'child' shall include a child by nature or by adoption."
+    },
+    {
+      "Article": 56,
+      "Description": "The petition for legal separation shall be denied on any of the following grounds:",
+      "Grounds": [
+        "Where the aggrieved party has condoned the offense or act complained of",
+        "Where the aggrieved party has consented to the commission of the offense or act complained of",
+        "Where there is connivance between the parties in the commission of the offense or act constituting the ground for legal separation",
+        "Where both parties have given ground for legal separation",
+        "Where there is collusion between the parties to obtain decree of legal separation",
+        "Where the action is barred by prescription"
+      ]
+    },
+    {
+      "Article": 57,
+      "Description": "An action for legal separation shall be filed within five years from the time of the occurrence of the cause."
+    },
+    {
+      "Article": 58,
+      "Description": "An action for legal separation shall in no case be tried before six months shall have elapsed since the filing of the petition."
+    },
+    {
+      "Article": 59,
+      "Description": "No legal separation may be decreed unless the Court has taken steps toward the reconciliation of the spouses and is fully satisfied, despite such efforts, that reconciliation is highly improbable."
+    },
+    {
+      "Article": 60,
+      "Description": "No decree of legal separation shall be based upon a stipulation of facts or a confession of judgment.",
+      "Provision": "The Court shall order the prosecuting attorney or fiscal assigned to it to take steps to prevent collusion between the parties and to take care that the evidence is not fabricated or suppressed."
+    },
+    {
+      "Article": 61,
+      "Description": "After the filing of the petition for legal separation, the spouses shall be entitled to live separately from each other.",
+      "Provision": "The court shall designate either spouse or a third person to administer the absolute community or conjugal partnership property."
+    },
+    {
+      "Article": 62,
+      "Description": "During the pendency of the action for legal separation, the provisions of Article 49 shall likewise apply to the support of the spouses and the custody and support of the common children."
+    },
+    {
+      "Article": 63,
+      "Description": "The decree of legal separation shall have the following effects:",
+      "Effects": [
+        "The spouses shall be entitled to live separately from each other, but the marriage bonds shall not be severed",
+        "The absolute community or the conjugal partnership shall be dissolved and liquidated but the offending spouse shall have no right to any share of the net profits earned by the absolute community or the conjugal partnership, which shall be forfeited in accordance with Article 43(2)",
+        "The custody of the minor children shall be awarded to the innocent spouse, subject to the provisions of Article 213 of this Code",
+        "The offending spouse shall be disqualified from inheriting from the innocent spouse by intestate succession. Moreover, provisions in favor of the offending spouse made in the will of the innocent spouse shall be revoked by operation of law."
+      ]
+    },
+    {
+      "Article": 64,
+      "Description": "After the finality of the decree of legal separation, the innocent spouse may revoke the donations made by him or by her in favor of the offending spouse, as well as the designation of the latter as beneficiary in any insurance policy, even if such designation be stipulated as irrevocable. The revocation of the donations shall be recorded in the registries of property in the places where the properties are located. Alienations, liens and encumbrances registered in good faith before the recording of the complaint for revocation in the registries of property shall be respected. The revocation of or change in the designation of the insurance beneficiary shall take effect upon written notification thereof to the insured.",
+      "Provision": "The action to revoke the donation must be brought within five years from the finality of the decree."
+    },
+    {
+      "Article": 65,
+      "Description": "If the spouses reconcile, a joint manifestation under oath shall be filed with the court in the same proceeding for legal separation."
+    },
+    {
+      "Article": 66,
+      "Description": "The reconciliation shall have the following consequences:",
+      "Consequences": [
+        "The legal separation proceedings, if still pending, shall be terminated",
+        "The final decree of legal separation shall be set aside, but the separation of property and forfeiture of the guilty spouse’s share shall subsist, unless the spouses agree to revive their former property regime"
+      ]
+    },
+    {
+      "Article": 67,
+      "Description": [
+      "The agreement to revive the former property regime referred to in the preceding Article shall be executed under oath and shall specify:",
+                      
+      "(1) The properties to be contributed anew to the restored regime;",
+      "(2) Those to be retained as separated properties of each spouse; and",
+      "(3) The names of all their known creditors, their addresses and the amounts owing to each."
+      ],
+      "Provision": "The agreement of revival and the motion for its approval shall be filed with the court in the same proceeding for legal separation, with copies of both furnished to the creditors named therein. After due hearing, the court shall, in its order, take measure to protect the interest of creditors and such order shall be recorded in the proper registries of properties. The recording of the ordering in the registries of property shall not prejudice any creditor not listed or not notified, unless the debtor-spouse has sufficient separate properties to satisfy the creditor's claim. (195a, 108a)."
+    }
+  ]
+}

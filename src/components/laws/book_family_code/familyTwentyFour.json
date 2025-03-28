@@ -1,0 +1,25 @@
+{
+  "title": "TITLE X - EMANCIPATION AND AGE OF MAJORITY",
+  "articles": [
+    {
+      "article": 234,
+      "text": "Emancipation takes place by the attainment of majority. Unless otherwise provided, majority commences at the age of twenty-one years.",
+      "conditions": [
+        "By the marriage of the minor",
+        "By the recording in the Civil Register of an agreement in a public instrument executed by the parent exercising parental authority and the minor at least eighteen years of age. Such emancipation shall be irrevocable."
+      ]
+    },
+    {
+      "article": 235,
+      "text": "The provisions governing emancipation by recorded agreement shall also apply to an orphan minor and the person exercising parental authority but the agreement must be approved by the court before it is recorded."
+    },
+    {
+      "article": 236,
+      "text": "Emancipation for any cause shall terminate parental authority over the person and property of the child who shall then be qualified and responsible for all acts of civil life."
+    },
+    {
+      "article": 237,
+      "text": "The annulment or declaration of nullity of the marriage of a minor or of the recorded agreement mentioned in the foregoing Articles 234 and 235 shall revive the parental authority over the minor but shall not affect acts and transactions that took place prior to the recording of the final judgment in the Civil Register."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "civil": [
+    {
+      "id": "civil_service",
+      "title": "The Civil Service Commission",
+      "subtitle": "ARTICLE IX",
+      "sections": [
+        {
+          "name": "Section 1",
+          "paragraph": [
+            "(1) The Civil Service shall be administered by the Civil Service Commission composed of a Chairman and two Commissioners who shall be natural-born citizens of the Philippines and, at the time of their appointment, at least thirty-five years of age, with proven capacity for public administration, and must not have been candidates for any elective position in the elections immediately preceding their appointment.",
+            "(2) The Chairman and the Commissioners shall be appointed by the President with the consent of the Commission on Appointments for a term of seven years without reappointment. Of those first appointed, the Chairman shall hold office for seven years, a Commissioner for five years, and another Commissioner for three years, without reappointment. Appointment to any vacancy shall be only for the unexpired term of the predecessor. In no case shall any Member be appointed or designated in a temporary or acting capacity."
+          ]
+        },
+        {
+          "name": "Section 2",
+          "paragraph": [
+            "(1) The civil service embraces all branches, subdivisions, instrumentalities, and agencies of the Government, including government-owned or controlled corporations with original charters.",
+            "(2) Appointments in the civil service shall be made only according to merit and fitness to be determined, as far as practicable, and, except to positions which are policy-determining, primarily confidential, or highly technical, by competitive examination.",
+            "(3) No officer or employee of the civil service shall be removed or suspended except for cause provided by law.",
+            "(4) No officer or employee in the civil service shall engage, directly or indirectly, in any electioneering or partisan political campaign.",
+            "(5) The right to self-organization shall not be denied to government employees.",
+            "(6) Temporary employees of the Government shall be given such protection as may be provided by law."
+          ]
+        },
+        {
+          "name": "Section 3",
+          "paragraph": [
+            "The Civil Service Commission, as the central personnel agency of the Government, shall establish a career service and adopt measures to promote morale, efficiency, integrity, responsiveness, progressiveness, and courtesy in the civil service.",
+            "It shall strengthen the merit and rewards system, integrate all human resources development programs for all levels and ranks, and institutionalize a management climate conducive to public accountability.",
+            "It shall submit to the President and the Congress an annual report on its personnel programs."
+          ]
+        },
+        {
+          "name": "Section 4",
+          "paragraph": [
+            "All public officers and employees shall take an oath or affirmation to uphold and defend this Constitution."
+          ]
+        },
+        {
+          "name": "Section 5",
+          "paragraph": [
+            "The Congress shall provide for the standardization of compensation of government officials and employees, including those in government-owned or controlled corporations with original charters, taking into account the nature of the responsibilities pertaining to, and the qualifications required for their positions."
+          ]
+        },
+        {
+          "name": "Section 6",
+          "paragraph": [
+            "No candidate who has lost in any election shall, within one year after such election, be appointed to any office in the Government or any government-owned or controlled corporations or in any of their subsidiaries."
+          ]
+        },
+        {
+          "name": "Section 7",
+          "paragraph": [
+            "No elective official shall be eligible for appointment or designation in any capacity to any public office or position during his tenure.",
+            "Unless otherwise allowed by law or by the primary functions of his position, no appointive official shall hold any other office or employment in the Government or any subdivision, agency or instrumentality thereof, including government-owned or controlled corporations or their subsidiaries."
+          ]
+        },
+        {
+          "name": "Section 8",
+          "paragraph": [
+            "No elective or appointive public officer or employee shall receive additional, double, or indirect compensation, unless specifically authorized by law, nor accept without the consent of the Congress, any present, emolument, office, or title of any kind from any foreign government.",
+            "Pensions or gratuities shall not be considered as additional, double, or indirect compensation."
+          ]
+        }
+      ]
+    }
+  ]
+}

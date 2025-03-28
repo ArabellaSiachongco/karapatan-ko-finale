@@ -1,0 +1,64 @@
+.page-content-wrapper {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto; 
+}
+
+.word-highlight {
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(120deg, rgba(255, 230, 0, 0.2), rgba(255, 230, 0, 0.2)); /* Subtle highlight */
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em; 
+    background-position: 0 88%;
+    transition: all 0.2s ease-in-out; 
+    z-index: 2; 
+}
+
+.word-highlight:hover {
+    background-size: 100% 100%; 
+}
+
+/* Styling for the modal where word definition appears */
+.definition-modal {
+    pointer-events: auto;
+    user-select: text; 
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); 
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06); 
+    max-width: 400px;
+    z-index: 9999; 
+}
+
+.definition-modal p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.select-text {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 640px) {
+    .definition-modal {
+        width: 90vw;
+        max-width: none;
+        left: 50% !important; 
+        transform: translateX(-50%) !important; 
+        padding: 15px;
+    }
+
+    .word-highlight {
+        background-size: 100% 0.5em; 
+    }
+}

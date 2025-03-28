@@ -1,0 +1,68 @@
+{
+    "title": "TITLE VI - PATERNITY AND FILIATION",
+    "chapters": [
+      {
+        "name": "Chapter 1 - Legitimate Children",
+        "articles": [
+          {
+            "article": 163,
+            "text": "The filiation of children may be by nature or by adoption. Natural filiation may be legitimate or illegitimate."
+          },
+          {
+            "article": 164,
+            "text": "Children conceived or born during the marriage of the parents are legitimate. Children conceived as a result of artificial insemination of the wife with the sperm of the husband or that of a donor or both are likewise legitimate children of the husband and his wife, provided, that both of them authorized or ratified such insemination in a written instrument executed and signed by them before the birth of the child. The instrument shall be recorded in the civil registry together with the birth certificate of the child."
+          },
+          {
+            "article": 165,
+            "text": "Children conceived and born outside a valid marriage are illegitimate, unless otherwise provided in this Code."
+          },
+          {
+            "article": 166,
+            "text": "Legitimacy of a child may be impugned only on the following grounds:",
+            "sections": [
+              {
+                "condition": "That it was physically impossible for the husband to have sexual intercourse with his wife within the first 120 days of the 300 days which immediately preceded the birth of the child because of:",
+                "sub_conditions": [
+                  "The physical incapacity of the husband to have sexual intercourse with his wife.",
+                  "The fact that the husband and wife were living separately in such a way that sexual intercourse was not possible.",
+                  "Serious illness of the husband, which absolutely prevented sexual intercourse."
+                ]
+              },
+              "That it is proved that for biological or other scientific reasons, the child could not have been that of the husband, except in the instance provided in the second paragraph of Article 164.",
+              "That in case of children conceived through artificial insemination, the written authorization or ratification of either parent was obtained through mistake, fraud, violence, intimidation, or undue influence."
+            ]
+          },
+          {
+            "article": 167,
+            "text": "The child shall be considered legitimate although the mother may have declared against its legitimacy or may have been sentenced as an adulteress."
+          },
+          {
+            "article": 168,
+            "text": "If the marriage is terminated and the mother contracted another marriage within three hundred days after such termination of the former marriage, these rules shall govern in the absence of proof to the contrary:",
+            "sections": [
+              "A child born before one hundred eighty days after the solemnization of the subsequent marriage is considered to have been conceived during the former marriage, provided it be born within three hundred days after the termination of the former marriage.",
+              "A child born after one hundred eighty days following the celebration of the subsequent marriage is considered to have been conceived during such marriage, even though it be born within the three hundred days after the termination of the former marriage."
+            ]
+          },
+          {
+            "article": 169,
+            "text": "The legitimacy or illegitimacy of a child born after three hundred days following the termination of the marriage shall be proved by whoever alleges such legitimacy or illegitimacy."
+          },
+          {
+            "article": 170,
+            "text": "The action to impugn the legitimacy of the child shall be brought within one year from the knowledge of the birth or its recording in the civil register, if the husband or, in a proper case, any of his heirs, should reside in the city or municipality where the birth took place or was recorded. If the husband or, in his default, all of his heirs do not reside at the place of birth as defined in the first paragraph or where it was recorded, the period shall be two years if they should reside in the Philippines; and three years if abroad. If the birth of the child has been concealed from or was unknown to the husband or his heirs, the period shall be counted from the discovery or knowledge of the birth of the child or of the fact of registration of said birth, whichever is earlier."
+          },
+          {
+            "article": 171,
+            "text": "The heirs of the husband may impugn the filiation of the child within the period prescribed in the preceding article only in the following cases:",
+            "sections": [
+              "If the husband should die before the expiration of the period fixed for bringing his action.",
+              "If he should die after the filing of the complaint without having desisted therefrom.",
+              "If the child was born after the death of the husband."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,116 @@
+{
+  "bill": [
+    {
+      "id": "bill_of_rights",
+      "title": "Bill of Rights",
+      "subtitle": "ARTICLE III",
+      "sections": [
+        {
+          "name": "Section 1",
+          "paragraph": "No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws."
+        },
+        {
+          "name": "Section 2",
+          "paragraph": "The right of the people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures of whatever nature and for any purpose shall be inviolable, and no search warrant or warrant of arrest shall issue except upon probable cause to be determined personally by the judge after examination under oath or affirmation of the complainant and the witnesses he may produce, and particularly describing the place to be searched and the persons or things to be seized."
+        },
+        {
+          "name": "Section 3",
+          "paragraph": [
+            "(1) The privacy of communication and correspondence shall be inviolable except upon lawful order of the court, or when public safety or order requires otherwise as prescribed by law",
+            "(2) Any evidence obtained in violation of this or the preceding section shall be inadmissible for any purpose in any proceeding."
+          ]
+        },
+        {
+          "name": "Section 4",
+          "paragraph": "No law shall be passed abridging the freedom of speech, of expression, or of the press, or the right of the people peaceably to assemble and petition the government for redress of grievances."
+        },
+        {
+          "name": "Section 5",
+          "paragraph": "No law shall be made respecting an establishment of religion, or prohibiting the free exercise thereof. The free exercise and enjoyment of religious profession and worship, without discrimination or preference, shall forever be allowed. No religious test shall be required for the exercise of civil or political rights."
+        },
+        {
+          "name": "Section 6",
+          "paragraph": "The liberty of abode and of changing the same within the limits prescribed by law shall not be impaired except upon lawful order of the court. Neither shall the right to travel be impaired except in the interest of national security, public safety, or public health, as may be provided by law."
+        },
+        {
+          "name": "Section 7",
+          "paragraph": "The right of the people to information on matters of public concern shall be recognized. Access to official records, and to documents, and papers pertaining to official acts, transactions, or decisions, as well as to government research data used as basis for policy development, shall be afforded the citizen, subject to such limitations as may be provided by law."
+        },
+        {
+          "name": "Section 8",
+          "paragraph": "The right of the people, including those employed in the public and private sectors, to form unions, associations, or societies for purposes not contrary to law shall not be abridged"
+        },
+        {
+          "name": "Section 9",
+          "paragraph": "Private property shall not be taken for public use without just compensation."
+        },
+        {
+          "name": "Section 10",
+          "paragraph": "No law impairing the obligation of contracts shall be passed."
+        },
+        {
+          "name": "Section 11",
+          "paragraph": "Free access to the courts and quasi-judicial bodies and adequate legal assistance shall not be denied to any person by reason of poverty."
+        },
+        {
+          "name": "Section 12",
+          "paragraph": [
+            "(1) Any person under investigation for the commission of an offense shall have the right to be informed of his right to remain silent and to have competent and independent counsel preferably of his own choice. If the person cannot afford the services of counsel, he must be provided with one. These rights cannot be waived except in writing and in the presence of counsel.",
+            "(2) No torture, force, violence, threat, intimidation, or any other means which vitiate the free will shall be used against him. Secret detention places, solitary, incommunicado, or other similar forms of detention are prohibited.",
+            "(3) Any confession or admission obtained in violation of this or Section 17 hereof shall be inadmissible in evidence against him.",
+            "(4) The law shall provide for penal and civil sanctions for violations of this section as well as compensation to and rehabilitation of victims of torture or similar practices, and their families."
+          ]
+        },
+        {
+          "name": "Section 13",
+          "paragraph": "All persons, except those charged with offenses punishable by reclusion perpetua when evidence of guilt is strong, shall, before conviction, be bailable by sufficient sureties, or be released on recognizance as may be provided by law. The right to bail shall not be impaired even when the privilege of the writ of habeas corpus is suspended. Excessive bail shall not be required."
+        },
+        {
+          "name": "Section 14",
+          "paragraph": [
+            ". (1) No person shall be held to answer for a criminal offense without due process of law.",
+            "(2) In all criminal prosecutions, the accused shall be presumed innocent until the contrary is proved, and shall enjoy the right to be heard by himself and counsel, to be informed of the nature and cause of the accusation against him, to have a speedy, impartial, and public trial, to meet the witnesses face to face, and to have compulsory process to secure the attendance of witnesses and the production of evidence in his behalf. However, after arraignment, trial may proceed notwithstanding the absence of the accused provided that he has been duly notified and his failure to appear is unjustifiable."
+          ]
+        },
+        {
+          "name": "Section 15",
+          "paragraph": "The privilege of the writ of habeas corpus shall not be suspended except in cases of invasion or rebellion when the public safety requires it."
+        },
+        {
+          "name": "Section 16",
+          "paragraph": "All persons shall have the right to a speedy disposition of their cases before all judicial, quasi-judicial, or administrative bodies."
+        },
+        {
+          "name": "Section 17",
+          "paragraph": "No person shall be compelled to be a witness against himself."
+        },
+        {
+          "name": "Section 18",
+          "paragraph": [
+            "(1) No person shall be detained solely by reason of his political beliefs and aspirations.",
+            "(2) No involuntary servitude in any form shall exist except as a punishment for a crime whereof the party shall have been duly convicted."
+          ]
+        },
+        {
+          "name": "Section 19",
+          "paragraph": [
+            "(1) Excessive fines shall not be imposed, nor cruel, degrading or inhuman punishment inflicted. Neither shall death penalty be imposed, unless, for compelling reasons involving heinous crimes, the Congress hereafter provides for it. Any death penalty already imposed shall be reduced to reclusion perpetua.",
+            "(2) The employment of physical, psychological, or degrading punishment against any prisoner or detainee or the use of substandard or inadequate penal facilities under subhuman conditions shall be dealt with by law."
+          ]
+        },
+        {
+          "name": "Section 20",
+          "paragraph": "No person shall be imprisoned for debt or non-payment of a poll tax."
+        },
+        {
+          "name": "Section 21",
+          "paragraph": "No person shall be twice put in jeopardy of punishment for the same offense. If an act is punished by a law and an ordinance, conviction or acquittal under either shall constitute a bar to another prosecution for the same act."
+        },
+        {
+          "name": "Section 22",
+          "paragraph": " No ex post facto law or bill of attainder shall be enacted."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "Chapter_2": {
+    "title": "Donations by Reason of Marriage",
+    "articles": [
+      {
+        "article_number": 82,
+        "text": "Donations by reason of marriage are those which are made before its celebration, in consideration of the same, and in favor of one or both of the future spouses."
+      },
+      {
+        "article_number": 83,
+        "text": "These donations are governed by the rules on ordinary donations established in Title III of Book III of the Civil Code, insofar as they are not modified by the following articles."
+      },
+      {
+        "article_number": 84,
+        "text": "If the future spouses agree upon a regime other than the absolute community of property, they cannot donate to each other in their marriage settlements more than one-fifth of their present property. Any excess shall be considered void. Donations of future property shall be governed by the provisions on testamentary succession and the formalities of wills."
+      },
+      {
+        "article_number": 85,
+        "text": "Donations by reason of marriage of property subject to encumbrances shall be valid. In case of foreclosure of the encumbrance and the property is sold for less than the total amount of the obligation secured, the donee shall not be liable for the deficiency. If the property is sold for more than the total amount of said obligation, the donee shall be entitled to the excess."
+      },
+      {
+        "article_number": 86,
+        "text": "A donation by reason of marriage may be revoked by the donor in the following cases:",
+        "conditions": [
+          "If the marriage is not celebrated or judicially declared void ab initio except donations made in the marriage settlements, which shall be governed by Article 81;",
+          "When the marriage takes place without the consent of the parents or guardian, as required by law;",
+          "When the marriage is annulled, and the donee acted in bad faith;",
+          "Upon legal separation, the donee being the guilty spouse;",
+          "If it is with a resolutory condition and the condition is complied with;",
+          "When the donee has committed an act of ingratitude as specified by the provisions of the Civil Code on donations in general."
+        ]
+      },
+      {
+        "article_number": 87,
+        "text": "Every donation or grant of gratuitous advantage, direct or indirect, between the spouses during the marriage shall be void, except moderate gifts which the spouses may give each other on the occasion of any family rejoicing. The prohibition shall also apply to persons living together as husband and wife without a valid marriage."
+      }
+    ]
+  }
+}

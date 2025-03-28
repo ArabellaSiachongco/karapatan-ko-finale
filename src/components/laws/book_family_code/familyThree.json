@@ -1,0 +1,138 @@
+{
+    "chapter": "Void and Voidable Marriages",
+    "articles": [
+      {
+        "article": 35,
+        "description": "The following marriages shall be void from the beginning:",
+        "clauses": [
+          "Those contracted by any party below eighteen years of age even with the consent of parents or guardians.",
+          "Those solemnized by any person not legally authorized to perform marriages unless such marriages were contracted with either or both parties believing in good faith that the solemnizing officer had the legal authority to do so.",
+          "Those solemnized without license, except those covered in the preceding Chapter.",
+          "Those bigamous or polygamous marriages not falling under Article 41.",
+          "Those contracted through mistake of one contracting party as to the identity of the other.",
+          "Those subsequent marriages that are void under Article 53."
+        ]
+      },
+      {
+        "article": 36,
+        "description": "A marriage contracted by any party who, at the time of the celebration, was psychologically incapacitated to comply with the essential marital obligations of marriage, shall likewise be void even if such incapacity becomes manifest only after its solemnization.",
+        "amendment": "As amended by Executive Order 227"
+      },
+      {
+        "article": 37,
+        "description": "Marriages between the following are incestuous and void from the beginning, whether relationship between the parties be legitimate or illegitimate:",
+        "clauses": [
+          "Between ascendants and descendants of any degree.",
+          "Between brothers and sisters, whether of the full or half blood."
+        ]
+      },
+      {
+        "article": 38,
+        "description": "The following marriages shall be void from the beginning for reasons of public policy:",
+        "clauses": [
+          "Between collateral blood relatives whether legitimate or illegitimate, up to the fourth civil degree.",
+          "Between step-parents and step-children.",
+          "Between parents-in-law and children-in-law.",
+          "Between the adopting parent and the adopted child.",
+          "Between the surviving spouse of the adopting parent and the adopted child.",
+          "Between the surviving spouse of the adopted child and the adopter.",
+          "Between an adopted child and a legitimate child of the adopter.",
+          "Between adopted children of the same adopter.",
+          "Between parties where one, with the intention to marry the other, killed that other person's spouse, or his or her own spouse."
+        ]
+      },
+      {
+        "article": 39,
+        "description": "The action or defense for the declaration of absolute nullity shall not prescribe. However, in case of marriage celebrated before the effectivity of this Code and falling under Article 36, such action or defense shall prescribe in ten years after this Code shall take effect."
+      },
+      {
+        "article": 40,
+        "description": "The absolute nullity of a previous marriage may be invoked for purposes of remarriage on the basis solely of a final judgment declaring such previous marriage void."
+      },
+      {
+        "article": 41,
+        "description": " A marriage contracted by any person during subsistence of a previous marriage shall be null and void, unless before the celebration of the subsequent marriage, the prior spouse had been absent for four consecutive years and the spouse present has a well-founded belief that the absent spouse was already dead. In case of disappearance where there is danger of death under the circumstances set forth in the provisions of Article 391 of the Civil Code, an absence of only two years shall be sufficient. For the purpose of contracting the subsequent marriage under the preceding paragraph the spouse present must institute a summary proceeding as provided in this Code for the declaration of presumptive death of the absentee, without prejudice to the effect of reappearance of the absent spouse."
+      },
+      {
+        "article": 42,
+        "description": "The subsequent marriage referred to in the preceding Article shall be automatically terminated by the recording of the affidavit of reappearance of the absent spouse, unless there is a judgment annulling the previous marriage or declaring it void ab initio. A sworn statement of the fact and circumstances of reappearance shall be recorded in the civil registry of the residence of the parties to the subsequent marriage at the instance of any interested person, with due notice to the spouses of the subsequent marriage and without prejudice to the fact of reappearance being judicially determined in case such fact is disputed"
+      },
+      {
+        "article": 43,
+        "text": "The termination of the subsequent marriage referred to in the preceding Article shall produce the following effects:",
+        "effects": [
+          "The children of the subsequent marriage conceived prior to its termination shall be considered legitimate.",
+          "The absolute community of property or the conjugal partnership, as the case may be, shall be dissolved and liquidated, but if either spouse contracted said marriage in bad faith, his or her share of the net profits of the community property or conjugal partnership property shall be forfeited in favor of the common children or, if there are none, the children of the guilty spouse by a previous marriage or in default of children, the innocent spouse.",
+          "Donations by reason of marriage shall remain valid, except that if the donee contracted the marriage in bad faith, such donations made to said donee are revoked by operation of law.",
+          "The innocent spouse may revoke the designation of the other spouse who acted in bad faith as beneficiary in any insurance policy, even if such designation be stipulated as irrevocable.",
+          "The spouse who contracted the subsequent marriage in bad faith shall be disqualified to inherit from the innocent spouse by testate and intestate succession."
+        ]
+      },
+      {
+        "article": 44,
+        "text": "If both spouses of the subsequent marriage acted in bad faith, said marriage shall be void ab initio and all donations by reason of marriage and testamentary dispositions made by one in favor of the other are revoked by operation of law."
+      },
+      {
+        "article": 45,
+        "text": "A marriage may be annulled for any of the following causes, existing at the time of the marriage:",
+        "causes": [
+          "That the party in whose behalf it is sought to have the marriage annulled was eighteen years of age or over but below twenty-one, and the marriage was solemnized without the consent of the parents, guardian or person having substitute parental authority over the party, in that order, unless after attaining the age of twenty-one, such party freely cohabited with the other and both lived together as husband and wife.",
+          "That either party was of unsound mind, unless such party after coming to reason, freely cohabited with the other as husband and wife.",
+          "That the consent of either party was obtained by fraud, unless such party afterwards, with full knowledge of the facts constituting the fraud, freely cohabited with the other as husband and wife.",
+          "That the consent of either party was obtained by force, intimidation or undue influence, unless the same having disappeared or ceased, such party thereafter freely cohabited with the other as husband and wife.",
+          "That either party was physically incapable of consummating the marriage with the other, and such incapacity continues and appears to be incurable.",
+          "That either party was afflicted with a sexually-transmissible disease found to be serious and appears to be incurable."
+        ]
+      },
+      {
+        "article": 46,
+        "text": "Any of the following circumstances shall constitute fraud referred to in Number 3 of the preceding Article:",
+        "circumstances": [
+          "Non-disclosure of a previous conviction by final judgment of the other party of a crime involving moral turpitude.",
+          "Concealment by the wife of the fact that at the time of the marriage, she was pregnant by a man other than her husband.",
+          "Concealment of sexually transmissible disease, regardless of its nature, existing at the time of the marriage.",
+          "Concealment of drug addiction, habitual alcoholism or homosexuality or lesbianism existing at the time of the marriage."
+        ],
+        "exclusion": "No other misrepresentation or deceit as to character, health, rank, fortune or chastity shall constitute such fraud as will give grounds for action for the annulment of marriage."
+      },
+      {
+        "article": 47,
+        "text": "The action for annulment of marriage must be filed by the following persons and within the periods indicated herein:",
+        "filing_rules": [
+          "For causes mentioned in number 1 of Article 45 by the party whose parent or guardian did not give his or her consent, within five years after attaining the age of twenty-one, or by the parent or guardian or person having legal charge of the minor, at any time before such party has reached the age of twenty-one.",
+          "For causes mentioned in number 2 of Article 45, by the same spouse, who had no knowledge of the other's insanity; or by any relative or guardian or person having legal charge of the insane, at any time before the death of either party, or by the insane spouse during a lucid interval or after regaining sanity.",
+          "For causes mentioned in number 3 of Articles 45, by the injured party, within five years after the discovery of the fraud.",
+          "For causes mentioned in number 4 of Article 45, by the injured party, within five years from the time the force, intimidation or undue influence disappeared or ceased.",
+          "For causes mentioned in number 5 and 6 of Article 45, by the injured party, within five years after the marriage."
+        ]
+      },
+      {
+        "article": 48,
+        "text": "attorney or fiscal assigned to it to appear on behalf of the State to take steps to prevent collusion between the parties and to take care that evidence is not fabricated or suppressed. In the cases referred to in the preceding paragraph, no judgment shall be based upon a stipulation of facts or confession of judgment."
+      },
+      {
+        "article": 49,
+        "text": "During the pendency of the action and in the absence of adequate provisions in a written agreement between the spouses, the Court shall provide for the support of the spouses and the custody and support of their common children. The Court shall give paramount consideration to the moral and material welfare of said children and their choice of the parent with whom they wish to remain as provided to in Title IX. It shall also provide for appropriate visitation rights of the other parent. ."
+      },
+      {
+        "article": 50,
+        "text": "The effects provided for by paragraphs (2), (3), (4) and (5) of Article 43 and by Article 44 shall also apply in the proper cases to marriages which are declared ab initio or annulled by final judgment under Articles 40 and 45. The final judgment in such cases shall provide for the liquidation, partition and distribution of the properties of the spouses, the custody and support of the common children, and the delivery of third presumptive legitimes, unless such matters had been adjudicated in previous judicial proceedings. All creditors of the spouses as well as of the absolute community or the conjugal partnership shall be notified of the proceedings for liquidation. In the partition, the conjugal dwelling and the lot on which it is situated, shall be adjudicated in accordance with the provisions of Articles 102 and 129."
+      },
+      {
+        "article": 51,
+        "text": "In said partition, the value of the presumptive legitimes of all common children, computed as of the date of the final judgment of the trial court, shall be delivered in cash, property or sound securities, unless the parties, by mutual agreement judicially approved, had already provided for such matters. The children or their guardian or the trustee of their property may ask for the enforcement of the judgment. The delivery of the presumptive legitimes herein prescribed shall in no way prejudice the ultimate successional rights of the children accruing upon the death of either of both of the parents; but the value of the properties already received under the decree of annulment or absolute nullity shall be considered as advances on their legitime."
+      },
+      {
+        "article": 52,
+        "text": "The judgment of annulment or of absolute nullity of the marriage, the partition and distribution of the properties of the spouses and the delivery of the children's presumptive legitimes shall be recorded in the appropriate civil registry and registries of property; otherwise, the same shall not affect third persons."
+      },
+      {
+        "article": 53,
+        "text": "Either of the former spouses may marry again after compliance with the requirements of the immediately preceding Article; otherwise, the subsequent marriage shall be null and void."
+      },
+      {
+        "article": 54,
+        "text": " Children conceived or born before the judgment of annulment or absolute nullity of the marriage under Article 36 has become final and executory shall be considered legitimate. Children conceived or born of the subsequent marriage under Article 53 shall likewise be legitimate."
+      }
+    ]
+  }

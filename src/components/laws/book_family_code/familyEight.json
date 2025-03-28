@@ -1,0 +1,152 @@
+{
+  "Chapter3": {
+    "title": "System of Absolute Community",
+    "sections": [
+      {
+        "Section 1": {
+          "title": "General Provisions",
+          "articles": [
+            {
+              "Article 88": "The absolute community of property between spouses shall commence at the precise moment that the marriage is celebrated. Any stipulation, express or implied, for the commencement of the community regime at any other time shall be void."
+            },
+            {
+              "Article 89": {
+                "text": "No waiver of rights, shares and effects of the absolute community of property during the marriage can be made except in case of judicial separation of property.",
+                "conditions": [
+                  "When the waiver takes place upon a judicial separation of property, or after the marriage has been dissolved or annulled, the same shall appear in a public instrument and shall be recorded as provided in Article 77.",
+                  "The creditors of the spouse who made such waiver may petition the court to rescind the waiver to the extent of the amount sufficient to cover the amount of their credits."
+                ]
+              }
+            },
+            {
+              "Article 90": "The provisions on co-ownership shall apply to the absolute community of property between the spouses in all matters not provided for in this Chapter."
+            }
+          ]
+        }
+      },
+      {
+        "Section 2": {
+          "title": "What Constitutes Community Property",
+          "articles": [
+            {
+              "Article 91": "Unless otherwise provided in this Chapter or in the marriage settlements, the community property shall consist of all the property owned by the spouses at the time of the celebration of the marriage or acquired thereafter."
+            },
+            {
+              "Article 92": {
+                "title": "The following shall be excluded from the community property:",
+                "exclusions": [
+                  "Property acquired during the marriage by gratuitous title by either spouse, and the fruits as well as the income thereof, if any, unless it is expressly provided by the donor, testator or grantor that they shall form part of the community property;",
+                  "Property for personal and exclusive use of either spouse. However, jewelry shall form part of the community property;",
+                  "Property acquired before the marriage by either spouse who has legitimate descendants by a former marriage, and the fruits as well as the income, if any, of such property."
+                ]
+              }
+            },
+            {
+              "Article 93": "Property acquired during the marriage is presumed to belong to the community, unless it is proved that it is one of those excluded therefrom."
+            }
+          ]
+        }
+      },
+      {
+        "Section 3": {
+          "title": "Charges and Obligations of the Absolute Community",
+          "articles": [
+            {
+              "Article 94": {
+                "description": "The absolute community of property shall be liable for:",
+                "liabilities": [
+                  "The support of the spouses, their common children, and legitimate children of either spouse; however, the support of illegitimate children shall be governed by the provisions of this Code on Support.",
+                  "All debts and obligations contracted during the marriage by the designated administrator-spouse for the benefit of the community, or by both spouses, or by one spouse with the consent of the other.",
+                  "Debts and obligations contracted by either spouse without the consent of the other to the extent that the family may have been benefited.",
+                  "All taxes, liens, charges and expenses, including major or minor repairs, upon the community property.",
+                  "All taxes and expenses for mere preservation made during marriage upon the separate property of either spouse used by the family.",
+                  "Expenses to enable either spouse to commence or complete a professional or vocational course, or other activity for self-improvement.",
+                  "Antenuptial debts of either spouse insofar as they have redounded to the benefit of the family.",
+                  "The value of what is donated or promised by both spouses in favor of their common legitimate children for the exclusive purpose of commencing or completing a professional or vocational course or other activity for self-improvement.",
+                  "Antenuptial debts of either spouse other than those falling under paragraph (7) of this Article, the support of illegitimate children of either spouse, and liabilities incurred by either spouse by reason of a crime or a quasi-delict, in case of absence or insufficiency of the exclusive property of the debtor-spouse, the payment of which shall be considered as advances to be deducted from the share of the debtor-spouse upon liquidation of the community.",
+                  "Expenses of litigation between the spouses unless the suit is found to be groundless."
+                ],
+                "solidary_liability": "If the community property is insufficient to cover the foregoing liabilities, except those falling under paragraph (9), the spouses shall be solidarily liable for the unpaid balance with their separate properties."
+              }
+            },
+            {
+              "Article 95": {
+                "description": "Losses due to gambling are borne by the loser, while winnings become part of the community property."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Section 4": {
+          "title": "Ownership, Administrative, Enjoyment and Disposition of the Community Property",
+          "articles": [
+            {
+              "Article 96": {
+                "description": "The administration and enjoyment of the community property shall belong to both spouses jointly.",
+                "provisions": [
+                  "In case of disagreement, the husband's decision shall prevail, subject to recourse to the court by the wife.",
+                  "If one spouse is incapacitated, the other may assume sole powers of administration, excluding disposition or encumbrance without proper consent or court authority."
+                ]
+              }
+            },
+            {
+              "Article 97": "Either spouse may dispose by will of his or her interest in the community property."
+            },
+            {
+              "Article 98": "Neither spouse may donate community property without consent, except for moderate charitable donations."
+            }
+          ]
+        }
+      },
+      {
+        "Section 5": {
+          "title": "Dissolution of Absolute Community Regime",
+          "articles": [
+            {
+              "Article 99": {
+                "description": "The absolute community terminates under the following conditions:",
+                "conditions": [
+                  "Upon the death of either spouse.",
+                  "When there is a decree of legal separation.",
+                  "When the marriage is annulled or declared void.",
+                  "In case of judicial separation of property."
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Section 6": {
+          "title": "Liquidation of the Absolute Community Assets and Liabilities",
+          "articles": [
+            {
+              "Article 102": {
+                "description": "Procedure upon dissolution of the absolute community regime.",
+                "steps": [
+                  "An inventory shall be prepared, listing properties separately.",
+                  "Debts and obligations shall be paid out of community assets.",
+                  "Remaining exclusive properties shall be returned to each spouse.",
+                  "Net assets shall be divided equally unless otherwise agreed.",
+                  "Presumptive legitimes of children shall be delivered upon partition.",
+                  "The conjugal dwelling shall be adjudicated based on children's choice or court decision."
+                ]
+              }
+            },
+            {
+              "Article 103": {
+                "description": "Upon the termination of the marriage by death, the community property shall be liquidated in the same proceeding for the settlement of the estate of the deceased."
+              }
+            },
+            {
+              "Article 104": {
+                "description": "Whenever the liquidation of the community properties of two or more marriages contracted by the same person before the effectivity of this Code is carried out simultaneously, the respective capital, fruits and income of each community shall be determined upon such proof as may be considered according to the rules of evidence."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

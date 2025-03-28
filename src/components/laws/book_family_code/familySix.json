@@ -1,0 +1,43 @@
+{
+    "TITLE": {
+      "name": "PROPERTY RELATIONS BETWEEN HUSBAND AND WIFE",
+      "Chapter 1": {
+        "name": "General Provisions",
+        "Article 74": {
+          "text": "The property relationship between husband and wife shall be governed in the following order:",
+          "order": [
+            "By marriage settlements executed before the marriage;",
+            "By the provisions of this Code;",
+            "By the local custom."
+          ]
+        },
+        "Article 75": {
+          "text": "The future spouses may, in the marriage settlements, agree upon the regime of absolute community, conjugal partnership of gains, complete separation of property, or any other regime. In the absence of a marriage settlement, or when the regime agreed upon is void, the system of absolute community of property as established in this Code shall govern."
+        },
+        "Article 76": {
+          "text": "In order that any modification in the marriage settlements may be valid, it must be made before the celebration of the marriage, subject to the provisions of Articles 66, 67, 128, 135 and 136."
+        },
+        "Article 77": {
+          "text": "The marriage settlements and any modification thereof shall be in writing, signed by the parties and executed before the celebration of the marriage. They shall not prejudice third persons unless they are registered in the local civil registry where the marriage contract is recorded as well as in the proper registries of properties."
+        },
+        "Article 78": {
+          "text": "A minor who according to law may contract marriage may also execute his or her marriage settlements, but they shall be valid only if the persons designated in Article 14 to give consent to the marriage are made parties to the agreement, subject to the provisions of Title IX of this Code."
+        },
+        "Article 79": {
+          "text": "For the validity of any marriage settlement executed by a person upon whom a sentence of civil interdiction has been pronounced or who is subject to any other disability, it shall be indispensable for the guardian appointed by a competent court to be made a party thereto."
+        },
+        "Article 80": {
+          "text": "In the absence of a contrary stipulation in a marriage settlement, the property relations of the spouses shall be governed by Philippine laws, regardless of the place of the celebration of the marriage and their residence.",
+          "exceptions": [
+            "Where both spouses are aliens;",
+            "With respect to the extrinsic validity of contracts affecting property not situated in the Philippines and executed in the country where the property is located;",
+            "With respect to the extrinsic validity of contracts entered into in the Philippines but affecting property situated in a foreign country whose laws require different formalities for its extrinsic validity."
+          ]
+        },
+        "Article 81": {
+          "text": "Everything stipulated in the settlements or contracts referred to in the preceding articles in consideration of a future marriage, including donations between the prospective spouses made therein, shall be rendered void if the marriage does not take place. However, stipulations that do not depend upon the celebration of the marriages shall be valid."
+        }
+      }
+    }
+  }
+  

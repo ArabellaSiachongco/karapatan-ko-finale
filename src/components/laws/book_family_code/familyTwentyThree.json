@@ -1,0 +1,69 @@
+{
+    "chapter": {
+      "name": "Chapter 4 - Effect of Parental Authority Upon the Property of the Children",
+      "articles": [
+        {
+          "article": 225,
+          "text": "The father and the mother shall jointly exercise legal guardianship over the property of the unemancipated common child without the necessity of a court appointment. In case of disagreement, the father's decision shall prevail, unless there is a judicial order to the contrary.\n\nWhere the market value of the property or the annual income of the child exceeds P50,000, the parent concerned shall be required to furnish a bond in such amount as the court may determine, but not less than ten per centum (10%) of the value of the property or annual income, to guarantee the performance of the obligations prescribed for general guardians.\n\nA verified petition for approval of the bond shall be filed in the proper court of the place where the child resides, or, if the child resides in a foreign country, in the proper court of the place where the property or any part thereof is situated.\n\nThe petition shall be docketed as a summary special proceeding in which all incidents and issues regarding the performance of the obligations referred to in the second paragraph of this Article shall be heard and resolved.\n\nThe ordinary rules on guardianship shall be merely suppletory except when the child is under substitute parental authority, or the guardian is a stranger, or a parent has remarried, in which case the ordinary rules on guardianship shall apply."
+        },
+        {
+          "article": 226,
+          "text": "The property of the unemancipated child earned or acquired with his work or industry or by onerous or gratuitous title shall belong to the child in ownership and shall be devoted exclusively to the latter's support and education, unless the title or transfer provides otherwise.\n\nThe right of the parents over the fruits and income of the child's property shall be limited primarily to the child's support and secondarily to the collective daily needs of the family."
+        },
+        {
+          "article": 227,
+          "text": "If the parents entrust the management or administration of any of their properties to an unemancipated child, the net proceeds of such property shall belong to the owner. The child shall be given a reasonable monthly allowance in an amount not less than that which the owner would have paid if the administrator were a stranger, unless the owner grants the entire proceeds to the child. In any case, the proceeds thus given in whole or in part shall not be charged to the child's legitime."
+        }
+      ]
+    },
+    
+    "chapter": {
+      "name": "Chapter 5 - Suspension or Termination of Parental Authority",
+      "articles": [
+        {
+          "article": 228,
+          "text": "Parental authority terminates permanently:",
+          "conditions": [
+            "Upon the death of the parents",
+            "Upon the death of the child",
+            "Upon emancipation of the child"
+          ]
+        },
+        {
+          "article": 229,
+          "text": "Unless subsequently revived by a final judgment, parental authority also terminates:",
+          "conditions": [
+            "Upon adoption of the child",
+            "Upon appointment of a general guardian",
+            "Upon judicial declaration of abandonment of the child in a case filed for the purpose",
+            "Upon final judgment of a competent court divesting the party concerned of parental authority",
+            "Upon judicial declaration of absence or incapacity of the person exercising parental authority"
+          ]
+        },
+        {
+          "article": 230,
+          "text": "Parental authority is suspended upon conviction of the parent or the person exercising the same of a crime which carries with it the penalty of civil interdiction. The authority is automatically reinstated upon service of the penalty or upon pardon or amnesty of the offender."
+        },
+        {
+          "article": 231,
+          "text": "The court in an action filed for the purpose in a related case may also suspend parental authority if the parent or the person exercising the same:",
+          "conditions": [
+            "Treats the child with excessive harshness or cruelty",
+            "Gives the child corrupting orders, counsel or example",
+            "Compels the child to beg",
+            "Subjects the child or allows him to be subjected to acts of lasciviousness"
+          ],
+          "additional_text": "The grounds enumerated above are deemed to include cases which have resulted from culpable negligence of the parent or the person exercising parental authority. If the degree of seriousness so warrants, or the welfare of the child so demands, the court shall deprive the guilty party of parental authority or adopt such other measures as may be proper under the circumstances. The suspension or deprivation may be revoked and the parental authority revived in a case filed for the purpose or in the same proceeding if the court finds that the cause therefor has ceased and will not be repeated."
+        },
+        {
+          "article": 232,
+          "text": "If the person exercising parental authority has subjected the child or allowed him to be subjected to sexual abuse, such person shall be permanently deprived by the court of such authority."
+        },
+        {
+          "article": 233,
+          "text": "The person exercising substitute parental authority shall have the same authority over the person of the child as the parents. In no case shall the school administrator, teacher or individual engaged in child care exercising special parental authority inflict corporal punishment upon the child."
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,34 @@
+{
+    "chapter": "Chapter 2 - Proof of Filiation",
+    "articles": [
+      {
+        "article": 172,
+        "text": "The filiation of legitimate children is established by any of the following:",
+        "methods": [
+          "The record of birth appearing in the civil register or a final judgment",
+          "An admission of legitimate filiation in a public document or a private handwritten instrument and signed by the parent concerned"
+        ],
+        "alternative_proof": {
+          "text": "In the absence of the foregoing evidence, the legitimate filiation shall be proved by:",
+          "methods": [
+            "The open and continuous possession of the status of a legitimate child",
+            "Any other means allowed by the Rules of Court and special laws"
+          ]
+        }
+      },
+      {
+        "article": 173,
+        "text": "The action to claim legitimacy may be brought by the child during his or her lifetime and shall be transmitted to the heirs should the child die during minority or in a state of insanity. In these cases, the heirs shall have a period of five years within which to institute the action."
+      },
+      {
+        "article": 174,
+        "text": "Legitimate children shall have the right:",
+        "rights": [
+          "To bear the surnames of the father and the mother, in conformity with the provisions of the Civil Code on Surnames",
+          "To receive support from their parents, their ascendants, and in proper cases, their brothers and sisters, in conformity with the provisions of this Code on Support",
+          "To be entitled to the legitimate and other successional rights granted to them by the Civil Code"
+        ]
+      }
+    ]
+  }
+  

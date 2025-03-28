@@ -1,0 +1,97 @@
+{
+  "title": "TITLE VII - ADOPTION",
+  "articles": [
+    {
+      "article": 183,
+      "text": "A person of age and in possession of full civil capacity and legal rights may adopt, provided he is in a position to support and care for his children, legitimate or illegitimate, in keeping with the means of the family. Only minors may be adopted, except in the cases when the adoption of a person of majority age is allowed in this Title. In addition, the adopter must be at least sixteen years older than the person to be adopted, unless the adopter is the parent by nature of the adopted, or is the spouse of the legitimate parent of the person to be adopted."
+    },
+    {
+      "article": 184,
+      "text": "The following persons may not adopt:",
+      "restrictions": [
+        "The guardian with respect to the ward prior to the approval of the final accounts rendered upon the termination of their guardianship relation",
+        "Any person who has been convicted of a crime involving moral turpitude",
+        "An alien, except:",
+        "A former Filipino citizen who seeks to adopt a relative by consanguinity",
+        "One who seeks to adopt the legitimate child of his or her Filipino spouse",
+        "One who is married to a Filipino citizen and seeks to adopt jointly with his or her spouse a relative by consanguinity of the latter"
+      ]
+    },
+    {
+      "article": 185,
+      "text": "Husband and wife must jointly adopt, except in the following cases:",
+      "exceptions": [
+        "When one spouse seeks to adopt his own illegitimate child",
+        "When one spouse seeks to adopt the legitimate child of the other"
+      ]
+    },
+    {
+      "article": 186,
+      "text": "In case husband and wife jointly adopt or one spouse adopts the legitimate child of the other, joint parental authority shall be exercised by the spouses in accordance with this Code."
+    },
+    {
+      "article": 187,
+      "text": "The following may not be adopted:",
+      "restrictions": [
+        "A person of legal age, unless he or she is a child by nature of the adopter or his or her spouse, or, prior to the adoption, said person has been consistently considered and treated by the adopter as his or her own child during minority.",
+        "An alien with whose government the Republic of the Philippines has no diplomatic relations",
+        "A person who has already been adopted unless such adoption has been previously revoked or rescinded"
+      ]
+    },
+    {
+      "article": 188,
+      "text": "The written consent of the following to the adoption shall be necessary:",
+      "consent_required": [
+        "The person to be adopted, if ten years of age or over",
+        "The parents by nature of the child, the legal guardian, or the proper government instrumentality",
+        "The legitimate and adopted children, ten years of age or over, of the adopting parent or parents",
+        "The illegitimate children, ten years of age or over, of the adopting parent, if living with said parent and the latter's spouse, if any",
+        "The spouse, if any, of the person adopting or to be adopted"
+      ]
+    },
+    {
+      "article": 189,
+      "text": "Adoption shall have the following effects:",
+      "effects": [
+        "For civil purposes, the adopted shall be deemed to be a legitimate child of the adopters and both shall acquire the reciprocal rights and obligations arising from the relationship of parent and child, including the right of the adopted to use the surname of the adopters",
+        "The parental authority of the parents by nature over the adopted shall terminate and be vested in the adopters, except that if the adopter is the spouse of the parent by nature of the adopted, parental authority over the adopted shall be exercised jointly by both spouses",
+        "The adopted shall remain an intestate heir of his parents and other blood relatives"
+      ]
+    },
+    {
+      "article": 190,
+      "text": "Legal or intestate succession to the estate of the adopted shall be governed by the following rules:",
+      "rules": [
+        "Legitimate and illegitimate children and descendants and the surviving spouse of the adopted shall inherit from the adopted, in accordance with the ordinary rules of legal or intestate succession",
+        "When the parents, legitimate or illegitimate, or the legitimate ascendants of the adopted concur with the adopter, they shall divide the entire estate, one-half to be inherited by the parents or ascendants and the other half, by the adopters",
+        "When the surviving spouse or the illegitimate children of the adopted concur with the adopters, they shall divide the entire estate in equal shares, one-half to be inherited by the spouse or the illegitimate children of the adopted and the other half, by the adopters",
+        "When the adopters concur with the illegitimate children and the surviving spouse of the adopted, they shall divide the entire estate in equal shares, one-third to be inherited by the illegitimate children, one-third by the surviving spouse, and one-third by the adopters",
+        "When only the adopters survive, they shall inherit the entire estate",
+        "When only collateral blood relatives of the adopted survive, then the ordinary rules of legal or intestate succession shall apply"
+      ]
+    },
+    {
+      "article": 191,
+      "description": "If the adopted is a minor or otherwise incapacitated, the adoption may be judicially rescinded upon petition of any person authorized by the court or proper government instrumentality acting on his behalf, on the same grounds prescribed for loss or suspension of parental authority.",
+      "conditions": "If the adopted is at least eighteen years of age, he may petition for judicial rescission of the adoption on the same grounds prescribed for disinheriting an ascendant."
+    },
+    {
+      "article": 192,
+      "description": "The adopters may petition the court for the judicial rescission of the adoption in any of the following cases:",
+      "cases": {
+        "1": "If the adopted has committed any act constituting ground for disinheriting a descendant.",
+        "2": "When the adopted has abandoned the home of the adopters during minority for at least one year, or, by some other acts, has definitely repudiated the adoption."
+      }
+    },
+    {
+      "article": 193,
+      "description": "If the adopted minor has not reached the age of majority at the time of the judicial rescission of the adoption, the court in the same proceeding shall reinstate the parental authority of the parents by nature, unless the latter are disqualified or incapacitated, in which case the court shall appoint a guardian over the person and property of the minor.",
+      "additional_conditions": "If the adopted person is physically or mentally handicapped, the court shall appoint in the same proceeding a guardian over his person or property or both.",
+      "effects": {
+        "1": "Judicial rescission of the adoption shall extinguish all reciprocal rights and obligations between the adopters and the adopted arising from the relationship of parent and child.",
+        "2": "The adopted shall likewise lose the right to use the surnames of the adopters and shall resume his surname prior to the adoption.",
+        "3": "The court shall accordingly order the amendment of the records in the proper registries."
+      }
+    }
+  ]
+}

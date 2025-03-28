@@ -1,0 +1,163 @@
+notes for react
+
+1. Differece between:
+    <Suspense></Suspense> = "we use this if theres a child included inside"
+    <Suspense/> = "w"e use this if there is no cild, possible: classname"
+    
+2. What is you API:
+    "theres a  prebuilt API in react, such as hooks and components, ecample of this in our code is the useContent or useREF"
+    
+3. meaning of:
+    x = "width"
+    y = "height"
+    z= "depth"
+    
+4. Use of BrowserRoute:
+    "the use of BrowserRoute is to render high resolution, like 3d images of THREEJS, it support the HTML5"
+
+5. const name {{index, icon, title}} :
+    props thene declare it. coming from constant: userLink
+
+6. no canvas loader aand noo section wrapper, di maayos ung nav hehe\
+
+meaning sa ThreeJs:
+
+1. ambient light with intensity 0.4, this will give a moderate and uniform lighting across the scene. that will prevent the model to blend much into the background.
+
+2. hemisphere light with intensity 0.15 and ground color of black - this is the light for top and bottom. 
+
+3.  position={[ -20, 10, 10 ]} - highlight position, top to side
+    angle={ 0.3 } - this keeps the light concentrated in specific part
+    penumbra={ 1 } - give the a light a smooth transition texture
+    castShadow
+    shadow-mapSize= { 1024 }
+    
+4.  frameloop="demand" - it updates the frame if there is a change in the object, to save power.
+    shadows is to enchance the realism of the object.
+    dpr={[ 1, 2 ]} or (device pixel ration) - based ont the device screen, it helps managing performance
+    gl={{ preserveDrawingBuffer: true }} - to minimize the use of memory 
+    maxPolarAngle={ Math.PI / 2 }
+    minPolarAngle={ 0.5 }
+
+5. SectionWrapper(Lawyer, "lawyer-section"): This wraps the Lawyer component and passes the idName as "lawyer-section".
+
+        
+    Explanation
+Check modelPath: By checking if modelPath contains the substring "helena" or "book", we can determine which model to render (HelenaCanvas or BookCanvas). This assumes that each model’s path has a unique identifier in the file name.
+
+Rendering the Appropriate Canvas: Depending on the value in modelPath, this code will render HelenaCanvas if modelPath includes "helena" or BookCanvas if it includes "book".
+
+Fallback: The null in the conditional chain ensures that if modelPath does not contain a recognized identifier, nothing is rendered.
+
+tags are not working, it still needs to connect
+
+anong pinagkaiba ng index sa styles? 
+yung main layout dapat katabi ung app js or ibang file name kasi layout pang css.
+
+
+const getWordMeaning = async (word) => {
+  const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+  const data = await response.json();
+  return data[0]?.meanings[0]?.definitions[0]?.definition || "Definition not found.";
+};
+
+-----------
+
+id:
+    service_f8p4u88 - service id
+    template_rtaqjfs - template id
+    bwAG3xTPWcur0njNLlBao - private key
+    Z-JlpUZqWVtTdl2mp - public key
+    
+what if lagyan ng loading pagka nasend ung appointment ...BET
+
+loading when going to other file - meron na sa login at signup
+reset credentials email and pass when submitting wrongly
+modal for forgat my pass, btn for submit should navigate to login part.
+
+to change the API to gmail ng karapatan ko - ginawan ko na ng gmail
+to add - the data privacy link for appointment
+nawawala navbartop ng lawyer status ay helena
+validatoin nawawala - kapag ni submit ng walang name 
+database ng lawyers para ma edit nila ung appointment
+
+
+sign out ng user dashboard
+ok na admin at user problem is wala pa header
+
+SO DAPAT YUNG BOOKS NAKA DATABASE DIN HUHUHU baliwala na yung pag transcrBE KO HAHAHAHHA
+
+pop up na bilog para sa chat
+color ng half side lang ng appoinment admin
+authentication ng gmail or what ever  is that 
+
+loading AAYUSIN!! KAINIS YERN
+delete din ba yung mga messages? or yung appoinment lang?
+
+
+NOTIFICATION NG MESSAGES
+TILT ng LOGO hahaha
+
+one week ( NAGLIPAT, NAGMOVIE, NAG TAMBAY HAHA   ) trying to find the bug, sabi nga nila dont fall silently. haha
+
+database ng  AI, settings
+
+
+Uncaught InvalidStateError: Failed to execute 'start' on 'SpeechRecognition': recognition has already started.
+-This error occurs because mic.start() is called multiple times when isListening is true, causing the SpeechRecognition API to throw an InvalidStateError.
+
+
+{chatAppointment && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white border border-2 rounded-lg p-4 w-1/3 shadow-lg">
+            <h6 className="text-black mb-4">
+              <b>Chat with:</b> {chatAppointment.firstName} {chatAppointment.lastName}
+            </h6>
+            <div className="mb-4 p-2 bg-gray-100 h-40 overflow-y-scroll text-black">
+              {messages.length > 0 ? (
+                messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`mb-2 ${message.sender === "admin" ? "text-right" : "text-left"}`}
+                  >
+                    <p>
+                      <strong>{message.sender === "admin" ? "Admin" : message.userId}</strong>: {message.details}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {message.date ? new Date(message.date.toDate()).toLocaleString() : ""}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500">No messages yet.</p>
+              )}
+            </div>
+
+            <textarea
+              className="w-full p-2 bg-gray-200 rounded mb-4 text-black"
+              rows="3"
+              value={chatMessage}
+              onChange={(e) => setChatMessage(e.target.value)}
+              placeholder="Type your message here..."
+            ></textarea>
+            <div className="flex justify-end space-x-2">
+              <button
+                className="px-4 py-2 text-red-600 hover:text-red-800"
+                onClick={() => setChatAppointment(null)}
+              >
+                Cancel
+              </button>
+              <button
+                className="px-4 py-2 text-orange-400 rounded hover:text-orange-900"
+                onClick={handleSendMessage}
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+        <button className="text-red-600 hover:text-red-800" onClick={() => deleteAppointment(appointment.id, selectedLawyer)}>✖</button>
