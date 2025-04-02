@@ -74,8 +74,8 @@ const Admin_Magalgalit = () => {
           appointment.date instanceof Timestamp
             ? appointment.date.toDate()
             : appointment.date instanceof Timestamp
-              ? appointment.date.toDate()
-              : new Date(appointment.date);
+            ? appointment.date.toDate()
+            : new Date(appointment.date);
 
         const formattedAppointment = {
           id: doc.id,
@@ -83,8 +83,9 @@ const Admin_Magalgalit = () => {
           time: appointment.time || "No time provided",
           reasons: appointment.reasons || "No reasons provided",
           client:
-            `${appointment.firstName || ""} ${appointment.lastName || ""}`.trim() ||
-            "Unknown Client",
+            `${appointment.firstName || ""} ${
+              appointment.lastName || ""
+            }`.trim() || "Unknown Client",
         };
 
         if (appointmentDate >= currentDate) {
@@ -148,15 +149,15 @@ const Admin_Magalgalit = () => {
       alert("Please select an appointment before rejecting.");
       return;
     }
-  
+
     if (!chatMessage.trim()) {
       alert("Please provide a reason for rejection.");
       return;
     }
-  
+
     try {
       const appointmentRef = doc(db, "appointments", selectedAppointment.id);
-  
+
       // Add to rejected_appointments collection
       await addDoc(collection(db, "rejected_appointments"), {
         id: selectedAppointment.id,
@@ -167,25 +168,25 @@ const Admin_Magalgalit = () => {
         reason: chatMessage, // User-provided rejection reason
         timestamp: new Date(),
       });
-  
+
       // Remove from appointments collection in Firebase
       await deleteDoc(appointmentRef);
-  
+
       // Remove from the state
       setAppointments((prevAppointments) =>
         prevAppointments.filter((app) => app.id !== selectedAppointment.id)
       );
-  
+
       setShowModal(false);
       setChatMessage("");
       setSelectedAppointment(null);
-  
+
       // Fetch and update rejected appointments list
       fetchRejectedAppointments();
     } catch (error) {
       console.error("Error rejecting appointment:", error);
     }
-  };  
+  };
 
   const fetchArchivedAppointments = async () => {
     if (showArchivedAppointments) {
@@ -414,18 +415,29 @@ const Admin_Magalgalit = () => {
                 </td>
                 <td className="border p-2 text-center">
                   <button
-                    className="px-3 py-1 bg-blue-900 text-white rounded-lg"
+                    className="px-3 py-1 text-white rounded-lg"
                     onClick={() => setChatAppointment(appointment)}
                   >
-                    Message
+                    <FaEnvelope size={26} color="#22c55e" />
+                  </button>
+                </td>
+                <td className="border p-2 text-center">
+                  <button
+                    className="px-3 py-1 rounded-lg cursor-pointer"
+                    onClick={() => {
+                      setSelectedAppointment(appointment); // Set the appointment
+                      setShowModal(true); // Open modal
+                    }}
+                  >
+                    <MdCancel size={30} color="#f97316" />
                   </button>
                 </td>
                 <td className="border p-2 text-center">
                   <button
                     onClick={() => handleDelete(appointment.id)}
-                    className="px-3 py-1 bg-red-900 text-white rounded-lg"
+                    className="px-3 py-1 cursor-pointer rounded-lg"
                   >
-                    Delete
+                    <FaTrash size={24} color="red" />
                   </button>
                 </td>
               </tr>
@@ -449,7 +461,7 @@ const Admin_Magalgalit = () => {
             ? "Hide Archived Appointments"
             : "Show Archived Appointments"}
         </button>
-        
+
         {/* Rejected Appointments Button */}
         <button
           className="ml-8 mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
@@ -483,7 +495,9 @@ const Admin_Magalgalit = () => {
                       <td className="border p-2">{appointment.time}</td>
                       <td className="border p-2">
                         {appointment.client ||
-                          `${appointment.firstName || ""} ${appointment.middleName || ""} ${appointment.lastName || ""}`.trim() ||
+                          `${appointment.firstName || ""} ${
+                            appointment.middleName || ""
+                          } ${appointment.lastName || ""}`.trim() ||
                           "Unknown Client"}
                       </td>
                       <td className="border p-2">{appointment.reasons}</td>
@@ -666,7 +680,9 @@ const Admin_Magalgalit = () => {
                       <td className="border p-2">{appointment.time}</td>
                       <td className="border p-2">
                         {appointment.client ||
-                          `${appointment.firstName || ""} ${appointment.middleName || ""} ${appointment.lastName || ""}`.trim() ||
+                          `${appointment.firstName || ""} ${
+                            appointment.middleName || ""
+                          } ${appointment.lastName || ""}`.trim() ||
                           "Unknown Client"}
                       </td>
                       <td className="border p-2">{appointment.reason}</td>

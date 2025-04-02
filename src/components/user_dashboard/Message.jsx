@@ -84,6 +84,7 @@ const Message = () => {
             lawyer: appointment.lawyer || { name: "Unknown Lawyer" },
             firstName: appointment.firstName || "",
             lastName: appointment.lastName || "",
+            isArchived: false,
           };
 
           if (appointmentDate >= now) {
@@ -247,6 +248,7 @@ const Message = () => {
       const archives = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
+        isArchived: true,
       }));
 
       console.log("User's Archived Appointments:", archives);
@@ -488,7 +490,7 @@ const Message = () => {
                     className="px-3 py-1 bg-blue-900 text-white rounded-lg"
                     onClick={() => setChatAppointment(appointment)}
                   >
-                    Message
+                    <FaEnvelope size={26} color="#22c55e" /> yu
                   </button>
                 </td>
                 <td className="border p-2 text-center">
@@ -496,7 +498,7 @@ const Message = () => {
                     onClick={() => handleDelete(appointment.id)}
                     className="px-3 py-1 bg-red-900 text-white rounded-lg"
                   >
-                    Delete
+                    <FaTrash size={24} color="red" />
                   </button>
                 </td>
               </tr>
@@ -527,8 +529,6 @@ const Message = () => {
         className="relative ml-8 mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
         onClick={fetchRejectedAppointments}
       >
-        <span>Rejected Appointments</span>
-
         {/* Show notification badge only if count > 0 and list is NOT open */}
         {rejectedCount > 0 && !showRejectedAppointments && (
           <span className="absolute -top-2 -right-2 px-2 py-1 text-xs font-bold text-white bg-red-500 rounded-full">
@@ -536,10 +536,7 @@ const Message = () => {
           </span>
         )}
 
-        {/* Toggle Text */}
-        <span className="ml-2">
-          {showRejectedAppointments ? "Hide" : "Show"}
-        </span>
+          {showRejectedAppointments ? "Hide Rejected Appointments" : "Show Rejected Appointments"}
       </button>
 
       {/* Archived Appointments List (only shown when button is clicked) */}
@@ -554,7 +551,7 @@ const Message = () => {
                   <th className="border p-2">Date</th>
                   <th className="border p-2">Time</th>
                   <th className="border p-2">Client</th>
-                  <th className="border p-2">Lawyer</th>
+                  {/* <th className="border p-2">Lawyer</th> */}
                   <th className="border p-2">Reason</th>
                   <th className="border p-2">Messages</th>
                 </tr>
@@ -569,7 +566,7 @@ const Message = () => {
                         `${appointment.firstName || ""} ${appointment.lastName || ""}`.trim() ||
                         "Unknown Client"}
                     </td>
-                    <td className="border p-2">{appointment.lawyer?.name}</td>
+                    {/* <td className="border p-2">{appointment.lawyer?.name}</td> */}
                     <td className="border p-2">{appointment.reasons}</td>
                     <td className="border p-2 text-center">
                       <button
@@ -694,6 +691,7 @@ const Message = () => {
             </div>
 
             {/* Message Input */}
+            {!chatAppointment.isArchived && (
             <textarea
               className="p-2 w-full bg-gray-200 rounded mb-2 text-black"
               rows="3"
@@ -701,7 +699,7 @@ const Message = () => {
               onChange={(e) => setChatMessage(e.target.value)}
               placeholder="Type your message here..."
             ></textarea>
-
+            )}
             {/* Buttons */}
             <div className="flex justify-end space-x-2">
               <button
@@ -710,12 +708,14 @@ const Message = () => {
               >
                 Cancel
               </button>
+              {!chatAppointment.isArchived && (
               <button
                 className="px-3 py-1 bg-blue-900 text-white rounded-lg"
                 onClick={handleSendMessage}
               >
                 Send
               </button>
+              )}
             </div>
           </div>
         </div>
