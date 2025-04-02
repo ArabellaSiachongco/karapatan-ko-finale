@@ -241,6 +241,8 @@ const PalmerAppointmentResult = () => {
             </tbody>
           </table>
         </div>
+        
+        <img src="/map.png"/>
 
       <div className="mt-10 text-center flex justify-between">
         <button
