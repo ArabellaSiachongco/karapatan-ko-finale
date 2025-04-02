@@ -16,6 +16,8 @@
     "@react-three/fiber": "^9.1.0",
     "firebase": "^11.5.0",
     "framer-motion": "^12.6.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "maath": "^0.10.8",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

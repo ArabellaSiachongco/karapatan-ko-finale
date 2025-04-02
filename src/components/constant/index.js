@@ -13,7 +13,7 @@ const navLinks = [
     },
     {
         id: "forms",
-        title: "DOWNLOADABLE FORMS",
+        title: "SPA FORM",
     },
 ];
 
