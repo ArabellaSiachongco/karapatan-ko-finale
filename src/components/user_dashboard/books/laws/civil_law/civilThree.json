@@ -1,0 +1,23 @@
+{
+  "civilThree": [
+    {
+      "id": "civilThree",
+      "title": "CIVIL PERSONALITY",
+      "subtitle": "Chapter 1: General Provisions",
+      "article": [
+        {
+          "name": "Article 37",
+          "paragraph": "Juridical capacity, which is the fitness to be the subject of legal relations, is inherent in every natural person and is lost only through death. Capacity to act, which is the power to do acts with legal effect, is acquired and may be lost."
+        },
+        {
+          "name": "Article 38",
+          "paragraph": "Minority, insanity or imbecility, the state of being a deaf-mute, prodigality and civil interdiction are mere restrictions on capacity to act, and do not exempt the incapacitated person from certain obligations, as when the latter arise from his acts or from property relations, such as easements."
+        },
+        {
+          "name": "Article 39",
+          "paragraph": "The following circumstances, among others, modify or limit capacity to act: age, insanity, imbecility, the state of being a deaf-mute, penalty, prodigality, family relations, alienage, absence, insolvency and trusteeship. The consequences of these circumstances are governed in this Code, other codes, the Rules of Court, and in special laws. Capacity to act is not limited on account of religious belief or political opinion. A married woman, twenty-one years of age or over, is qualified for all acts of civil life, except in cases specified by law."
+        }
+      ]
+    }
+  ]
+}

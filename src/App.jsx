@@ -17,12 +17,13 @@ import Admin_Evasco from "./components/admin_dashboard/Admin_profile/Admin_Evasc
 import Admin_Palmer from "./components/admin_dashboard/Admin_profile/Admin_Palmer";
 import Admin_Magalgalit from "./components/admin_dashboard/Admin_profile/Admin_Magalgalit";
 
-import Navbar from "./components/user_dashboard/Navbar";
+import NavbarTop from "./components/user_dashboard/NavbarTop";
+import Sidebar from "./components/user_dashboard/Sidebar";
 import Lawyer from "./components/user_dashboard/about_lawyers/Lawyer";
 import AI from "./components/user_dashboard/AI/Gemini_main";
-import NavbarTop from "./components/user_dashboard/NavbarTop";
 import Message from "./components/user_dashboard/Message";
 import Forms from "./components/user_dashboard/Forms";
+
 // palmer 
 import AppointmentLawyer1 from "./components/user_dashboard/about_lawyers/palmer_schedule/PalmerAppointment";
 import AppointmentTableLawyer1 from "./components/user_dashboard/about_lawyers/palmer_schedule/PalmerAppointmentTable";
@@ -38,66 +39,80 @@ import AppointmentLawyer3 from "./components/user_dashboard/about_lawyers/evasco
 import AppointmentTableLawyer3 from "./components/user_dashboard/about_lawyers/evasco_schedule/EvascoAppoinmentTable";
 import AppointmentResultLawyer3 from "./components/user_dashboard/about_lawyers/evasco_schedule/EvascoAppointmentResult";
 
-import Layout from "./components/user_dashboard/Layout"; //layout for all the navbars, ANG GULO KO
 
-import RA_12066 from "./components/user_dashboard/books/RA_12066";
-import Constitution from "./components/user_dashboard/books/Constitution";
-import FamilyCode from "./components/user_dashboard/books/FamilyCode";
+import RA_12066 from "./components/user_dashboard/books/pages/peoples_rights_content/RA_12066";
+import Constitution from "./components/user_dashboard/books/pages/constitution_content/Constitution";
+import FamilyCode from "./components/user_dashboard/books/pages/family_code/FamilyCode";
+import CivilLaw from "./components/user_dashboard/books/pages/civil_law/CivilLaw";
 
-import ArticleOne from "./components/pages/constitution_content/ArticleOne";
-import ArticleTwo from "./components/pages/constitution_content/ArticleTwo";
-import ArticleThree from "./components/pages/constitution_content/ArticleThree";
-import ArticleFour from "./components/pages/constitution_content/ArticleFour";
-import ArticleFive from "./components/pages/constitution_content/ArticleFive";
-import ArticleSix from "./components/pages/constitution_content/ArticleSix";
-import ArticleSeven from "./components/pages/constitution_content/ArticleSeven";
-import ArticleEight from "./components/pages/constitution_content/ArticleEight";
-import ArticleNine from "./components/pages/constitution_content/ArticleNine";
-import ArticleTen from "./components/pages/constitution_content/ArticleTen";
-import ArticleEleven from "./components/pages/constitution_content/ArticleEleven";
-import ArticleTwelve from "./components/pages/constitution_content/ArticleTwelve";
-import ArticleThirteen from "./components/pages/constitution_content/ArticleThirteen";
-import ArticleFourteen from "./components/pages/constitution_content/ArticleFourteen";
-import ArticleFifteen from "./components/pages/constitution_content/ArticleFifteen";
-import ArticleSixteen from "./components/pages/constitution_content/ArticleSixteen";
-import ArticleSeventeen from "./components/pages/constitution_content/ArticleSeventeen";
-import ArticleEighteen from "./components/pages/constitution_content/ArticleEighteen";
+import ConstitutionOne from "./components/user_dashboard/books/pages/constitution_content/ConstitutionOne";
+import ConstitutionTwo from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTwo";
+import ConstitutionThree from "./components/user_dashboard/books/pages/constitution_content/ConstitutionThree";
+import ConstitutionFour from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFour";
+import ConstitutionFive from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFive";
+import ConstitutionSix from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSix";
+import ConstitutionSeven from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSeven";
+import ConstitutionEight from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEight";
+import ConstitutionNine from "./components/user_dashboard/books/pages/constitution_content/ConstitutionNine";
+import ConstitutionTen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTen";
+import ConstitutionEleven from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEleven";
+import ConstitutionTwelve from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTwelve";
+import ConstitutionThirteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionThirteen";
+import ConstitutionFourteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFourteen";
+import ConstitutionFifteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFifteen";
+import ConstitutionSixteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSixteen";
+import ConstitutionSeventeen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSeventeen";
+import ConstitutionEighteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEighteen";
 
-import ChapterOne from "./components/pages/peoples_rights_content/ChapterOne";
-import ChapterTwo from "./components/pages/peoples_rights_content/ChapterTwo";
-import ChapterThree from "./components/pages/peoples_rights_content/ChapterThree";
-import ChapterFour from "./components/pages/peoples_rights_content/ChapterFour";
-import ChapterFive from "./components/pages/peoples_rights_content/ChapterFive";
-import ChapterSix from "./components/pages/peoples_rights_content/ChapterSix";
-import ChapterSeven from "./components/pages/peoples_rights_content/ChapterSeven";
-import ChapterEight from "./components/pages/peoples_rights_content/ChapterEight";
-import ChapterNine from "./components/pages/peoples_rights_content/ChapterNine";
-import ChapterTen from "./components/pages/peoples_rights_content/ChapterTen";
-import ChapterEleven from "./components/pages/peoples_rights_content/ChapterEleven";
-import ChapterTwelve from "./components/pages/peoples_rights_content/ChapterTwelve";
+import RA_8371_One from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_One";
+import RA_8371_Two from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Two";
+import RA_8371_Three from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Three";
+import RA_8371_Four from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Four";
+import RA_8371_Five from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Five";
+import RA_8371_Six from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Six";
+import RA_8371_Seven from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Seven";
+import RA_8371_Eight from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Eight";
+import RA_8371_Nine from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Nine";
+import RA_8371_Ten from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Ten";
+import RA_8371_Eleven from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Eleven";
+import RA_8371_Twelve from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Twelve";
 
-import FamilyOne from "./components/pages/family_code/FamilyOne";
-import FamilyTwo from "./components/pages/family_code/FamilyTwo";
-import FamilyThree from "./components/pages/family_code/FamilyThree";
-import FamilyFour from "./components/pages/family_code/FamilyFour";
-import FamilyFive from "./components/pages/family_code/FamilyFive";
-import FamilySix from "./components/pages/family_code/FamilySix";
-import FamilySeven from "./components/pages/family_code/FamilySeven";
-import FamilyEight from "./components/pages/family_code/FamilyEight";
+import FamilyOne from "./components/user_dashboard/books/pages/family_code/FamilyOne";
+import FamilyTwo from "./components/user_dashboard/books/pages/family_code/FamilyTwo";
+import FamilyThree from "./components/user_dashboard/books/pages/family_code/FamilyThree";
+import FamilyFour from "./components/user_dashboard/books/pages/family_code/FamilyFour";
+import FamilyFive from "./components/user_dashboard/books/pages/family_code/FamilyFive";
+import FamilySix from "./components/user_dashboard/books/pages/family_code/FamilySix";
+import FamilySeven from "./components/user_dashboard/books/pages/family_code/FamilySeven";
+import FamilyEight from "./components/user_dashboard/books/pages/family_code/FamilyEight";
+
+import CivilOne from "./components/user_dashboard/books/pages/civil_law/CivilOne";
+import CivilTwo from "./components/user_dashboard/books/pages/civil_law/CivilTwo";
+import CivilThree from "./components/user_dashboard/books/pages/civil_law/CivilThree";
+import CivilFour from "./components/user_dashboard/books/pages/civil_law/CivilFour";
+import CivilFive from "./components/user_dashboard/books/pages/civil_law/CivilFive";
+import CivilSix from "./components/user_dashboard/books/pages/civil_law/CivilSix";
 
 const NavbarWrapper = ({ children }) => {
   const location = useLocation();
-  const showNavbar = 
-  location.pathname.startsWith("/articleOne") || 
-  location.pathname.startsWith("/chapterOne") || 
-  location.pathname.startsWith("/main") || 
-  location.pathname.startsWith("/familyOne")
-  // location.pathname.startsWith("/family");  
+  const showSidebar = 
+  location.pathname.startsWith("/main") ||
+  location.pathname.startsWith("/RA_8371") || 
+  location.pathname.startsWith("/constitution") || 
+  location.pathname.startsWith("/family") ||
+  location.pathname.startsWith("/civil");
   
-  const showNavbarTop = location.pathname.startsWith("/lawyer-status") || location.pathname.startsWith("/appointment") || location.pathname.startsWith("/lawyer-appoinments") || location.pathname.startsWith("/forms") || location.pathname.startsWith("/ai");
+  const showNavbarTop = 
+  location.pathname.startsWith("/lawyer-status") || 
+  location.pathname.startsWith("/appointment") || 
+  location.pathname.startsWith("/lawyer") || 
+  location.pathname.startsWith("/forms") || 
+  location.pathname.startsWith("/constitution") || 
+  location.pathname.startsWith("/ai");
+    
   return (
     <>
-      {showNavbar && <Navbar />}
+      {showSidebar && <Sidebar />}
       {showNavbarTop && <NavbarTop />}
       {children}
     </>
@@ -136,10 +151,8 @@ const App = () => {
   return (
     <NavbarWrapper>
       <Routes>
-
         {/* Default Route */}
         <Route path="/" element={<StarsWrapper><Login /></StarsWrapper>} />
-        
         {/* Public Routes with StarsCanvas wrapper */}
         <Route path="/login" element={<StarsWrapper><Login /></StarsWrapper>} />
         <Route path="/signup" element={<StarsWrapper><SignUp /></StarsWrapper>} />
@@ -149,13 +162,14 @@ const App = () => {
         {role === "user" && (
           <>
             <Route path="/main" element={<MainLayout />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_evasco/>} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_magalgalit/>} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_palmer/>} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions_evasco />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions_palmer />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions_magalgalit />} />
             
             {/* User-Specific Routes & atty */}
             <Route path="/lawyer-status" element={<Lawyer />} />
-            <Route path="/lawyer-appoinments" element={<Message />} />
+            <Route path="/lawyer-appointments" element={<Message />} />
+            
             <Route path="/appointmentLawyer1" element={<AppointmentLawyer1 />} />
             <Route path="/appointmentTableLawyer1" element={<AppointmentTableLawyer1 />} />
             <Route path="/appointmentResultLawyer1" element={<AppointmentResultLawyer1 />} />
@@ -169,55 +183,62 @@ const App = () => {
             <Route path="/appointmentResultLawyer3" element={<AppointmentResultLawyer3 />} />
 
             <Route path="/ai" element={<AI />} />
-            <Route path="/constitution" element={<Constitution />} />
+            <Route path="/forms" element={<Forms />} />
+            <Route path="/civil" element={<CivilLaw />} />
             <Route path="/RA_8371" element={<RA_12066 />} />
             <Route path="/family" element={<FamilyCode />} />
-            <Route path="/forms" element={<Forms/>} />
+            <Route path="/constitution" element={<Constitution />} />
             
             {/* Article Routes */}
-            <Route path="/articleOne" element={<Layout><ArticleOne /></Layout>} />
-            <Route path="/articleTwo" element={<Layout><ArticleTwo /></Layout>} />
-            <Route path="/articleThree" element={<Layout><ArticleThree /></Layout>} />
-            <Route path="/articleFour" element={<Layout><ArticleFour /></Layout>} />
-            <Route path="/articleFive" element={<Layout><ArticleFive /> </Layout>} />
-            <Route path="/articleSix" element={<Layout><ArticleSix /> </Layout>} />
-            <Route path="/articleSeven" element={<Layout><ArticleSeven /> </Layout>} />
-            <Route path="/articleEight" element={<Layout><ArticleEight /> </Layout>} />
-            <Route path="/articleNine" element={<Layout><ArticleNine /> </Layout>} />
-            <Route path="/articleTen" element={<Layout><ArticleTen /> </Layout>} />
-            <Route path="/articleEleven" element={<Layout><ArticleEleven /> </Layout>} />
-            <Route path="/articleTwelve" element={<Layout><ArticleTwelve /> </Layout>} />
-            <Route path="/articleThirteen" element={<Layout><ArticleThirteen /> </Layout>} />
-            <Route path="/articleFourteen" element={<Layout><ArticleFourteen /> </Layout>} />
-            <Route path="/articleFifteen" element={<Layout><ArticleFifteen /> </Layout>} />
-            <Route path="/articleSixteen" element={<Layout><ArticleSixteen /> </Layout>} />
-            <Route path="/articleSeventeen" element={<Layout><ArticleSeventeen /> </Layout>} />
-            <Route path="/articleEighteen" element={<Layout><ArticleEighteen /> </Layout>} />
+            <Route path="/constitutionOne" element={<ConstitutionOne />} />
+            <Route path="/constitutionTwo" element={<ConstitutionTwo />} />
+            <Route path="/constitutionThree" element={<ConstitutionThree />} />
+            <Route path="/constitutionFour" element={<ConstitutionFour />} />
+            <Route path="/constitutionFive" element={<ConstitutionFive />} />
+            <Route path="/constitutionSix" element={<ConstitutionSix />} />
+            <Route path="/constitutionSeven" element={<ConstitutionSeven />} />
+            <Route path="/constitutionEight" element={<ConstitutionEight />} />
+            <Route path="/constitutionNine" element={<ConstitutionNine />} />
+            <Route path="/constitutionTen" element={<ConstitutionTen />} />
+            <Route path="/constitutionEleven" element={<ConstitutionEleven />} />
+            <Route path="/constitutionTwelve" element={<ConstitutionTwelve />} />
+            <Route path="/constitutionThirteen" element={<ConstitutionThirteen />} />
+            <Route path="/constitutionFourteen" element={<ConstitutionFourteen />} />
+            <Route path="/constitutionFifteen" element={<ConstitutionFifteen />} />
+            <Route path="/constitutionSixteen" element={<ConstitutionSixteen />} />
+            <Route path="/constitutionSeventeen" element={<ConstitutionSeventeen />} />
+            <Route path="/constitutionEighteen" element={<ConstitutionEighteen />} />
 
             {/* Chapter Routes */}
-            <Route path="/chapterOne" element={<Layout><ChapterOne /></Layout>} />
-            <Route path="/chapterTwo" element={<Layout> <ChapterTwo /></Layout>} />
-            <Route path="/chapterThree" element={<Layout> <ChapterThree /></Layout>} />
-            <Route path="/chapterFour" element={<Layout> <ChapterFour /></Layout>} />
-            <Route path="/chapterFive" element={<Layout> <ChapterFive /></Layout>} />
-            <Route path="/chapterSix" element={<Layout> <ChapterSix /></Layout>} />
-            <Route path="/chapterSeven" element={<Layout> <ChapterSeven /></Layout>} />
-            <Route path="/chapterEight" element={<Layout> <ChapterEight /></Layout>} />
-            <Route path="/chapterNine" element={<Layout> <ChapterNine /></Layout>} />
-            <Route path="/chapterTen" element={<Layout> <ChapterTen /></Layout>} />
-            <Route path="/chapterEleven" element={<Layout> <ChapterEleven /></Layout>} />
-            <Route path="/chapterTwelve" element={<Layout> <ChapterTwelve /></Layout>} />
+            <Route path="/RA_8371_One" element={<RA_8371_One />} />
+            <Route path="/RA_8371_Two" element={<RA_8371_Two />} />
+            <Route path="/RA_8371_Three" element={<RA_8371_Three />} />
+            <Route path="/RA_8371_Four" element={<RA_8371_Four />} />
+            <Route path="/RA_8371_Five" element={<RA_8371_Five />} />
+            <Route path="/RA_8371_Six" element={<RA_8371_Six />} />
+            <Route path="/RA_8371_Seven" element={<RA_8371_Seven />} />
+            <Route path="/RA_8371_Eight" element={<RA_8371_Eight />} />
+            <Route path="/RA_8371_Nine" element={<RA_8371_Nine />} />
+            <Route path="/RA_8371_Ten" element={<RA_8371_Ten />} />
+            <Route path="/RA_8371_Eleven" element={<RA_8371_Eleven />} />
+            <Route path="/RA_8371_Twelve" element={<RA_8371_Twelve />} />
             
             {/* family code  */}
-            <Route path="/familyOne" element={<Layout> <FamilyOne /></Layout>} />
-            <Route path="/familyTwo" element={<Layout> <FamilyTwo /></Layout>} />
-            <Route path="/familyThree" element={<Layout> <FamilyThree /></Layout>} />
-            <Route path="/familyFour" element={<Layout> <FamilyFour /></Layout>} />
-            <Route path="/familyFive" element={<Layout> <FamilyFive /></Layout>} />
-            <Route path="/familySix" element={<Layout> <FamilySix /></Layout>} />
-            <Route path="/familySeven" element={<Layout> <FamilySeven /></Layout>} />
-            <Route path="/familyEight" element={<Layout> <FamilyEight /></Layout>} />
+            <Route path="/familyOne" element={<FamilyOne />} />
+            <Route path="/familyTwo" element={<FamilyTwo />} />
+            <Route path="/familyThree" element={<FamilyThree />} />
+            <Route path="/familyFour" element={<FamilyFour />} />
+            <Route path="/familyFive" element={<FamilyFive />} />
+            <Route path="/familySix" element={<FamilySix />} />
+            <Route path="/familySeven" element={<FamilySeven />} />
+            <Route path="/familyEight" element={<FamilyEight />} />
             
+            <Route path="/civilOne" element={<CivilOne /> } />
+            <Route path="/civilTwo" element={<CivilTwo /> } />
+            <Route path="/civilThree" element={<CivilThree /> } />
+            <Route path="/civilFour" element={<CivilFour /> } />
+            <Route path="/civilFive" element={<CivilFive /> } />
+            <Route path="/civilSix" element={<CivilSix /> } />
             
           </>
         )}

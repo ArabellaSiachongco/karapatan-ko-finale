@@ -1,0 +1,27 @@
+{
+  "civilFour": [
+    {
+      "id": "civilThree",
+      "title": "Natural Persons",
+      "subtitle": "Chapter 2",
+      "article": [
+        {
+          "name": "Article 40",
+          "paragraph": "Birth determines personality; but the conceived child shall be considered born for all purposes that are favorable to it, provided it be born later with the conditions specified in the following article."
+        },
+        {
+          "name": "Article 41",
+          "paragraph": "For civil purposes, the foetus is considered born if it is alive at the time it is completely delivered from the mother's womb. However, if the foetus had an intra-uterine life of less than seven months, it is not deemed born if it dies within twenty-four hours after its complete delivery from the maternal womb."
+        },
+        {
+          "name": "Article 42",
+          "paragraph": "Civil personality is extinguished by death. The effect of death upon the rights and obligations of the deceased is determined by law, by contract and by will."
+        },
+        {
+          "name": "Article 43",
+          "paragraph": "If there is a doubt, as between two or more persons who are called to succeed each other, as to which of them died first, whoever alleges the death of one prior to the other, shall prove the same; in the absence of proof, it is presumed that they died at the same time and there shall be no transmission of rights from one to the other."
+        }
+      ]
+    }
+  ]
+}

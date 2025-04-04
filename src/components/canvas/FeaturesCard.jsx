@@ -47,7 +47,7 @@ const FeaturesCard = ({ feature }) => {
             <li
               key={`features-point-${index}`}
               className="text-gray-100 text-[14px] pl-1 tracking-wider cursor-pointer hover:underline"
-              onClick={() => navigate(`${point.li}#${point.id}`)}
+              onClick={() => navigate(`${point.li}`)}
             >
               {point.text}
             </li>

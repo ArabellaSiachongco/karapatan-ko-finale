@@ -1,0 +1,37 @@
+{
+  "civilFive": [
+    {
+      "id": "civilThree",
+      "title": "Juridical Persons",
+      "subtitle": "Chapter 3",
+      "article": [
+        {
+          "name": "Article 44",
+          "paragraph": [
+            {
+              "sub_paragraph": "(1) The State and its political subdivisions;"
+            },
+            {
+              "sub_paragraph": "(2) Other corporations, institutions and entities for public interest or purpose, created by law; their personality begins as soon as they have been constituted according to law;"
+            },
+            {
+              "sub_paragraph": "(3) Corporations, partnerships and associations for private interest or purpose to which the law grants a juridical personality, separate and distinct from that of each shareholder, partner or member."
+            }
+          ]
+        },
+        {
+          "name": "Article 45",
+          "paragraph": "Juridical persons mentioned in Nos. 1 and 2 of the preceding article are governed by the laws creating or recognizing them. Private corporations are regulated by laws of general application on the subject.Partnerships and associations for private interest or purpose are governed by the provisions of this Code concerning partnerships."
+        },
+        {
+          "name": "Article 46",
+          "paragraph": "Juridical persons may acquire and possess property of all kinds, as well as incur obligations and bring civil or criminal actions, in conformity with the laws and regulations of their organizatio."
+        },
+        {
+          "name": "Article 47",
+          "paragraph": "Upon the dissolution of corporations, institutions and other entities for public interest or purpose mentioned in No. 2 of article 44, their property and other assets shall be disposed of in pursuance of law or the charter creating them. If nothing has been specified on this point, the property and other assets shall be applied to similar purposes for the benefit of the region, province, city or municipality which during the existence of the institution derived the principal benefits from the same."
+        }
+      ]
+    }
+  ]
+}

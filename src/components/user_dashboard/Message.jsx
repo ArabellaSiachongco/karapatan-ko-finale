@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Sidebar";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { fadeIn, textVariant } from "../utility/motion";
@@ -29,7 +29,6 @@ const Message = () => {
   const [chatAppointment, setChatAppointment] = useState(null);
   const [chatMessage, setChatMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [notifications, setNotifications] = useState([]);
   const [user, setUser] = useState(null);
   const [archivedAppointments, setArchivedAppointments] = useState([]);
   const [showArchivedAppointments, setShowArchivedAppointments] =
@@ -377,6 +376,7 @@ const Message = () => {
       const rejectedList = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
+        isRejected: true,
       }));
 
       setRejectedAppointments(rejectedList);
@@ -413,11 +413,11 @@ const Message = () => {
     });
 
     return () => unsubscribe();
-  }, [rejectedCount]); // Dependency added
-
+  }, [rejectedCount]); 
+  
   return (
     <>
-      <Navbar notifications={notifications} />
+      <Navbar />
       <motion.div variants={textVariant()}>
         <h2 className={`${styles.headText} highlight-border`}>
           <span className="title-with-line">Your Appointments</span>
@@ -536,7 +536,9 @@ const Message = () => {
           </span>
         )}
 
-          {showRejectedAppointments ? "Hide Rejected Appointments" : "Show Rejected Appointments"}
+        {showRejectedAppointments
+          ? "Hide Rejected Appointments"
+          : "Show Rejected Appointments"}
       </button>
 
       {/* Archived Appointments List (only shown when button is clicked) */}
@@ -563,7 +565,9 @@ const Message = () => {
                     <td className="border p-2">{appointment.time}</td>
                     <td className="border p-2">
                       {appointment.client ||
-                        `${appointment.firstName || ""} ${appointment.lastName || ""}`.trim() ||
+                        `${appointment.firstName || ""} ${
+                          appointment.lastName || ""
+                        }`.trim() ||
                         "Unknown Client"}
                     </td>
                     {/* <td className="border p-2">{appointment.lawyer?.name}</td> */}
@@ -573,7 +577,7 @@ const Message = () => {
                         className="px-3 py-1 text-white rounded-lg"
                         onClick={() => setChatAppointment(appointment)}
                       >
-                        <FaEnvelope size={26} color="#22c55e" />
+                        <FaEnvelope size={26} color="#22c55e" /> hehe
                       </button>
                     </td>
                   </tr>
@@ -584,66 +588,48 @@ const Message = () => {
         </div>
       )}
 
-      {/* Archived Messages Modal */}
-      {open && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12">
-            <h6 className="text-black mb-4">
-              <b>Archived Messages</b>
-            </h6>
-            {/* Filter Messages for the Selected Appointment */}
-            <div className="mb-4 p-2 h-64 overflow-y-scroll text-black flex flex-col space-y-2">
-              {archivedMessages.filter(
-                (msg) =>
-                  msg.appointmentId.trim().toLowerCase() ===
-                  selectedAppointmentId.trim().toLowerCase()
-              ).length > 0 ? (
-                archivedMessages
-                  .filter(
-                    (msg) =>
-                      msg.appointmentId.trim().toLowerCase() ===
-                      selectedAppointmentId.trim().toLowerCase()
-                  )
-                  .sort((a, b) => new Date(a.date) - new Date(b.date)) // Ensure chronological order
-                  .map((message) => (
-                    <div
-                      key={message.id}
-                      className={`flex ${message.sender === "admin" ? "justify-start" : "justify-end"}`}
-                    >
-                      <div
-                        className={`p-3 max-w-xs rounded-lg shadow-md ${
-                          message.sender === "admin"
-                            ? "bg-blue-900 text-white rounded-br-none"
-                            : "bg-gray-200 text-black rounded-bl-none"
-                        }`}
-                      >
-                        <p className="text-sm">{message.details}</p>
-                        <p className="text-xs text-gray-400 mt-1 text-right">
-                          {message.date instanceof Date
-                            ? message.date.toLocaleString() // Already a Date object
-                            : typeof message.date === "string"
-                              ? new Date(message.date).toLocaleString() // Convert from string
-                              : "No date available"}
-                        </p>
-                      </div>
-                    </div>
-                  ))
-              ) : (
-                <p className="text-gray-500 text-center p-12">
-                  No archived messages available.
-                </p>
-              )}
-            </div>
+      {/* Rejected Appointments List (only shown when button is clicked) */}
+      {showRejectedAppointments && rejectedAppointments.length > 0 && (
+        <div className="mt-4 p-4 border rounded-lg shadow-md bg-gray-700">
+          <h3 className="text-lg font-bold mb-4">Rejected Appointments</h3>
 
-            {/* Close Button */}
-            <div className="flex justify-end space-x-2">
-              <button
-                className="px-3 py-1 text-red-900 rounded-lg"
-                onClick={handleClose}
-              >
-                Close
-              </button>
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-gray-900">
+              <thead>
+                <tr className="bg-gray-800 text-white">
+                  <th className="border p-2">Date</th>
+                  <th className="border p-2">Time</th>
+                  <th className="border p-2">Client</th>
+                  <th className="border p-2">Reason</th>
+                  <th className="border p-2">Messages</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rejectedAppointments.map((appointment, index) => (
+                  <tr key={index} className="hover:bg-gray-700">
+                    <td className="border p-2">{appointment.date}</td>
+                    <td className="border p-2">{appointment.time}</td>
+                    <td className="border p-2">
+                      {appointment.client ||
+                        `${appointment.firstName || ""} ${
+                          appointment.lastName || ""
+                        }`.trim() ||
+                        "Unknown Client"}
+                    </td>
+                    <td className="border p-2">{appointment.reasons}</td>
+                    <td className="border p-2 text-center">
+                      <button
+                        className="px-3 py-1 text-white rounded-lg"
+                        onClick={() => setChatAppointment(appointment)}
+                      >
+                        <FaEnvelope size={26} color="#f43f5e" />{" "}
+                        {/* Red for rejected */}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
@@ -666,7 +652,11 @@ const Message = () => {
                   .map((message) => (
                     <div
                       key={message.id}
-                      className={`flex ${message.sender === user.uid ? "justify-end" : "justify-start"}`}
+                      className={`flex ${
+                        message.sender === user.uid
+                          ? "justify-end"
+                          : "justify-start"
+                      }`}                   
                     >
                       <div
                         className={`p-3 max-w-xs rounded-lg shadow-md ${
@@ -675,9 +665,10 @@ const Message = () => {
                             : "bg-blue-900 text-white rounded-br-none"
                         }`}
                       >
+                      
                         <p className="text-sm">{message.details}</p>
                         <p className="text-xs text-gray-400 mt-1 text-right">
-                          {message.date.toLocaleString()}{" "}
+                          {message.date.toLocaleString()}
                           {/* Display formatted date */}
                         </p>
                       </div>
@@ -691,15 +682,16 @@ const Message = () => {
             </div>
 
             {/* Message Input */}
-            {!chatAppointment.isArchived && (
-            <textarea
-              className="p-2 w-full bg-gray-200 rounded mb-2 text-black"
-              rows="3"
-              value={chatMessage}
-              onChange={(e) => setChatMessage(e.target.value)}
-              placeholder="Type your message here..."
-            ></textarea>
+            {!(chatAppointment.isArchived || chatAppointment.isRejected) && (
+              <textarea
+                className="p-2 w-full bg-gray-200 rounded mb-2 text-black"
+                rows="3"
+                value={chatMessage}
+                onChange={(e) => setChatMessage(e.target.value)}
+                placeholder="Type your message here..."
+              ></textarea>
             )}
+
             {/* Buttons */}
             <div className="flex justify-end space-x-2">
               <button
@@ -708,59 +700,15 @@ const Message = () => {
               >
                 Cancel
               </button>
-              {!chatAppointment.isArchived && (
-              <button
-                className="px-3 py-1 bg-blue-900 text-white rounded-lg"
-                onClick={handleSendMessage}
-              >
-                Send
-              </button>
+              {!(chatAppointment.isArchived || chatAppointment.isRejected) && (
+                <button
+                  className="px-3 py-1 bg-blue-900 text-white rounded-lg"
+                  onClick={handleSendMessage}
+                >
+                  Send
+                </button>
               )}
             </div>
-          </div>
-        </div>
-      )}
-      {/* Rejected Appointments Section */}
-      {showRejectedAppointments && rejectedAppointments.length > 0 && (
-        <div className="mt-4 p-4 border rounded-lg shadow-md bg-gray-700">
-          <h3 className="text-lg font-bold mb-4 text-white">
-            Rejected Appointments
-          </h3>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse border border-gray-900">
-              <thead>
-                <tr className="bg-gray-800 text-white">
-                  <th className="border p-2">Date</th>
-                  <th className="border p-2">Time</th>
-                  <th className="border p-2">Client</th>
-                  <th className="border p-2">Reason</th>
-                  <th className="border p-2">Messages</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rejectedAppointments.map((appointment, index) => (
-                  <tr key={index} className="hover:bg-gray-700">
-                    <td className="border p-2">{appointment.date}</td>
-                    <td className="border p-2">{appointment.time}</td>
-                    <td className="border p-2">
-                      {appointment.client ||
-                        `${appointment.firstName || ""} ${appointment.middleName || ""} ${appointment.lastName || ""}`.trim() ||
-                        "Unknown Client"}
-                    </td>
-                    <td className="border p-2">{appointment.reason}</td>
-                    <td className="border p-2 text-center">
-                      <button
-                        onClick={() => handleOpen(appointment.id)}
-                        className="px-3 py-1 text-white rounded-lg"
-                      >
-                        <FaEnvelope size={26} color="#16a34a" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       )}

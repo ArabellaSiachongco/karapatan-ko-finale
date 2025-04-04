@@ -1,0 +1,46 @@
+{
+  "civilSix": [
+    {
+      "id": "civilThree",
+      "title": "CITIZENSHIP AND DOMECILE",
+      "subtitle": "Chapter 4",
+      "article": [
+        {
+          "name": "Article 44",
+          "paragraph": [
+            {
+              "sub_paragraph": "The following are citizens of the Philippines:"
+            },
+            {
+              "sub_paragraph": "(1) Those who were citizens of the Philippines at the time of the adoption of the Constitution of the Philippines;"
+            },
+            {
+              "sub_paragraph": "(2) Those born in the Philippines of foreign parents who, before the adoption of said Constitution, had been elected to public office in the Philippines;"
+            },
+            {
+              "sub_paragraph": "(3) Those whose fathers are citizens of the Philippines;"
+            },
+            {
+              "sub_paragraph": "(4) Those whose mothers are citizens of the Philippines and, upon reaching the age of majority, elect Philippine citizenship;"
+            },
+            {
+              "sub_paragraph": "(5) Those who are naturalized in accordance with law."
+            }
+          ]
+        },
+        {
+          "name": "Article 49",
+          "paragraph": "Naturalization and the loss and reacquisition of citizenship of the Philippines are governed by special laws."
+        },
+        {
+          "name": "Article 50",
+          "paragraph": "For the exercise of civil rights and the fulfillment of civil obligations, the domicile of natural persons is the place of their habitual residence."
+        },
+        {
+          "name": "Article 51",
+          "paragraph": "When the law creating or recognizing them, or any other provision does not fix the domicile of juridical persons, the same shall be understood to be the place where their legal representation is established or where they exercise their principal functions."
+        }
+      ]
+    }
+  ]
+}

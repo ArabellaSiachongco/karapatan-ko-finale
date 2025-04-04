@@ -1,32 +1,26 @@
 const navLinks = [
     {
-        id: "ai",
+        id: "/ai",
         title: "HELENA AI",
     },
     {
-        id: "lawyer-status",
+        id: "/lawyer-status",
         title: "LEGAL MATCH",
     },
     {
-        id: "lawyer-appoinments",
+        id: "/constitution",
+        title: "BOOKS",
+    },
+    {
+        id: "/lawyer-appointments",
         title: "APPOINTMENT",
     },
     {
-        id: "forms",
+        id: "/forms",
         title: "SPA FORM",
     },
 ];
 
-const userLink = [
-    {
-        title: "LAWYER",
-        icon: "/userLawyer.png",
-    },
-    {
-        title: "STUDENT",
-        icon: "/userStudents.png",
-    },
-];
 
 const features = [
     {
@@ -34,6 +28,7 @@ const features = [
         subtitle: "Simply highlight any word in our law books to instantly fetch its definition.",
         icon: "/book.png",
         iconBg: "#383E56",
+        id: "law_books",
         // overview: "An in-depth look at legal texts in the Philippines.",
         color: "blue-text-gradient",
         
@@ -49,9 +44,14 @@ const features = [
                 li:"/RA_8371",
             },
             {
-                text:"Family Code", 
+                text:"Family Code of the Philippines", 
                 id: "family_ID",
                 li:"/family",
+            },
+            {
+                text:"An act to ordain and institute the civil code of the Philippines", 
+                id: "civil_law",
+                li:"/civil",
             },
         ],
         image: "/lawbook.png",
@@ -134,7 +134,7 @@ const testimonials = [
 
 const lawyerProfiles = [
     {
-      image: "/profile1.jpg",
+      image: "/palmer_profile.png",
       name: "Palmer Fagyan Bugtong",
       nickname:"Atty. Palmer",
       title: "Criminal Law",
@@ -147,7 +147,6 @@ const lawyerProfiles = [
       address: "Liaison Officer at Magalgalit Law Office",
       btn: "/appointmentLawyer1",
     },
-    // No. 7, 2/F Israel Bldg., Gibraltar Road, Baguio City 2600
     {
         image: "/magalgalit_eme.jpg",
         name: "Noel Magalgalit",
@@ -163,15 +162,15 @@ const lawyerProfiles = [
         btn: "/appointmentLawyer2",
     },
     {
-        image: "/profile2.png",
+        image: "/evasco_profile.png",
         name: "Jess B. Evasco",
         nickname:"Atty. Evasco",
         title: "Criminal Law",
         currentSP: "Face to Face",
         currentPoints: "5 years lawyer",
         talent: "Persuasion, Public Speaking",
-        contact: "09666303622",
-        gmail: "karapatanko@gmail.com",
+        contact: "09456528009",
+        gmail: "jess.evasco2615@gmail.com",
         tagline: "The Fast Talker and Thinker", 
         address: "Liaison Officer at Magalgalit Law Office",
         btn: "/appointmentLawyer3",
@@ -181,7 +180,6 @@ const lawyerProfiles = [
 
 export {
     navLinks,
-    userLink,
     features,
     legalMatch,
     partnerships,

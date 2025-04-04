@@ -137,6 +137,10 @@ canvas {
   border-image-width: 50px;
 }
 
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
 @keyframes mulShdSpin {
   0%,
   100% {
