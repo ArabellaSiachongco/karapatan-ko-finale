@@ -40,58 +40,63 @@ import AppointmentTableLawyer3 from "./components/user_dashboard/about_lawyers/e
 import AppointmentResultLawyer3 from "./components/user_dashboard/about_lawyers/evasco_schedule/EvascoAppointmentResult";
 
 
-import RA_12066 from "./components/user_dashboard/books/pages/peoples_rights_content/RA_12066";
-import Constitution from "./components/user_dashboard/books/pages/constitution_content/Constitution";
-import FamilyCode from "./components/user_dashboard/books/pages/family_code/FamilyCode";
-import CivilLaw from "./components/user_dashboard/books/pages/civil_law/CivilLaw";
+import RA_12066 from "./components/user_dashboard/books/laws/peoples_rights_content/RA_12066";
+import Constitution from "./components/user_dashboard/books/laws/constitution_content/Constitution";
+import FamilyCode from "./components/user_dashboard/books/laws/family_code/FamilyCode";
+import CivilLaw from "./components/user_dashboard/books/laws/civil_law/CivilLaw";
 
-import ConstitutionOne from "./components/user_dashboard/books/pages/constitution_content/ConstitutionOne";
-import ConstitutionTwo from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTwo";
-import ConstitutionThree from "./components/user_dashboard/books/pages/constitution_content/ConstitutionThree";
-import ConstitutionFour from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFour";
-import ConstitutionFive from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFive";
-import ConstitutionSix from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSix";
-import ConstitutionSeven from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSeven";
-import ConstitutionEight from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEight";
-import ConstitutionNine from "./components/user_dashboard/books/pages/constitution_content/ConstitutionNine";
-import ConstitutionTen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTen";
-import ConstitutionEleven from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEleven";
-import ConstitutionTwelve from "./components/user_dashboard/books/pages/constitution_content/ConstitutionTwelve";
-import ConstitutionThirteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionThirteen";
-import ConstitutionFourteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFourteen";
-import ConstitutionFifteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionFifteen";
-import ConstitutionSixteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSixteen";
-import ConstitutionSeventeen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionSeventeen";
-import ConstitutionEighteen from "./components/user_dashboard/books/pages/constitution_content/ConstitutionEighteen";
+import ConstitutionOne from "./components/user_dashboard/books/laws/constitution_content/ConstitutionOne";
+import ConstitutionTwo from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTwo";
+import ConstitutionThree from "./components/user_dashboard/books/laws/constitution_content/ConstitutionThree";
+import ConstitutionFour from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFour";
+import ConstitutionFive from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFive";
+import ConstitutionSix from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSix";
+import ConstitutionSeven from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSeven";
+import ConstitutionEight from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEight";
+import ConstitutionNine from "./components/user_dashboard/books/laws/constitution_content/ConstitutionNine";
+import ConstitutionTen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTen";
+import ConstitutionEleven from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEleven";
+import ConstitutionTwelve from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTwelve";
+import ConstitutionThirteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionThirteen";
+import ConstitutionFourteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFourteen";
+import ConstitutionFifteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFifteen";
+import ConstitutionSixteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSixteen";
+import ConstitutionSeventeen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSeventeen";
+import ConstitutionEighteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEighteen";
 
-import RA_8371_One from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_One";
-import RA_8371_Two from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Two";
-import RA_8371_Three from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Three";
-import RA_8371_Four from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Four";
-import RA_8371_Five from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Five";
-import RA_8371_Six from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Six";
-import RA_8371_Seven from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Seven";
-import RA_8371_Eight from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Eight";
-import RA_8371_Nine from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Nine";
-import RA_8371_Ten from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Ten";
-import RA_8371_Eleven from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Eleven";
-import RA_8371_Twelve from "./components/user_dashboard/books/pages/peoples_rights_content/RA_8371_Twelve";
+import RA_8371_One from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_One";
+import RA_8371_Two from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Two";
+import RA_8371_Three from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Three";
+import RA_8371_Four from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Four";
+import RA_8371_Five from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Five";
+import RA_8371_Six from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Six";
+import RA_8371_Seven from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Seven";
+import RA_8371_Eight from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eight";
+import RA_8371_Nine from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Nine";
+import RA_8371_Ten from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Ten";
+import RA_8371_Eleven from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eleven";
+import RA_8371_Twelve from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Twelve";
 
-import FamilyOne from "./components/user_dashboard/books/pages/family_code/FamilyOne";
-import FamilyTwo from "./components/user_dashboard/books/pages/family_code/FamilyTwo";
-import FamilyThree from "./components/user_dashboard/books/pages/family_code/FamilyThree";
-import FamilyFour from "./components/user_dashboard/books/pages/family_code/FamilyFour";
-import FamilyFive from "./components/user_dashboard/books/pages/family_code/FamilyFive";
-import FamilySix from "./components/user_dashboard/books/pages/family_code/FamilySix";
-import FamilySeven from "./components/user_dashboard/books/pages/family_code/FamilySeven";
-import FamilyEight from "./components/user_dashboard/books/pages/family_code/FamilyEight";
+import FamilyOne from "./components/user_dashboard/books/laws/family_code/FamilyOne";
+import FamilyTwo from "./components/user_dashboard/books/laws/family_code/FamilyTwo";
+import FamilyThree from "./components/user_dashboard/books/laws/family_code/FamilyThree";
+import FamilyFour from "./components/user_dashboard/books/laws/family_code/FamilyFour";
+import FamilyFive from "./components/user_dashboard/books/laws/family_code/FamilyFive";
+import FamilySix from "./components/user_dashboard/books/laws/family_code/FamilySix";
+import FamilySeven from "./components/user_dashboard/books/laws/family_code/FamilySeven";
+import FamilyEight from "./components/user_dashboard/books/laws/family_code/FamilyEight";
+import FamilyNine from "./components/user_dashboard/books/laws/family_code/FamilyNine";
+import FamilyTen from "./components/user_dashboard/books/laws/family_code/FamilyTen";
+import FamilyEleven from "./components/user_dashboard/books/laws/family_code/FamilyEleven";
+import FamilyTwelve from "./components/user_dashboard/books/laws/family_code/FamilyTwelve";
+import FamilyThirteen from "./components/user_dashboard/books/laws/family_code/FamilyThirteen";
 
-import CivilOne from "./components/user_dashboard/books/pages/civil_law/CivilOne";
-import CivilTwo from "./components/user_dashboard/books/pages/civil_law/CivilTwo";
-import CivilThree from "./components/user_dashboard/books/pages/civil_law/CivilThree";
-import CivilFour from "./components/user_dashboard/books/pages/civil_law/CivilFour";
-import CivilFive from "./components/user_dashboard/books/pages/civil_law/CivilFive";
-import CivilSix from "./components/user_dashboard/books/pages/civil_law/CivilSix";
+import CivilOne from "./components/user_dashboard/books/laws/civil_law/CivilOne";
+import CivilTwo from "./components/user_dashboard/books/laws/civil_law/CivilTwo";
+import CivilThree from "./components/user_dashboard/books/laws/civil_law/CivilThree";
+import CivilFour from "./components/user_dashboard/books/laws/civil_law/CivilFour";
+import CivilFive from "./components/user_dashboard/books/laws/civil_law/CivilFive";
+import CivilSix from "./components/user_dashboard/books/laws/civil_law/CivilSix";
 
 const NavbarWrapper = ({ children }) => {
   const location = useLocation();
@@ -232,6 +237,11 @@ const App = () => {
             <Route path="/familySix" element={<FamilySix />} />
             <Route path="/familySeven" element={<FamilySeven />} />
             <Route path="/familyEight" element={<FamilyEight />} />
+            <Route path="/familyNine" element={<FamilyNine />} />
+            <Route path="/familyTen" element={<FamilyTen />} />
+            <Route path="/familyEleven" element={<FamilyEleven />} />
+            <Route path="/familyTwelve" element={<FamilyTwelve />} />
+            <Route path="/familyThirteen" element={<FamilyThirteen />} />
             
             <Route path="/civilOne" element={<CivilOne /> } />
             <Route path="/civilTwo" element={<CivilTwo /> } />

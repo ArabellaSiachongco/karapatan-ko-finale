@@ -7,7 +7,7 @@ import {
   table_of_content_RA12066,
   table_of_content_family_code,
   table_of_content_civil_law,
-} from "../user_dashboard/books/laws/table_of_content.json";
+} from "../user_dashboard/books/pages/table_of_content.json";
 import { VscSignOut } from "react-icons/vsc";
 
 const Sidebar = () => {
