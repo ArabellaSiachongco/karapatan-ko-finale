@@ -5,6 +5,7 @@ import { SectionWrapper } from "../HOC";
 import { useNavigate } from "react-router-dom";
 import Loader from "../utility/Loader";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import ReCAPTCHAWrapper from "../HOC/ReCAPTCHAWrapper";
 
 // Firebase
 import { auth } from "../database/firebase";
@@ -20,37 +21,46 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !password) {
       setError("Both fields are required.");
       return;
     }
+
+    if (!recaptchaToken) {
+      setError("Please complete the reCAPTCHA.");
+      return;
+    }
+
     setLoading(true);
-  
+
     try {
-      // Firebase authentication
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
-  
+
       console.log("User logged in:", user);
-  
-      // Fetch user's role correctly
+
       checkUserRole((role) => {
         if (role === "admin") {
-          if (user.email === "evasco@gmail.com") {
+          if (user.email === "jess.evasco2615@gmail.com") {
             navigate("/admin_evasco");
           } else if (user.email === "nbmagalgalit@gmail.com") {
             navigate("/admin_magalgalit");
           } else if (user.email === "amorsolo960@gmail.com") {
             navigate("/admin_palmer");
           } else {
-            navigate("/admin"); // Default admin page
+            navigate("/admin");
           }
         } else if (role === "user") {
-          navigate("/main"); // Redirect user to User Dashboard
+          navigate("/main");
         } else {
           setError("Unknown role. Please contact support.");
         }
@@ -65,7 +75,7 @@ const Login = () => {
     } finally {
       setLoading(false);
     }
-  };  
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -90,7 +100,10 @@ const Login = () => {
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium"
+                    >
                       Email
                     </label>
                     <input
@@ -103,7 +116,10 @@ const Login = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="password" className="block text-sm font-medium">
+                    <label
+                      htmlFor="password"
+                      className="block text-sm font-medium"
+                    >
                       Password
                     </label>
                     <div className="relative">
@@ -135,6 +151,10 @@ const Login = () => {
                     </a>
                   </div>
 
+                  <ReCAPTCHAWrapper
+                    onChange={(token) => setRecaptchaToken(token)}
+                  />
+                  <br />
                   {error && <p className="text-red-500 text-sm">{error}</p>}
                   <button
                     type="submit"

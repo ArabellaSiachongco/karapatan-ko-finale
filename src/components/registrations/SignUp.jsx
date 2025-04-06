@@ -11,6 +11,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { auth, db } from "../database/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import ReCAPTCHAWrapper from "../HOC/ReCAPTCHAWrapper";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,13 +46,21 @@ const SignUp = () => {
       setError("Password must be at least 6 characters.");
       return;
     }
+    if (!recaptchaToken) {
+      setError("Please complete the reCAPTCHA.");
+      return;
+    }
 
     setError(""); // Clear errors
     setLoading(true); // Show loader
 
     try {
       // Create user account in Firebase Authentication
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       // Save user data to Firestore
@@ -68,9 +78,10 @@ const SignUp = () => {
       navigate("/main"); // Redirect to user layout
     } catch (err) {
       console.error("Error signing up:", err.message);
-      setError(err.message.includes("email-already-in-use")
-        ? "This email is already registered. Log in instead."
-        : "Failed to sign up. Please try again."
+      setError(
+        err.message.includes("email-already-in-use")
+          ? "This email is already registered. Log in instead."
+          : "Failed to sign up. Please try again."
       );
     } finally {
       setLoading(false); // Hide loader
@@ -187,7 +198,13 @@ const SignUp = () => {
                       <label htmlFor="role">Role</label>
                       <input type="text" id="role" className="text-input" />
                     </div>
-                    {error && <p className="error-message text-red-500">{error}</p>}
+                    <ReCAPTCHAWrapper
+                      onChange={(token) => setRecaptchaToken(token)}
+                    />
+                    <br />
+                    {error && (
+                      <p className="error-message text-red-500">{error}</p>
+                    )}
                     <button type="submit" className="primary-btn">
                       Sign Up
                     </button>
@@ -202,7 +219,8 @@ const SignUp = () => {
                 <footer id="main-footer">
                   <p>Copyright &copy; 2024, KarapatanKo All Rights Reserved</p>
                   <div>
-                    <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a> |{" "}
+                    <a href="#">Privacy Policy</a>
                   </div>
                 </footer>
               </div>
