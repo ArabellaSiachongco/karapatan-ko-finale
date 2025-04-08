@@ -1,6 +1,6 @@
 import { Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { auth } from "./firebase"; // Import your Firebase auth
+import { auth } from "./firebase";
 
 const ProtectedRoute = ({ element, ...rest }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -14,13 +14,10 @@ const ProtectedRoute = ({ element, ...rest }) => {
         setIsAuthenticated(false); // User is not authenticated
       }
     });
-
-    // Cleanup listener on unmount
     return () => unsubscribe();
   }, []);
-
   if (isAuthenticated === null) {
-    return <div>Loading...</div>; // Or show a loader while checking auth
+    return <div>Loading...</div>; // show a loader while checking auth
   }
 
   return (
@@ -32,3 +29,5 @@ const ProtectedRoute = ({ element, ...rest }) => {
 };
 
 export default ProtectedRoute;
+
+

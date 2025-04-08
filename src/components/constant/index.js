@@ -148,7 +148,7 @@ const lawyerProfiles = [
       btn: "/appointmentLawyer1",
     },
     {
-        image: "/magalgalit_eme.jpg",
+        image: "/magalgalit_profile.png",
         name: "Noel Magalgalit",
         nickname:"Atty. Magalgalit",
         title: "Civil Law",

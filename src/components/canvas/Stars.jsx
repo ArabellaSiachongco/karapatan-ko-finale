@@ -11,7 +11,6 @@ const StarsCanvas = (props) => {
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
   });
-
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
@@ -26,7 +25,6 @@ const StarsCanvas = (props) => {
     </group>
   );
 };
-
 const Stars = () => {
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">
@@ -34,11 +32,9 @@ const Stars = () => {
         <Suspense fallback={null}>
           <StarsCanvas />
         </Suspense>
-
         <Preload all />
       </Canvas>
     </div>
   );
 };
-
 export default Stars;
