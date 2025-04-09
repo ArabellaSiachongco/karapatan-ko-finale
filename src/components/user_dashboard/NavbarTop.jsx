@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import navigation hooks
+import { Link, useNavigate } from "react-router-dom";
 import { styles } from "../../styles";
 import { navLinks } from "../constant";
+import { FiX } from "react-icons/fi"; // Close icon
+import { VscListSelection } from "react-icons/vsc"; // Hamburger icon
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,30 +22,32 @@ const Navbar = () => {
   }, []);
 
   const handleNavigation = (id) => {
-    // hash-based navigation
     if (id === "/") {
       navigate("/");
-      window.scrollTo(0, 0); // Scroll to top of the page
+      window.scrollTo(0, 0);
     } else {
-      // For section-based navigation
-      navigate(id); // Navigate to the section via hash (e.g., #helena)
-      setActive(id); // Update the active section
+      navigate(id);
+      setActive(id);
     }
   };
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 
-        ${scrolled ? "bg-primary" : "bg-primary"}`}
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-20 ${
+        scrolled ? "bg-primary" : "bg-primary"
+      }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+        {/* Logo visible only on desktop */}
         <Link
           to="/main"
           className="flex items-center gap-2"
           onClick={() => handleNavigation("/")}
         >
-          <img className="w-9 h-9 object-contain" src="/logo2.png" alt="Logo" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          <img className="w-9 h-9 object-contain hidden sm:block" src="/logo2.png" alt="Logo" />
+          <p className="sm:flex hidden text-white text-[18px] font-bold cursor-pointer flex">
             Karapatan &nbsp;
             <span className="sm:block hidden">Ko</span>
           </p>
@@ -54,8 +58,9 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${active === nav.id ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`${
+                active === nav.id ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => handleNavigation(nav.id)}
             >
               {nav.title}
@@ -64,35 +69,68 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile menu icon */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? "/close.png" : "/menu.png"} alt="menu"
-            className="w-[28px] h-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
-          {/* Mobile navigation dropdown */}
-          <div
-            className={`${!toggle ? "hidden" : "flex"
-              } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+        <div className="sm:hidden flex items-center">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-white text-3xl"
           >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+            {mobileMenuOpen ? (
+              <FiX /> // Close icon (X)
+            ) : (
+              <VscListSelection /> // Hamburger icon (three horizontal bars)
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-10 "
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-primary dark:bg-gray-800 transform transition-transform duration-300 ease-in-out z-20 ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          {/* Logo Section */}
+          <div className="p-5 border-b border-secondary dark:border-gray-700 flex items-center">
+            <Link
+              to="/main"
+              className="flex items-center gap-2"
+              onClick={() => handleNavigation("")}
+            >
+              <img className="w-9 h-9 sm:block" src="/logo2.png" alt="Logo" />
+              <p className="text-white text-lg font-bold">Karapatan Ko</p>
+            </Link>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex-1 py-4 overflow-y-auto">
+            <ul className="px-4 space-y-2">
               {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.id ? "text-white" : "text-secondary"
+                <li key={nav.id} className="group text-white">
+                  <Link
+                    to={nav.id}
+                    className={`block p-3 rounded-lg text-lg transition-colors duration-200 ${
+                      active === nav.id
+                        ? "bg-secondary/20 dark:bg-gray-700/30 text-white"
+                        : "text-secondary dark:text-gray-300"
                     }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    handleNavigation(nav.id);
-                  }}
-                >
-                  {nav.title}
+                    onClick={() => handleNavigation(nav.id)}
+                  >
+                    {nav.title}
+                  </Link>
                 </li>
               ))}
             </ul>
-          </div>
-          
+          </nav>
         </div>
       </div>
     </nav>

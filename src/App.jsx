@@ -100,7 +100,7 @@ import CivilSix from "./components/user_dashboard/books/laws/civil_law/CivilSix"
 const NavbarWrapper = ({ children }) => {
   const location = useLocation();
   const showSidebar = 
-  location.pathname.startsWith("/main") ||
+  // location.pathname.startsWith("/main") ||
   location.pathname.startsWith("/RA_8371") || 
   location.pathname.startsWith("/constitution") || 
   location.pathname.startsWith("/family") ||
@@ -111,7 +111,6 @@ const NavbarWrapper = ({ children }) => {
   location.pathname.startsWith("/appointment") || 
   location.pathname.startsWith("/lawyer") || 
   location.pathname.startsWith("/forms") || 
-  location.pathname.startsWith("/constitution") || 
   location.pathname.startsWith("/ai");
     
   return (

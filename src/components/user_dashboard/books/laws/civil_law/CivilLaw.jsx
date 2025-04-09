@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { styles } from "../../../../../styles.js";
 import table_of_content from "../../pages/table_of_content.json";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
@@ -10,12 +10,61 @@ import "../../../../layouts/book.css";
 
 const CivilLaw = () => {
   const { selectedWord, definition, tooltipPosition, handleTextSelection } = useDictionary();
-  const { table_of_content_civil_law } = table_of_content; // Extracting data properly
+  const { table_of_content_civil_law } = table_of_content;
+
+  const speakText = (word, definition) => {
+    try {
+      if (!word) {
+        throw new Error("No word provided for speech synthesis.");
+      }
+
+      let textToSpeak = word; // Start with the selected word
+      if (definition) {
+        textToSpeak += `. Definition: ${definition}`; // Add definition
+      }
+
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.lang = "en-US";
+
+      // Get available voices
+      let voices = speechSynthesis.getVoices();
+
+      // Find a female voice
+      let femaleVoice = voices.find(
+        (voice) =>
+          voice.name.includes("Female") ||
+          voice.name.includes("Samantha") ||
+          voice.name.includes("Google UK English Female")
+      );
+
+      // Set the voice (fallback to first available if no female voice is found)
+      utterance.voice = femaleVoice || voices[0] || null;
+
+      // If no voices are available, wait for them to load
+      if (voices.length === 0) {
+        speechSynthesis.onvoiceschanged = () => {
+          voices = speechSynthesis.getVoices();
+          femaleVoice = voices.find(
+            (voice) =>
+              voice.name.includes("Female") ||
+              voice.name.includes("Samantha") ||
+              voice.name.includes("Google UK English Female")
+          );
+          utterance.voice = femaleVoice || voices[0] || null;
+          speechSynthesis.speak(utterance);
+        };
+      } else {
+        speechSynthesis.speak(utterance);
+      }
+    } catch (error) {
+      console.error("Speech synthesis error:", error);
+    }
+  };
 
   return (
     <ScrollWrapper>
       <div id="family_ID" className="p-8 min-h-screen text-center image-border-table">
-        
+
         {/* Family Intro */}
         <div className="mb-16">
           <motion.p
@@ -84,26 +133,38 @@ const CivilLaw = () => {
             </Link>
           ))}
         </motion.div>
-        
+
         {/* Word Selection and Definition Tooltip */}
         {selectedWord && (
           <div
             className="absolute text-left bg-white p-4 shadow-lg rounded-lg max-w-xs text-black"
             style={{
-              left: tooltipPosition?.left || 0,
-              top: tooltipPosition?.top || 0,
+              left: tooltipPosition.left,
+              top: tooltipPosition.top,
               zIndex: 100,
             }}
           >
             <div className="flex items-center justify-between">
               <p className={styles.dictionaryText}>{selectedWord}</p>
-              <i className="fas fa-volume-up ml-5 text-gray-600"></i>
+              <button
+                onClick={() => {
+                  console.log(
+                    "🔍 Volume icon clicked! Word:",
+                    selectedWord,
+                    "| Definition:",
+                    definition
+                  );
+                  speakText(selectedWord, definition);
+                }}
+                className="bg-transparent border-none p-0 m-0 cursor-pointer"
+              >
+                <i className="fas fa-volume-up ml-5 text-gray-600 cursor-pointer"></i>
+              </button>
             </div>
             <hr className="border-2 mb-2" />
             <p>{definition}</p>
           </div>
         )}
-
       </div>
     </ScrollWrapper>
   );

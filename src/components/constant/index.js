@@ -19,6 +19,10 @@ const navLinks = [
         id: "/forms",
         title: "SPA FORM",
     },
+    {
+        id: "/",
+        title: "SIGN OUT",
+    }
 ];
 
 
