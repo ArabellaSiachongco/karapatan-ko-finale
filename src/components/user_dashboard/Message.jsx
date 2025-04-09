@@ -30,9 +30,6 @@ const Message = () => {
   const [chatMessage, setChatMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [user, setUser] = useState(null);
-  // const [showArchivedAppointments, setShowArchivedAppointments] =
-  //   useState(false);
-  // const [showArchivedMessages, setShowArchivedMessages] = useState(false);
   const [showArchived, setShowArchived] = useState(false); // Toggle for both appointments and messages
   const [archivedAppointments, setArchivedAppointments] = useState([]);
   const [archivedMessages, setArchivedMessages] = useState([]);
@@ -43,20 +40,11 @@ const Message = () => {
   const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [showRejectedAppointments, setShowRejectedAppointments] =
     useState(false);
-  const [rejectedCount, setRejectedCount] = useState(0);
   const auth = getAuth();
 
   const [showArchivedModal, setShowArchivedModal] = useState(false);
   const [showRejectedModal, setShowRejectedModal] = useState(false);
-  // const [archivedMessages, setArchivedMessages] = useState([]);
   const [rejectedMessages, setRejectedMessages] = useState([]);
-  // Format the date to a readable string (MM/DD/YYYY, HH:MM AM/PM)
-  const formatDate = (date) => {
-    if (!(date instanceof Date)) {
-      date = new Date(date.seconds * 1000); // Convert Firestore Timestamp to JS Date
-    }
-    return date.toLocaleString(); // You can customize the format here
-  };
 
   // Fetch appointments for the logged-in user
   useEffect(() => {
@@ -137,13 +125,13 @@ const Message = () => {
         if (message.date && typeof message.date.toDate === "function") {
           date = message.date.toDate();
         } else {
-          date = new Date(message.date); // Fallback if not a Timestamp
+          date = new Date(message.date);
         }
 
         return {
           id: docSnap.id,
           ...message,
-          date: date, // Store the Date object
+          date: date,
         };
       });
 
@@ -165,7 +153,7 @@ const Message = () => {
         "unknown",
       appointmentId: chatAppointment.id,
       details: chatMessage,
-      date: Timestamp.now(), // Use Firestore Timestamp
+      date: Timestamp.now(),
     };
 
     try {
@@ -337,13 +325,6 @@ const Message = () => {
         prevAppointments.filter((app) => app.id !== selectedAppointment.id)
       );
 
-      // Increase rejected count and store in local storage
-      setRejectedCount((prev) => {
-        const newCount = prev + 1;
-        localStorage.setItem("rejectedCount", newCount);
-        return newCount;
-      });
-
       setShowModal(false);
       setChatMessage("");
       setSelectedAppointment(null);
@@ -385,37 +366,10 @@ const Message = () => {
       setRejectedAppointments(userRejectedList);
       setShowRejectedAppointments(true);
   
-      if (rejectedCount > 0) {
-        setRejectedCount(0);
-        localStorage.removeItem("rejectedCount");
-      }
     } catch (error) {
       console.error("Error fetching rejected appointments:", error);
     }
   };
-
-  useEffect(() => {
-    const rejectedRef = collection(db, "rejected_appointments");
-
-    // Load rejected count from localStorage on page refresh
-    const storedRejectedCount = localStorage.getItem("rejectedCount");
-    if (storedRejectedCount) {
-      setRejectedCount(parseInt(storedRejectedCount, 10));
-    }
-
-    // Real-time listener for rejected appointments
-    const unsubscribe = onSnapshot(rejectedRef, (snapshot) => {
-      const newCount = snapshot.docs.length;
-
-      // Only update if new rejected appointments exist
-      if (newCount > rejectedCount) {
-        setRejectedCount(newCount);
-        localStorage.setItem("rejectedCount", newCount);
-      }
-    });
-
-    return () => unsubscribe();
-  }, [rejectedCount]);
 
   const fetchRejectedMessages = async (appointmentId) => {
     try {
@@ -550,13 +504,6 @@ const Message = () => {
         className="relative ml-8 mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
         onClick={fetchRejectedAppointments}
       >
-        {/* Show notification badge only if count > 0 and list is NOT open */}
-        {rejectedCount > 0 && !showRejectedAppointments && (
-          <span className="absolute -top-2 -right-2 px-2 py-1 text-xs font-bold text-white bg-red-500 rounded-full">
-            {rejectedCount}
-          </span>
-        )}
-
         {showRejectedAppointments
           ? "Hide Rejected Appointments"
           : "Show Rejected Appointments"}
