@@ -112,27 +112,27 @@ const partnerships = [
 const testimonials = [
     {
         testimonial:
-            "The website is well designed and user-friendly, with features like AI chat and definitions for any highlighted text. It is clear how to use it from the first time, and I didn't face any complications.",
+            "The website is well designed and user-friendly, with features like AI chat bot and definitions for any highlighted text with speaker. It is clear how to use it from the first time, and I didn't face any complications.",
         name: "Jamil Al Amin",
-        designation: "Student",
+        designation: "IT Student",
         company: "University of the Cordilleras",
         image: "/testimonial1.png",
     },
     {
         testimonial:
             "The website has a clean and professional look, and suitable for legal resources. However, some areas could benefit from improved visual appeal, such as personalized dashboard and inclusion of search bar.",
-        name: "Lina An-an",
-        designation: "Student",
-        company: "University of the Cordilleras",
-        image: "/profile2.png",
+        name: "Emmanuel",
+        designation: "Lawyer Student",
+        company: "University of the Baguio",
+        image: "/profile2.jpg",
     },
     {
         testimonial:
             "It will help many people, especially those who are unaware of their rights. I love the Legal Matching, as it connects us with professionals. The convenience of booking appointments directly on the site is a great addition.",
         name: "Palmer Bugtong",
-        designation: "Lawyer",
+        designation: "Professional Lawyer",
         company: "Magalgalit Law Office",
-        image: "/profile1.png",
+        image: "/palmer_profile.png",
     },
 ];
 
