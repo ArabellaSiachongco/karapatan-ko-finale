@@ -54,11 +54,14 @@ const SignUp = () => {
     setError(""); // Clear errors
     setLoading(true); // Show loader
 
+    // Convert email to lowercase before using it
+    const normalizedEmail = email.toLowerCase();
+
     try {
       // Create user account in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
         auth,
-        email,
+        normalizedEmail,
         password
       );
       const user = userCredential.user;
@@ -69,7 +72,7 @@ const SignUp = () => {
         middleName,
         lastName,
         age: parseInt(age, 10),
-        email,
+        email: normalizedEmail,
         role,
         createdAt: new Date(),
       });

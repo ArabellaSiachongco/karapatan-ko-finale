@@ -57,12 +57,15 @@ const Message = () => {
       }
 
       console.log("User ID:", currentUser.uid);
+      console.log("Appointments:", appointments);
+      console.log("Past Appointments:", pastAppointments);
+      console.log("Querying with email:", currentUser.email);
 
       // Fetch all appointments where the user is involved
       const appointmentsRef = collection(db, "appointments");
       const q = query(
         appointmentsRef,
-        where("email", "==", currentUser.email),
+        where("email", "==", currentUser.email.toLowerCase()),
         orderBy("timestamp", "asc") // Use the timestamp field for sorting
       );
 
@@ -140,7 +143,6 @@ const Message = () => {
 
     return () => unsubscribeMessages();
   }, [chatAppointment]);
-
 
   const handleSendMessage = async () => {
     if (!chatMessage.trim() || !chatAppointment) return;
@@ -234,18 +236,17 @@ const Message = () => {
     }
   };
 
-
   const fetchArchivedAppointments = async () => {
     if (!user) {
       console.error("No user is logged in.");
       return;
     }
-
+//adding email lower case to match the firebase
     try {
       const archivedRef = query(
         collection(db, "archived_appointments"),
-        where("email", "==", user.email) // Filter by user email
-      );
+        where("email", "==", user.email.toLowerCase())
+      );      
 
       const snapshot = await getDocs(archivedRef);
       const archives = snapshot.docs.map((doc) => ({
@@ -340,32 +341,30 @@ const Message = () => {
       setShowRejectedAppointments(false);
       return;
     }
-  
+
     try {
       const auth = getAuth();
       const currentUser = auth.currentUser;
-  
+
       if (!currentUser) {
         console.error("User not logged in.");
         return;
       }
-  
-      const userEmail = currentUser.email;
-  
+//lowercase ng email
+      const userEmail = currentUser.email.toLowerCase(); 
       const rejectedRef = query(collection(db, "rejected_appointments"));
       const snapshot = await getDocs(rejectedRef);
-  
+
       const userRejectedList = snapshot.docs
-        .map((doc) => ({ id: doc.id, ...doc.data() }))
-        .filter((doc) => doc.id.startsWith(userEmail)) // match email at start of ID
+      .map((doc) => ({ id: doc.id, ...doc.data() }))
+      .filter((doc) => doc.id.toLowerCase().startsWith(userEmail)) // match email at start of ID
         .map((doc) => ({
           ...doc,
           isRejected: true,
         }));
-  
+
       setRejectedAppointments(userRejectedList);
       setShowRejectedAppointments(true);
-  
     } catch (error) {
       console.error("Error fetching rejected appointments:", error);
     }
@@ -377,13 +376,13 @@ const Message = () => {
         collection(db, "messages"),
         where("appointmentId", "==", appointmentId)
       );
-  
+
       const snapshot = await getDocs(messagesRef);
       const messages = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-  
+
       console.log("Rejected Messages for Appointment:", messages);
       setRejectedMessages(messages); // Ensure this sets the correct state
     } catch (error) {
@@ -463,16 +462,16 @@ const Message = () => {
                 </td>
                 <td className="border p-2 text-center">
                   <button
-                    className="px-3 py-1 bg-blue-900 text-white rounded-lg"
+                    className="px-3 py-1 text-white rounded-lg"
                     onClick={() => setChatAppointment(appointment)}
                   >
-                    <FaEnvelope size={26} color="#22c55e" /> yu
+                    <FaEnvelope size={26} color="#22c55e" />
                   </button>
                 </td>
                 <td className="border p-2 text-center">
                   <button
                     onClick={() => handleDelete(appointment.id)}
-                    className="px-3 py-1 bg-red-900 text-white rounded-lg"
+                    className="px-3 py-1 text-white rounded-lg"
                   >
                     <FaTrash size={24} color="red" />
                   </button>
@@ -490,13 +489,15 @@ const Message = () => {
         </table>
       </div>
 
-{/* BTN FOR ARC AND REJ  */}
+      {/* BTN FOR ARC AND REJ  */}
       {/* Archived Appointments Button */}
       <button
         className="mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
         onClick={toggleArchived}
       >
-        {showArchived ? "Hide Archived Appointments" : "Show Archived Appointments"}
+        {showArchived
+          ? "Hide Archived Appointments"
+          : "Show Archived Appointments"}
       </button>
 
       {/* Rejected Appointments Button */}
@@ -509,7 +510,7 @@ const Message = () => {
           : "Show Rejected Appointments"}
       </button>
 
-{/* TABLE FOR THE ARHIVED AND REJECTED APPOINTMENTS */}
+      {/* TABLE FOR THE ARHIVED AND REJECTED APPOINTMENTS */}
       {/* Archived Appointments Table */}
       {showArchived && archivedAppointments.length > 0 && (
         <div className="mt-4 p-4 border rounded-lg shadow-md bg-gray-700">
@@ -531,8 +532,11 @@ const Message = () => {
                   <tr key={index} className="hover:bg-gray-700">
                     <td className="border p-2">{appointment.date}</td>
                     <td className="border p-2">{appointment.time}</td>
-                    <td className="border p-2">{appointment.client || `${appointment.firstName || ""} 
-                      ${appointment.lastName || "" }`.trim() || "Unknown Client"}
+                    <td className="border p-2">
+                      {appointment.client ||
+                        `${appointment.firstName || ""} 
+                      ${appointment.lastName || ""}`.trim() ||
+                        "Unknown Client"}
                     </td>
                     {/* <td className="border p-2">{appointment.lawyer?.name}</td> */}
                     <td className="border p-2">{appointment.reasons}</td>
@@ -569,7 +573,7 @@ const Message = () => {
                   <th className="border p-2">Time</th>
                   <th className="border p-2">Client</th>
                   {/* <th className="border p-2">Lawyer</th> */}
-                  
+
                   <th className="border p-2">Reason</th>
                   <th className="border p-2">Messages</th>
                 </tr>
@@ -587,8 +591,8 @@ const Message = () => {
                         "Unknown Client"}
                     </td>
                     {/* <td className="border p-2">{appointment.lawyer?.name}</td> */}
-                    
-                    <td className="border p-2">{appointment.reasons}</td>
+
+                    <td className="border p-2">{appointment.reason}</td>
                     <td className="border p-2 text-center">
                       <button
                         className="px-3 py-1 text-white rounded-lg"
@@ -608,52 +612,57 @@ const Message = () => {
           </div>
         </div>
       )}
-      
-{/* MODAL MODAL MODAL */}
+
+      {/* MODAL MODAL MODAL */}
       {/* Chat Popup */}
       {chatAppointment && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12 flex flex-col">
             {/* Chat Header */}
             <h6 className="text-black mb-4">
-            <b>Chat with:</b> {chatAppointment.lawyer?.name || "Unknown Lawyer"}
+              <b>Chat with:</b>{" "}
+              {chatAppointment.lawyer?.name || "Unknown Lawyer"}
             </h6>
 
             {/* Chat Messages */}
             <div className="flex flex-col mb-4 p-2 h-80 overflow-y-scroll text-black space-y-2">
-            {messages.length > 0 ? (
-  messages
-    .slice()
-    .sort((a, b) => a.date.getTime() - b.date.getTime())
-    .map((message) => (
-      <div
-        key={message.id}
-        className={`flex ${
-          message.sender === user.uid ? "justify-end" : "justify-start"
-        }`}
-      >
-        <div
-          className={`p-3 max-w-xs rounded-lg shadow-md ${
-            message.sender === "admin"
-              ? "bg-gray-200 text-black rounded-bl-none"
-              : "bg-blue-900 text-white rounded-br-none"
-          }`}
-        >
-          <p className="text-sm">{message.details}</p>
-          <p className="text-xs text-gray-400 mt-1 text-right">
-            {message.date
-              ? (message.date.toDate ? message.date.toDate() : new Date(message.date)).toLocaleString()
-              : "Date not available"}
-          </p>
-
-        </div>
-      </div>
-    ))
-) : (
-  <p className="text-gray-500 text-center p-12">
-    No messages yet.
-  </p>
-)}
+              {messages.length > 0 ? (
+                messages
+                  .slice()
+                  .sort((a, b) => a.date.getTime() - b.date.getTime())
+                  .map((message) => (
+                    <div
+                      key={message.id}
+                      className={`flex ${
+                        message.sender === user.uid
+                          ? "justify-end"
+                          : "justify-start"
+                      }`}
+                    >
+                      <div
+                        className={`p-3 max-w-xs rounded-lg shadow-md ${
+                          message.sender === "admin"
+                            ? "bg-gray-200 text-black rounded-bl-none"
+                            : "bg-blue-900 text-white rounded-br-none"
+                        }`}
+                      >
+                        <p className="text-sm">{message.details}</p>
+                        <p className="text-xs text-gray-400 mt-1 text-right">
+                          {message.date
+                            ? (message.date.toDate
+                                ? message.date.toDate()
+                                : new Date(message.date)
+                              ).toLocaleString()
+                            : "Date not available"}
+                        </p>
+                      </div>
+                    </div>
+                  ))
+              ) : (
+                <p className="text-gray-500 text-center p-12">
+                  No messages yet.
+                </p>
+              )}
             </div>
 
             {/* Message Input */}
@@ -687,84 +696,106 @@ const Message = () => {
           </div>
         </div>
       )}
-      
+
       {/* Archived Messages Modal */}
       {showArchivedModal && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12 flex flex-col">
-      <h6 className="text-black mb-4">
-        <b>Archived Messages:</b>
-      </h6>
-      <div className="flex flex-col mb-4 p-2 h-80 overflow-y-scroll text-black space-y-2">
-        {archivedMessages.length > 0 ? (
-          archivedMessages.map((message) => (
-            <div
-              key={message.id}
-              className={`flex ${message.sender === "admin" ? "justify-start" : "justify-end"}`}
-            >
-              <div
-                className={`p-3 max-w-xs rounded-lg shadow-md ${
-                  message.sender === "admin"
-                    ? "bg-gray-200 text-black rounded-bl-none"
-                    : "bg-blue-900 text-white rounded-br-none"
-                }`}
-              >
-                <p className="text-sm">{message.details}</p>
-                <p className="text-xs text-gray-400 mt-1 text-right">
-                  {message.date ? message.date.toDate().toLocaleString() : "Date not available"}
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12 flex flex-col">
+            <h6 className="text-black mb-4">
+              <b>Archived Messages:</b>
+            </h6>
+            <div className="flex flex-col mb-4 p-2 h-80 overflow-y-scroll text-black space-y-2">
+              {archivedMessages.length > 0 ? (
+                archivedMessages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${
+                      message.sender === "admin"
+                        ? "justify-start"
+                        : "justify-end"
+                    }`}
+                  >
+                    <div
+                      className={`p-3 max-w-xs rounded-lg shadow-md ${
+                        message.sender === "admin"
+                          ? "bg-gray-200 text-black rounded-bl-none"
+                          : "bg-blue-900 text-white rounded-br-none"
+                      }`}
+                    >
+                      <p className="text-sm">{message.details}</p>
+                      <p className="text-xs text-gray-400 mt-1 text-right">
+                        {message.date
+                          ? message.date.toDate().toLocaleString()
+                          : "Date not available"}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500 text-center p-12">
+                  No archived messages yet.
                 </p>
-              </div>
+              )}
             </div>
-          ))
-        ) : (
-          <p className="text-gray-500 text-center p-12">No archived messages yet.</p>
-        )}
-      </div>
-      <button onClick={() => setShowArchivedModal(false)} className="mt-4 px-3 py-2 bg-gray-300 text-red-900 rounded-lg">
-        Close
-      </button>
-    </div>
-  </div>
-)}
+            <button
+              onClick={() => setShowArchivedModal(false)}
+              className="mt-4 px-3 py-2 bg-gray-300 text-red-900 rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
-{/* Rejected Messages Modal */}
-{showRejectedModal && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12 flex flex-col">
-      <h6 className="text-black mb-4">
-        <b>Rejected Messages:</b>
-      </h6>
-      <div className="flex flex-col mb-4 p-2 h-80 overflow-y-scroll text-black space-y-2">
-        {rejectedMessages.length > 0 ? (
-          rejectedMessages.map((message) => (
-            <div
-              key={message.id}
-              className={`flex ${message.sender === "admin" ? "justify-start" : "justify-end"}`}
-            >
-              <div
-                className={`p-3 max-w-xs rounded-lg shadow-md ${
-                  message.sender === "admin"
-                    ? "bg-gray-200 text-black rounded-bl-none"
-                    : "bg-blue-900 text-white rounded-br-none"
-                }`}
-              >
-                <p className="text-sm">{message.details}</p>
-                <p className="text-xs text-gray-400 mt-1 text-right">
-                  {message.date ? message.date.toDate().toLocaleString() : "Date not available"}
+      {/* Rejected Messages Modal */}
+      {showRejectedModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white border-2 rounded-lg p-4 shadow-lg w-8/12 flex flex-col">
+            <h6 className="text-black mb-4">
+              <b>Rejected Messages:</b>
+            </h6>
+            <div className="flex flex-col mb-4 p-2 h-80 overflow-y-scroll text-black space-y-2">
+              {rejectedMessages.length > 0 ? (
+                rejectedMessages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${
+                      message.sender === "admin"
+                        ? "justify-start"
+                        : "justify-end"
+                    }`}
+                  >
+                    <div
+                      className={`p-3 max-w-xs rounded-lg shadow-md ${
+                        message.sender === "admin"
+                          ? "bg-gray-200 text-black rounded-bl-none"
+                          : "bg-blue-900 text-white rounded-br-none"
+                      }`}
+                    >
+                      <p className="text-sm">{message.details}</p>
+                      <p className="text-xs text-gray-400 mt-1 text-right">
+                        {message.date
+                          ? message.date.toDate().toLocaleString()
+                          : "Date not available"}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500 text-center p-12">
+                  No rejected messages yet.
                 </p>
-              </div>
+              )}
             </div>
-          ))
-        ) : (
-          <p className="text-gray-500 text-center p-12">No rejected messages yet.</p>
-        )}
-      </div>
-      <button onClick={() => setShowRejectedModal(false)} className="mt-4 px-3 py-2 bg-gray-300 text-red-900 rounded-lg">
-        Close
-      </button>
-    </div>
-  </div>
-)}
+            <button
+              onClick={() => setShowRejectedModal(false)}
+              className="mt-4 px-3 py-2 bg-gray-300 text-red-900 rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">

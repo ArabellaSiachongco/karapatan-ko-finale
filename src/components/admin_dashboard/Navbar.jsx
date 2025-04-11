@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../layouts/admin_navbar.css";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../database/firebase";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navbarRef = useRef(null);
   const navLinksRef = useRef(null);
   const overlayRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,11 +47,21 @@ const Navbar = () => {
     document.body.style.overflow = !isMenuOpen ? "hidden" : "";
   };
 
+  const handleLogout = async () => {
+    try {
+      await auth.signOut(); // sign out from Firebase
+      navigate("/login", { replace: true }); // redirect & remove history
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
   return (
     <>
       <nav className="admin_navbar" ref={navbarRef}>
         <div className="admin_navbar-container">
-          <div className="text-white dark:text-gray-200 text-lg font-bold admin_logo highlight-border">KARAPATAN KO</div>
+          <div className="text-white dark:text-gray-200 text-lg font-bold admin_logo highlight-border">
+            KARAPATAN KO
+          </div>
           <button
             className={`admin-mobile-nav-toggle ${isMenuOpen ? "active" : ""}`}
             aria-label="Toggle navigation"
@@ -58,9 +71,15 @@ const Navbar = () => {
             <span className="bar"></span>
             <span className="bar"></span>
           </button>
-          <ul className={`admin-nav-links ${isMenuOpen ? "active" : ""}`} ref={navLinksRef}>
+          <ul
+            className={`admin-nav-links ${isMenuOpen ? "active" : ""}`}
+            ref={navLinksRef}
+          >
             <li>
-              <a href="/login" onClick={toggleMenu} >HOME</a>
+              {/* <a href="/" onClick={toggleMenu} >HOME</a> */}
+              <button onClick={handleLogout} className="logout-btn">
+                LOGOUT
+              </button>
             </li>
           </ul>
         </div>
@@ -70,7 +89,6 @@ const Navbar = () => {
         ref={overlayRef}
         onClick={toggleMenu}
       ></div>
-
     </>
   );
 };

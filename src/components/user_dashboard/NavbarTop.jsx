@@ -4,6 +4,8 @@ import { styles } from "../../styles";
 import { navLinks } from "../constant";
 import { FiX } from "react-icons/fi"; // Close icon
 import { VscListSelection } from "react-icons/vsc"; // Hamburger icon
+import { auth } from "../database/firebase";
+import { VscSignOut } from "react-icons/vsc";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -31,6 +33,16 @@ const Navbar = () => {
     }
   };
 
+  // Handle logout functionality
+  const handleLogout = async () => {
+    try {
+      await auth.signOut(); // Sign out from Firebase
+      navigate("/login", { replace: true }); // Redirect to login page
+    } catch (error) {
+      console.error("Logout error:", error); // Handle logout errors
+    }
+  };
+
   return (
     <nav
       className={`${
@@ -46,7 +58,11 @@ const Navbar = () => {
           className="flex items-center gap-2"
           onClick={() => handleNavigation("/")}
         >
-          <img className="w-9 h-9 object-contain hidden sm:block" src="/logo2.png" alt="Logo" />
+          <img
+            className="w-9 h-9 object-contain hidden sm:block"
+            src="/logo2.png"
+            alt="Logo"
+          />
           <p className="sm:flex hidden text-white text-[18px] font-bold cursor-pointer flex">
             Karapatan &nbsp;
             <span className="sm:block hidden">Ko</span>
@@ -66,6 +82,15 @@ const Navbar = () => {
               {nav.title}
             </li>
           ))}
+          {/* Add Logout button on desktop */}
+          <li>
+            <button
+              onClick={handleLogout}
+              className="text-white hover:text-secondary text-[18px] font-medium cursor-pointer"
+            >
+              LOGOUT
+            </button>
+          </li>
         </ul>
 
         {/* Mobile menu icon */}
@@ -130,6 +155,17 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Mobile Logout Button */}
+            <div className="p-4">
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 text-white p-3 bg-red-500 hover:bg-red-600 rounded-lg w-full mt-4"
+              >
+                <VscSignOut className="text-white w-5 h-5" />
+                LOGOUT
+              </button>
+            </div>
           </nav>
         </div>
       </div>

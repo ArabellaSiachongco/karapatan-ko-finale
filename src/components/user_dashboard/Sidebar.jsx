@@ -9,6 +9,8 @@ import {
   table_of_content_civil_law,
 } from "../user_dashboard/books/pages/table_of_content.json";
 import { VscSignOut } from "react-icons/vsc";
+import { auth } from "../database/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -27,10 +29,21 @@ const Sidebar = () => {
       return [];
     }
   })();
+  const navigate = useNavigate();
 
+  // Handle navigation click
   const handleNavClick = (title) => {
     setActive(title);
     setIsNavbarVisible(false);
+  };
+  // Handle logout functionality
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();  // Sign out from Firebase
+      navigate("/login", { replace: true });  // Redirect to login page
+    } catch (error) {
+      console.error("Logout error:", error);  // Handle logout errors
+    }
   };
 
   return (
@@ -109,6 +122,15 @@ const Sidebar = () => {
                 </Link>
               )}
             </ul>
+
+            {/* Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-white p-3 bg-red-500 hover:bg-red-600 rounded-lg w-full mt-4"
+            >
+              <VscSignOut className="text-white w-5 h-5" />
+              LOGOUT
+            </button>
           </nav>
         </div>
       </div>
