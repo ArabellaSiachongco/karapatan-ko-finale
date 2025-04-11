@@ -491,24 +491,28 @@ const Message = () => {
 
       {/* BTN FOR ARC AND REJ  */}
       {/* Archived Appointments Button */}
-      <button
-        className="mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
-        onClick={toggleArchived}
-      >
-        {showArchived
-          ? "Hide Archived Appointments"
-          : "Show Archived Appointments"}
-      </button>
 
-      {/* Rejected Appointments Button */}
-      <button
-        className="relative ml-8 mt-4 px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
-        onClick={fetchRejectedAppointments}
-      >
-        {showRejectedAppointments
-          ? "Hide Rejected Appointments"
-          : "Show Rejected Appointments"}
-      </button>
+      <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
+          {/* Archived Appointments Button */}
+          <button
+            className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
+            onClick={toggleArchived}
+          >
+            {showArchived
+              ? "Hide Archived Appointments"
+              : "Show Archived Appointments"}
+          </button>
+
+          {/* Rejected Appointments Button */}
+          <button
+            className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
+            onClick={fetchRejectedAppointments}
+          >
+            {showRejectedAppointments
+              ? "Hide Rejected Appointments"
+              : "Show Rejected Appointments"}
+          </button>
+        </div>
 
       {/* TABLE FOR THE ARHIVED AND REJECTED APPOINTMENTS */}
       {/* Archived Appointments Table */}

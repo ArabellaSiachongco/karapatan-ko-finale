@@ -456,7 +456,9 @@ const MagalgalitAppointmentTable = () => {
               {renderCalendarDays().map((date, index) => (
                 <div
                   key={index}
-                  className={`py-2 px-4 rounded-lg cursor-pointer ${getCalendarDayClass(date)}`}
+                  className={`py-2 px-4 rounded-lg cursor-pointer ${getCalendarDayClass(
+                    date
+                  )}`}
                   onClick={() => date && handleDateClick(date)}
                 >
                   {date ? date.getDate() : ""}
@@ -494,7 +496,7 @@ const MagalgalitAppointmentTable = () => {
             <button
               onClick={handlePrevArticleClick}
               className="px-6 py-2 border-2 border-white text-white rounded-lg hover:bg-red-900"
-              >
+            >
               Go back
             </button>
 

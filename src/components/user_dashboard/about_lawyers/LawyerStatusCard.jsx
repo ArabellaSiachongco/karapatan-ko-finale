@@ -54,19 +54,27 @@ const LawyerStatusCard = ({ LawyerProfile }) => {
         <div className="grid grid-cols-1 gap-1 text-xs">
           <div>
             <p className="font-semibold">TALENT</p>
-            <p className="text-left tracking-wide text-sm text-white mb-2">{LawyerProfile.talent}</p>
+            <p className="text-left tracking-wide text-sm text-white mb-2">
+              {LawyerProfile.talent}
+            </p>
           </div>
           <div>
             <p className="font-semibold">CONTACT NUMBER:</p>
-            <p className="text-left tracking-wide text-sm text-white mb-2">{LawyerProfile.contact}</p>
+            <p className="text-left tracking-wide text-sm text-white mb-2">
+              {LawyerProfile.contact}
+            </p>
           </div>
           <div>
             <p className="font-semibold">GMAIL:</p>
-            <p className="text-left tracking-wide text-sm text-white mb-2">{LawyerProfile.gmail}</p>
+            <p className="text-left tracking-wide text-sm text-white mb-2">
+              {LawyerProfile.gmail}
+            </p>
           </div>
           <div>
             <p className="font-semibold mt-2">ADDRESS:</p>
-            <p className="text-left tracking-wide text-sm text-white mb-2">{LawyerProfile.address}</p>
+            <p className="text-left tracking-wide text-sm text-white mb-2">
+              {LawyerProfile.address}
+            </p>
           </div>
         </div>
 
@@ -75,7 +83,10 @@ const LawyerStatusCard = ({ LawyerProfile }) => {
             <Link
               to={{
                 pathname: LawyerProfile.btn,
-                state: { lawyerName: LawyerProfile.name, lawyerProfile: LawyerProfile },
+                state: {
+                  lawyerName: LawyerProfile.name,
+                  lawyerProfile: LawyerProfile,
+                },
               }}
               className="px-6 py-2 border-2 border-orange-500 hover:bg-slate-700 text-white rounded-lg text-sm font-semibold flex items-center"
             >

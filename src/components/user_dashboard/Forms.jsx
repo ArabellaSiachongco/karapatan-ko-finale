@@ -189,7 +189,6 @@ const Forms = () => {
             SPECIAL POWER OF ATTORNEY
           </h2>
           <p className="text-black mb-4">KNOW ALL MEN BY THESE PRESENTS:</p>
-
           <p className="mb-2">
             I,{" "}
             <input
@@ -258,7 +257,6 @@ const Forms = () => {
             and stead, to do and perform the following acts, deeds, and things
             to wit: {""}
           </p>
-
           <p className="mb-5 mt-5">
             To ask, demand, collect, and receive all sums of money either in
             cash or check(s) payable or owing to me from {""}
@@ -276,18 +274,15 @@ const Forms = () => {
             banking and financial institution duly authorized by the Banko
             Sentral ng Pilipinas.
           </p>
-
           <p className="mb-5">
             To sign and execute any and all papers with all and any third
             persons, concerns and entities in connection with the above-given
             powers; and
           </p>
-
           <p className="mb-5">
             To do and perform on my behalf acts which are related to the above
             powers.
           </p>
-
           <p className="mb-5">
             HEREBY GIVING AND GRANTING unto my said attorney full power and
             authority to do whatsoever requisite or necessary or proper to be
@@ -315,7 +310,8 @@ const Forms = () => {
               className="border-b w-1/3 border-black bg-transparent text-black focus:outline-none"
             />
             .
-          </p><br/>
+          </p>
+          <br />
           <p className="mb-2">
             SIGNED IN THE PRESENCE OF:{" "}
             <input
@@ -333,12 +329,12 @@ const Forms = () => {
               onChange={handleChange}
               className="border-b w-1/3 border-black bg-transparent text-black focus:outline-none"
             />
-          </p> <br/>
+          </p>{" "}
+          <br />
           <p className="mb-2">
             At the Philippine Consulate General, Baguio City, Benguet,
             Philippines.
           </p>
-
           <button
             className="btn__filled px-10 py-2 mt-8 text-white bg-green-800 hover:bg-green-600"
             onClick={handleDownload}

@@ -1,9 +1,9 @@
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <Navbar />  
+      <Navbar />
       <main>{children}</main>
     </div>
   );
@@ -11,4 +11,4 @@ const Layout = ({ children }) => {
 
 export default Layout;
 
-// layout kasi ng buong navbar hahaha 
+// layout kasi ng buong navbar hahaha

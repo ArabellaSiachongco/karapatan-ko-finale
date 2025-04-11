@@ -5,11 +5,4 @@ import Footer from "./Footer";
 import Testimonials from "./Testimonials";
 import NavbarTop from "./NavbarTop";
 
-export {
-    Features,
-    Navbar,
-    Header,
-    Footer,
-    Testimonials,
-    NavbarTop
-};
+export { Features, Navbar, Header, Footer, Testimonials, NavbarTop };

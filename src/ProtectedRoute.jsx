@@ -7,7 +7,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
 
   useEffect(() => {
     // Check authentication status using Firebase
-    const unsubscribe = auth.onAuthStateChanged(user => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuthenticated(true); // User is authenticated
       } else {
@@ -29,5 +29,3 @@ const ProtectedRoute = ({ element, ...rest }) => {
 };
 
 export default ProtectedRoute;
-
-

@@ -10,7 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: "Poppins", sans-serif; */
-  font-family: sans-serif, "Poppins", "Outfit",  ;
+  font-family: sans-serif, "Poppins", "Outfit", ;
   scroll-behavior: smooth;
   /* to make it bg black */
   color-scheme: dark;
@@ -34,11 +34,9 @@
 .violet-gradient {
   background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: -webkit-linear-gradient(-90deg,
+      #804dee 0%,
+      rgba(60, 51, 80, 0) 100%);
 }
 
 .green-pink-gradient {
@@ -53,16 +51,22 @@
   background: -webkit-linear-gradient(to top, #f12711, #f5af19);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #f12711, #f5af19);
-  border-radius: 12px; /* Optional for rounded corners */
+  border-radius: 12px;
+  /* Optional for rounded corners */
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5),
-    /* Deep shadow for contrast */ 0 4px 6px rgba(0, 0, 0, 0.3); /* Softer shadow for depth */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth effect */
+    /* Deep shadow for contrast */
+    0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Softer shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Smooth effect */
 }
 
 /* Add hover or tilt effect */
 .orange-gradient:hover {
-  transform: translateY(-10px); /* Slight lift */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6), 0 6px 10px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+  transform: translateY(-10px);
+  /* Slight lift */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6), 0 6px 10px rgba(0, 0, 0, 0.4);
+  /* Enhance shadow on hover */
 }
 
 .highlight-border {
@@ -142,6 +146,7 @@ canvas {
 }
 
 @keyframes mulShdSpin {
+
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em #ffffff,

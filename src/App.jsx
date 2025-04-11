@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import checkUserRole from "./components/database/admin_dashboard_auth";
 
@@ -44,58 +44,58 @@ import Constitution from "./components/user_dashboard/books/laws/constitution_co
 import FamilyCode from "./components/user_dashboard/books/laws/family_code/FamilyCode";
 import CivilLaw from "./components/user_dashboard/books/laws/civil_law/CivilLaw";
 
-import ConstitutionOne from "./components/user_dashboard/books/laws/constitution_content/ConstitutionOne";
-import ConstitutionTwo from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTwo";
-import ConstitutionThree from "./components/user_dashboard/books/laws/constitution_content/ConstitutionThree";
-import ConstitutionFour from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFour";
-import ConstitutionFive from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFive";
-import ConstitutionSix from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSix";
-import ConstitutionSeven from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSeven";
-import ConstitutionEight from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEight";
-import ConstitutionNine from "./components/user_dashboard/books/laws/constitution_content/ConstitutionNine";
-import ConstitutionTen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTen";
-import ConstitutionEleven from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEleven";
-import ConstitutionTwelve from "./components/user_dashboard/books/laws/constitution_content/ConstitutionTwelve";
-import ConstitutionThirteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionThirteen";
-import ConstitutionFourteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFourteen";
-import ConstitutionFifteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionFifteen";
-import ConstitutionSixteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSixteen";
-import ConstitutionSeventeen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionSeventeen";
-import ConstitutionEighteen from "./components/user_dashboard/books/laws/constitution_content/ConstitutionEighteen";
+const ConstitutionOne = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionOne"));
+const ConstitutionTwo = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionTwo"));
+const ConstitutionThree = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionThree"));
+const ConstitutionFour = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionFour"));
+const ConstitutionFive = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionFive"));
+const ConstitutionSix = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionSix"));
+const ConstitutionSeven = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionSeven"));
+const ConstitutionEight = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionEight"));
+const ConstitutionNine = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionNine"));
+const ConstitutionTen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionTen"));
+const ConstitutionEleven = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionEleven"));
+const ConstitutionTwelve = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionTwelve"));
+const ConstitutionThirteen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionThirteen"));
+const ConstitutionFourteen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionFourteen"));
+const ConstitutionFifteen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionFifteen"));
+const ConstitutionSixteen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionSixteen"));
+const ConstitutionSeventeen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionSeventeen"));
+const ConstitutionEighteen = lazy(() => import("./components/user_dashboard/books/laws/constitution_content/ConstitutionEighteen"));
 
-import RA_8371_One from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_One";
-import RA_8371_Two from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Two";
-import RA_8371_Three from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Three";
-import RA_8371_Four from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Four";
-import RA_8371_Five from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Five";
-import RA_8371_Six from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Six";
-import RA_8371_Seven from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Seven";
-import RA_8371_Eight from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eight";
-import RA_8371_Nine from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Nine";
-import RA_8371_Ten from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Ten";
-import RA_8371_Eleven from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eleven";
-import RA_8371_Twelve from "./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Twelve";
+const RA_8371_One = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_One"));
+const RA_8371_Two = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Two"));
+const RA_8371_Three = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Three"));
+const RA_8371_Four = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Four"));
+const RA_8371_Five = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Five"));
+const RA_8371_Six = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Six"));
+const RA_8371_Seven = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Seven"));
+const RA_8371_Eight = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eight"));
+const RA_8371_Nine = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Nine"));
+const RA_8371_Ten = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Ten"));
+const RA_8371_Eleven = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Eleven"));
+const RA_8371_Twelve = lazy(() => import("./components/user_dashboard/books/laws/peoples_rights_content/RA_8371_Twelve"));
 
-import FamilyOne from "./components/user_dashboard/books/laws/family_code/FamilyOne";
-import FamilyTwo from "./components/user_dashboard/books/laws/family_code/FamilyTwo";
-import FamilyThree from "./components/user_dashboard/books/laws/family_code/FamilyThree";
-import FamilyFour from "./components/user_dashboard/books/laws/family_code/FamilyFour";
-import FamilyFive from "./components/user_dashboard/books/laws/family_code/FamilyFive";
-import FamilySix from "./components/user_dashboard/books/laws/family_code/FamilySix";
-import FamilySeven from "./components/user_dashboard/books/laws/family_code/FamilySeven";
-import FamilyEight from "./components/user_dashboard/books/laws/family_code/FamilyEight";
-import FamilyNine from "./components/user_dashboard/books/laws/family_code/FamilyNine";
-import FamilyTen from "./components/user_dashboard/books/laws/family_code/FamilyTen";
-import FamilyEleven from "./components/user_dashboard/books/laws/family_code/FamilyEleven";
-import FamilyTwelve from "./components/user_dashboard/books/laws/family_code/FamilyTwelve";
-import FamilyThirteen from "./components/user_dashboard/books/laws/family_code/FamilyThirteen";
+const FamilyOne = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyOne"));
+const FamilyTwo = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyTwo"));
+const FamilyThree = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyThree"));
+const FamilyFour = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyFour"));
+const FamilyFive = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyFive"));
+const FamilySix = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilySix"));
+const FamilySeven = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilySeven"));
+const FamilyEight = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyEight"));
+const FamilyNine = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyNine"));
+const FamilyTen = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyTen"));
+const FamilyEleven = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyEleven"));
+const FamilyTwelve = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyTwelve"));
+const FamilyThirteen = lazy(() => import("./components/user_dashboard/books/laws/family_code/FamilyThirteen"));
 
-import CivilOne from "./components/user_dashboard/books/laws/civil_law/CivilOne";
-import CivilTwo from "./components/user_dashboard/books/laws/civil_law/CivilTwo";
-import CivilThree from "./components/user_dashboard/books/laws/civil_law/CivilThree";
-import CivilFour from "./components/user_dashboard/books/laws/civil_law/CivilFour";
-import CivilFive from "./components/user_dashboard/books/laws/civil_law/CivilFive";
-import CivilSix from "./components/user_dashboard/books/laws/civil_law/CivilSix";
+const CivilOne = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilOne"));
+const CivilTwo = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilTwo"));
+const CivilThree = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilThree"));
+const CivilFour = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilFour"));
+const CivilFive = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilFive"));
+const CivilSix = lazy(() => import("./components/user_dashboard/books/laws/civil_law/CivilSix"));
 
 const NavbarWrapper = ({ children }) => {
   const location = useLocation();
@@ -153,6 +153,7 @@ const App = () => {
   
   return (
     <NavbarWrapper>
+      <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {/* Default Route */}
         <Route path="/" element={<StarsWrapper><Login /></StarsWrapper>} />
@@ -261,6 +262,7 @@ const App = () => {
         {/* 404 Fallback */}
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
+      </Suspense>
     </NavbarWrapper>
   );
 };

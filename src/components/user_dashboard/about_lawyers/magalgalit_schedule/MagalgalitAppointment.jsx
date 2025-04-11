@@ -66,7 +66,9 @@ const MagalgalitAppointment = () => {
           <tr>
             <td className="p-3 text-sm">
               <Link to="/terms-and-conditions">
-                <button className="text-blue-300"><i>View Terms and Conditions</i></button>
+                <button className="text-blue-300">
+                  <i>View Terms and Conditions</i>
+                </button>
               </Link>{" "}
             </td>
           </tr>
@@ -84,7 +86,9 @@ const MagalgalitAppointment = () => {
         <div className="w-1/4"></div>
         <Link
           to={isChecked ? "/appointmentTableLawyer2" : "#"}
-          className={`px-6 py-2 border-2 text-white rounded-lg text-sm font-semibold flex items-center ${isChecked ? "bg-green-800" : "bg-red-950 cursor-not-allowed"}`}
+          className={`px-6 py-2 border-2 text-white rounded-lg text-sm font-semibold flex items-center ${
+            isChecked ? "bg-green-800" : "bg-red-950 cursor-not-allowed"
+          }`}
           onClick={(e) => {
             if (!isChecked) e.preventDefault();
           }}

@@ -134,115 +134,115 @@ const PalmerAppointmentResult = () => {
       </p>
 
       {/* Appointment Details */}
-        <div className="mt-6 mb-6">
-          <table className="min-w-full table-auto border-collapse border border-gray-300">
-            <tbody>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  First Name
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.firstName}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Middle Name
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.middleName || "N/A"}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Last Name
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.lastName}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Date of Appointment
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.date}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Time of Appointment
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.time}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Selected Reason
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.reasons || "No reason selected"}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="mt-6 mb-6">
+        <table className="min-w-full table-auto border-collapse border border-gray-300">
+          <tbody>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                First Name
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.firstName}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Middle Name
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.middleName || "N/A"}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Last Name
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.lastName}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Date of Appointment
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.date}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Time of Appointment
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.time}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Selected Reason
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.reasons || "No reason selected"}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <br />
-        <p className={styles.paragraphSubText}>Contact Information</p>
-        <div className="mt-6 mb-6">
-          <table className="min-w-full table-auto border-collapse border border-gray-300">
-            <tbody>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Email
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {formData.email}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <br />
+      <br />
+      <p className={styles.paragraphSubText}>Contact Information</p>
+      <div className="mt-6 mb-6">
+        <table className="min-w-full table-auto border-collapse border border-gray-300">
+          <tbody>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Email
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {formData.email}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
 
-        <p className={styles.paragraphSubText}>
-          You've got an appointment with an attorney
-        </p>
-        <div className="mt-6 mb-6">
-          <table className="min-w-full table-auto border-collapse border border-gray-300">
-            <tbody>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Name
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  {lawyerProfiles[0].name}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Title
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  Attorney at Law specializing in {lawyerProfiles[0].title}
-                </td>
-              </tr>
-              <tr>
-                <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
-                  Address
-                </td>
-                <td className="w-2/3 px-4 py-3 border border-gray-300">
-                  Insular Life Building, Legarda Street, corner Abanao
-                  extension, Baguio, 2600 Benguet
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <img src="/map.png"/>
+      <p className={styles.paragraphSubText}>
+        You've got an appointment with an attorney
+      </p>
+      <div className="mt-6 mb-6">
+        <table className="min-w-full table-auto border-collapse border border-gray-300">
+          <tbody>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Name
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                {lawyerProfiles[0].name}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Title
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                Attorney at Law specializing in {lawyerProfiles[0].title}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-1/3 px-4 py-3 text-right border border-gray-300 font-semibold">
+                Address
+              </td>
+              <td className="w-2/3 px-4 py-3 border border-gray-300">
+                Insular Life Building, Legarda Street, corner Abanao extension,
+                Baguio, 2600 Benguet
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <img src="/map.png" />
 
       <div className="mt-10 text-center flex justify-between">
         <button

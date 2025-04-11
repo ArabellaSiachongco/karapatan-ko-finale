@@ -69,7 +69,11 @@ const EvascoAppointmentResult = () => {
 
     try {
       // Save appointment to Firestore
-      const appointmentRef = doc(db, "appointments", `${formData.email}_${formData.date}_${formData.time}`);
+      const appointmentRef = doc(
+        db,
+        "appointments",
+        `${formData.email}_${formData.date}_${formData.time}`
+      );
       await setDoc(appointmentRef, {
         firstName: formData.firstName,
         middleName: formData.middleName || "",
@@ -81,7 +85,8 @@ const EvascoAppointmentResult = () => {
         lawyer: {
           name: lawyerProfiles[2].name,
           title: lawyerProfiles[2].title,
-          address: "Insular Life Building, Legarda Street, corner Abanao extension, Baguio, 2600 Benguet",
+          address:
+            "Insular Life Building, Legarda Street, corner Abanao extension, Baguio, 2600 Benguet",
         },
         timestamp: new Date(), // Add timestamp for reference
       });
@@ -203,7 +208,9 @@ const EvascoAppointmentResult = () => {
       </div>
       <br />
 
-      <p className={styles.paragraphSubText}>You've got an appointment with an attorney</p>
+      <p className={styles.paragraphSubText}>
+        You've got an appointment with an attorney
+      </p>
       <div className="mt-6 mb-6">
         <table className="min-w-full table-auto border-collapse border border-gray-300">
           <tbody>
@@ -228,15 +235,16 @@ const EvascoAppointmentResult = () => {
                 Address
               </td>
               <td className="w-2/3 px-4 py-3 border border-gray-300">
-                Insular Life Building, Legarda Street, corner Abanao extension, Baguio, 2600 Benguet
+                Insular Life Building, Legarda Street, corner Abanao extension,
+                Baguio, 2600 Benguet
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      
-      <img src="/map.png"/>
-      
+
+      <img src="/map.png" />
+
       <div className="mt-10 text-center flex justify-between">
         <button
           onClick={handlePrevArticleClick}
@@ -248,7 +256,7 @@ const EvascoAppointmentResult = () => {
         <button
           onClick={handleConfirmClick}
           className="px-6 py-2 border-2 border-white text-white rounded-lg hover:bg-teal-900"
-          >
+        >
           Confirm
         </button>
       </div>

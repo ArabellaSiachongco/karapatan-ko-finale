@@ -5,8 +5,8 @@ import "../../../../index.css";
 import { useNavigate } from "react-router-dom";
 
 const TermsAndConditions_evasco = () => {
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+
   return (
     <div>
       <h1 className={`${styles.AiText} highlight-border`}>

@@ -67,16 +67,10 @@ const ForgotPass = () => {
               </button>
             </form>
             <div className="button-grid">
-              <button
-                onClick={() => navigate("/signup")}
-                className="pass"
-              >
+              <button onClick={() => navigate("/signup")} className="pass">
                 Sign Up &nbsp; |
               </button>
-              <button
-                onClick={() => navigate("/login")}
-                className="pass"
-              >
+              <button onClick={() => navigate("/login")} className="pass">
                 Login
               </button>
             </div>

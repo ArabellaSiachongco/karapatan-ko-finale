@@ -39,10 +39,10 @@ const Sidebar = () => {
   // Handle logout functionality
   const handleLogout = async () => {
     try {
-      await auth.signOut();  // Sign out from Firebase
-      navigate("/login", { replace: true });  // Redirect to login page
+      await auth.signOut(); // Sign out from Firebase
+      navigate("/login", { replace: true }); // Redirect to login page
     } catch (error) {
-      console.error("Logout error:", error);  // Handle logout errors
+      console.error("Logout error:", error); // Handle logout errors
     }
   };
 

@@ -27,7 +27,7 @@ const CivilFive = () => {
   const handleNextArticleClick = () => {
     navigate("/civilSix");
   };
-  
+
   const handlePrevArticleClick = () => {
     navigate("/civilFour");
   };
@@ -87,7 +87,7 @@ const CivilFive = () => {
         <div>
           {civilFive.civilFive.map((item) => (
             <div key={item.id} className="my-5">
-            <h5 className={styles.paragraphSubText}>{item.subtitle}</h5>
+              <h5 className={styles.paragraphSubText}>{item.subtitle}</h5>
               <h4 className={`${styles.headText} mb-10`}>{item.title}</h4>
               <div>
                 {item.article.map((article, index) => (
