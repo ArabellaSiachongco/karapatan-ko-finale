@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../layouts/gemini.css";
 import { Context } from "./Context.jsx";
 import Sidebar from "./Sidebar.jsx";
+import { styles } from "../../../styles.js";
 import { getAuth } from "firebase/auth";
 import {
   getFirestore,
@@ -157,6 +158,7 @@ const GeminiMain = () => {
                 Hello, {userData ? userData.firstName : "User"}
               </p>
               <p>How can I help you today?</p>
+              <i><p className="text-[24px]">Paano kita matutulungan ngayon</p></i>
             </div>
           )}
 
@@ -166,7 +168,7 @@ const GeminiMain = () => {
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
                 type="text"
-                placeholder="Enter a prompt here"
+                placeholder="Message"
                 onKeyDown={handleKeyDown}
               />
               <div>

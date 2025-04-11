@@ -5,6 +5,7 @@ import { styles } from "../../../../../styles.js";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import civilThree from "../../pages/civil_law/civilThree.json";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
+import translateText from "../../../../database/translate.js";
 
 const CivilThree = () => {
   const navigate = useNavigate();
@@ -80,6 +81,20 @@ const CivilThree = () => {
       console.error("Speech synthesis error:", error);
     }
   };
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
 
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
@@ -133,6 +148,12 @@ const CivilThree = () => {
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>
+              {translatedWord && (
+              <div className="mt-2">
+                <strong>In Tagalog:</strong>
+                <p>{translatedWord}</p>
+              </div>
+            )}
             </div>
           )}
 

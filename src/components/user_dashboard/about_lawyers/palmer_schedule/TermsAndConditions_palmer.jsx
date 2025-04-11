@@ -10,126 +10,143 @@ const TermsAndConditions_palmer = () => {
   return (
     <div>
       <h1 className={`${styles.AiText} highlight-border`}>
-        Terms and Conditions for Data Privacy
+        Mga Tuntunin at Kundisyon para sa Privacy ng Data
       </h1>
       <h2 className={`${styles.paragraphSubText} mt-4`}>
-        Data Privacy & Security Policy
+        Patakaran sa Privacy at Seguridad ng Data
       </h2>
+
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        1. Data Collection & Usage
+        1. Pagkolekta at Paggamit ng Data
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        We collect and process user data solely for the purpose of providing
-        legal information, services, and communication. By using our website,
-        you consent to the collection, use, and processing of your data as
-        outlined in this policy.
+        Kinokolekta at pinoproseso namin ang data ng user para lamang sa layunin
+        ng pagbibigay ng legal na impormasyon, serbisyo, at komunikasyon. Sa
+        paggamit ng aming website, sumasang-ayon ka sa pagkolekta, paggamit, at
+        pagproseso ng iyong data ayon sa patakarang ito.
+        <br />
+        <i>
+          We collect and process user data solely for the purpose of providing
+          legal information, services, and communication...
+        </i>
       </p>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        2. Data Protection & Security Measures
+        2. Proteksyon at Seguridad ng Data
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        We implement industry-standard security measures to protect user data,
-        including encryption, secure servers, and access control. However, no
-        method of online transmission is 100% secure, and we cannot guarantee
-        absolute security.
+        Gumagamit kami ng mga industry-standard na hakbang sa seguridad upang
+        maprotektahan ang data ng user, kabilang ang encryption, secure na
+        server, at access control. Gayunpaman, walang paraan ng online
+        transmission na 100% secure, at hindi namin maipapangako ang ganap na
+        seguridad.
+        <br />
+        <i>
+          We implement industry-standard security measures to protect user
+          data...
+        </i>
       </p>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        3. Third-Party Sharing
+        3. Pagbabahagi sa Iba
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        We do not sell, rent, or share personal data with third parties except:
+        Hindi namin ibinebenta, inuupa, o ibinabahagi ang personal na data sa
+        iba maliban kung:
       </p>
       <ul>
-        <li className={`${styles.paragraphSubTextLower} text-white `}>
-          • When required by law.
+        <li className={`${styles.paragraphSubTextLower} text-white`}>
+          • Kinakailangan ng batas.
         </li>
-        <li className={`${styles.paragraphSubTextLower} text-white `}>
-          • When necessary to provide requested services (e.g., legal
-          consultations).
+        <li className={`${styles.paragraphSubTextLower} text-white`}>
+          • Kailangan para sa mga serbisyong hiniling (hal. legal na
+          konsultasyon).
         </li>
-        <li className={`${styles.paragraphSubTextLower} text-white `}>
-          • With user consent.
+        <li className={`${styles.paragraphSubTextLower} text-white`}>
+          • May pahintulot mula sa user.
         </li>
       </ul>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        4. Data Breach Policy
+        4. Patakaran sa Data Breach
       </h3>
       <p className={`${styles.dictionaryText} text-white`}>
-        In the event of a data breach, we will:
+        Sa kaso ng data breach, kami ay:
       </p>
       <ul>
-        <li className={`${styles.paragraphSubTextLower} text-white `}>
-          • Notify affected users as soon as possible via email or website
-          notice.
+        <li className={`${styles.paragraphSubTextLower} text-white`}>
+          • Magbibigay-alam agad sa mga apektadong user sa pamamagitan ng email
+          o paabiso sa website.
         </li>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Provide details about the nature of the breach and the affected
-          data.
+          • Magbibigay ng detalye tungkol sa insidente at kung anong data ang
+          naapektuhan.
         </li>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Implement corrective measures to prevent future incidents.
+          • Magsasagawa ng mga hakbang upang maiwasan ang mga susunod na
+          insidente.
         </li>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Report the incident to relevant authorities if required by law.
+          • Mag-uulat sa mga awtoridad kung kinakailangan ng batas.
         </li>
       </ul>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        5. User Rights & Responsibilities
+        5. Mga Karapatan at Responsibilidad ng User
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        Users have the right to:
+        May karapatan ang user na:
       </p>
       <ul>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Request access to their stored data.
+          • Humiling ng access sa kanilang data.
         </li>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Request corrections or deletions of personal information.
+          • Humiling ng pagwawasto o pagbura ng personal na impormasyon.
         </li>
         <li className={`${styles.paragraphSubTextLower} text-white`}>
-          • Withdraw consent for data processing.
+          • Bawiin ang pahintulot sa pagproseso ng data.
         </li>
       </ul>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        Users are responsible for keeping their login credentials confidential
-        and reporting any suspicious activities.
+        Responsibilidad ng user na panatilihing ligtas ang kanilang login
+        credentials at i-report agad ang anumang kahina-hinalang aktibidad.
       </p>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        6. Disclaimer & Limitation of Liability
+        6. Disclaimer at Limitasyon ng Pananagutan
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        While we take reasonable steps to protect user data, we are not liable
-        for any unauthorized access, hacking, or breaches beyond our control.
-        Users acknowledge the inherent risks of sharing data online and agree
-        that our liability is limited to the extent permitted by law.
+        Habang kami ay nagsasagawa ng mga hakbang upang maprotektahan ang data,
+        hindi kami responsable sa mga hindi awtorisadong pag-access o insidente
+        ng hacking na wala sa aming kontrol. Naiintindihan ng user ang mga
+        panganib ng pagbabahagi ng data online at sumasang-ayon sa limitasyon ng
+        aming pananagutan alinsunod sa batas.
       </p>
 
       <h3 className={`${styles.paragraphSubText} mt-4`}>
-        7. Changes to This Policy
+        7. Mga Pagbabago sa Patakarang Ito
       </h3>
       <p className={`${styles.paragraphSubTextLower} text-white`}>
-        We reserve the right to update this policy at any time. Users will be
-        notified of significant changes via email or an announcement on the
-        website.
+        Nananatili sa amin ang karapatang baguhin ang patakarang ito anumang
+        oras. Aabisuhan ang user sa anumang malaking pagbabago sa pamamagitan ng
+        email o abiso sa website.
       </p>
 
       <p className="mt-4">
         <strong>
-          By using this website, you acknowledge and agree to these terms.
+          Sa paggamit ng website na ito, kinikilala at sinasang-ayunan mong
+          sumunod sa mga patakarang ito.
         </strong>
       </p>
+
       <div className="flex justify-between mt-10">
         <button
           type="button"
           onClick={() => navigate("/appointmentLawyer1")}
           className="px-6 py-2 border-2 border-white text-white rounded-lg hover:bg-red-900"
         >
-          Back
+          Bumalik
         </button>
       </div>
     </div>

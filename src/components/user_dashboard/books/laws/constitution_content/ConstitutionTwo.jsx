@@ -5,12 +5,13 @@ import { styles } from "../../../../../styles.js";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import declarations from "../../pages/book_constitution/declaration.json";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
+import translateText from "../../../../database/translate.js";
 
 const ArticleTwo = () => {
   const navigate = useNavigate();
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
-
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
@@ -43,36 +44,38 @@ const ArticleTwo = () => {
       if (!word) {
         throw new Error("No word provided for speech synthesis.");
       }
-  
+
       let textToSpeak = word; // Start with the selected word
       if (definition) {
         textToSpeak += `. Definition: ${definition}`; // Add definition
       }
-  
+
       const utterance = new SpeechSynthesisUtterance(textToSpeak);
       utterance.lang = "en-US";
-  
+
       // Get available voices
       let voices = speechSynthesis.getVoices();
-  
+
       // Find a female voice
-      let femaleVoice = voices.find(voice => 
-        voice.name.includes("Female") || 
-        voice.name.includes("Samantha") || 
-        voice.name.includes("Google UK English Female")
+      let femaleVoice = voices.find(
+        (voice) =>
+          voice.name.includes("Female") ||
+          voice.name.includes("Samantha") ||
+          voice.name.includes("Google UK English Female")
       );
-  
+
       // Set the voice (fallback to first available if no female voice is found)
       utterance.voice = femaleVoice || voices[0] || null;
-  
+
       // If no voices are available, wait for them to load
       if (voices.length === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
-          femaleVoice = voices.find(voice => 
-            voice.name.includes("Female") || 
-            voice.name.includes("Samantha") || 
-            voice.name.includes("Google UK English Female")
+          femaleVoice = voices.find(
+            (voice) =>
+              voice.name.includes("Female") ||
+              voice.name.includes("Samantha") ||
+              voice.name.includes("Google UK English Female")
           );
           utterance.voice = femaleVoice || voices[0] || null;
           speechSynthesis.speak(utterance);
@@ -80,12 +83,25 @@ const ArticleTwo = () => {
       } else {
         speechSynthesis.speak(utterance);
       }
-  
     } catch (error) {
       console.error("Speech synthesis error:", error);
     }
   };
+  // Automatically translate the word when selected
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
 
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
       <ScrollWrapper>
@@ -161,6 +177,13 @@ const ArticleTwo = () => {
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>
+              <br />
+              {translatedWord && (
+                <div className="mt-2">
+                  <strong>In Tagalog:</strong>
+                  <p>{translatedWord}</p>
+                </div>
+              )}
             </div>
           )}
 

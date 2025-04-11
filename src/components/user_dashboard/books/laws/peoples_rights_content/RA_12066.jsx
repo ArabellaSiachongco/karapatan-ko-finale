@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { styles } from "../../../../../styles.js";
@@ -6,10 +7,13 @@ import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import { fadeIn } from "../../../../utility/motion.js";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
 import "../../../../layouts/book.css";
+import translateText from "../../../../database/translate.js";
 
 const RA_12066 = () => {
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
+
   const speakText = (word, definition) => {
     try {
       if (!word) {
@@ -29,7 +33,7 @@ const RA_12066 = () => {
           voice.name.includes("Samantha")
       );
       utterance.voice = femaleVoice || voices[0] || null;
-      if (voices.lenght === 0) {
+      if (voices.length  === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
           femaleVoice = voices.find(
@@ -47,7 +51,22 @@ const RA_12066 = () => {
     } catch (error) {
       console.error("Speech error", error);
     }
-  };
+  }; // Automatically translate the word when selected
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
+
   return (
     <div>
       <ScrollWrapper>
@@ -163,7 +182,7 @@ const RA_12066 = () => {
 
           {/* Links to Table of Contents */}
           <motion.div
-          variants={fadeIn("bottom", "tween", 0.7, 1)}
+            variants={fadeIn("bottom", "tween", 0.7, 1)}
             className="space-y-4 text-left max-w-3xl mx-auto"
           >
             {table_of_content_RA12066.map((item, index) => (
@@ -211,6 +230,12 @@ const RA_12066 = () => {
           </div>
           <hr className="border-2 mb-2" />
           <p>{definition}</p>
+          {translatedWord && (
+            <div className="mt-2">
+              <strong>In Tagalog:</strong>
+              <p>{translatedWord}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

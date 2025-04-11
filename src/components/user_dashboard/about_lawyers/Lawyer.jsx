@@ -16,13 +16,14 @@ const Lawyer = () => {
         <span className="title-with-line mb-5">Legal Matching</span>
       </h2>
       <p className={styles.paragraphSubTextLower}>
-        Finding the right lawyer is a crucial step in ensuring the best possible
-        outcome for your legal case. Whether you're dealing with workplace
-        discrimination, personal injury, or family law matters, we connect you
-        with experienced professionals who specialize in your area of need.
-        Legal match helps you find qualified attorneys and lawyers based on your
-        specific legal concerns, ensuring you receive expert guidance.
-      </p>
+        Use Legal Match to connect with qualified attorneys based on your
+        specific legal needs, such as workplace discrimination, personal injury,
+        or family law. Review profiles, contact potential lawyers, and choose
+        the one that best fits your requirements for expert guidance.
+      </p><br/>
+      <i> <p className={` text-sm{styles.paragraphSubTextLower}`}>
+        Gumamit ng Legal Match upang makipag-ugnay sa mga abogado. Batay sa iyong mga partikular na pangangailangan sa batas, tulad ng diskriminasyon sa lugar ng trabaho, personal, o mga usaping pampamilya. Makipag-ugnayan sa mga potensyal na abogado, at pumili ng pinaka-angkop para sa iyong mga pangangailangan upang makatanggap ng ekspertong gabay.
+      </p></i>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {lawyerProfiles.map((profile, index) => (

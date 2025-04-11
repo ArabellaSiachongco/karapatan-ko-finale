@@ -5,12 +5,14 @@ import { styles } from "../../../../../styles.js";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import familySix from "../../pages/book_family_code/familySix.json";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
+import translateText from "../../../../database/translate.js";
 
 const FamilySix = () => {
   const navigate = useNavigate();
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,7 @@ const FamilySix = () => {
           voice.name.includes("Samantha")
       );
       utterance.voice = femaleVoice || voices[0] || null;
-      if (voices.lenght === 0) {
+      if (voices.length  === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
           femaleVoice = voices.find(
@@ -68,6 +70,21 @@ const FamilySix = () => {
       console.error("Speech error", error);
     }
   };
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
+
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
       <ScrollWrapper>
@@ -144,6 +161,13 @@ const FamilySix = () => {
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>
+              <br />
+            {translatedWord && (
+              <div className="mt-2">
+                <strong>In Tagalog:</strong>
+                <p>{translatedWord}</p>
+              </div>
+            )}
             </div>
           )}
 

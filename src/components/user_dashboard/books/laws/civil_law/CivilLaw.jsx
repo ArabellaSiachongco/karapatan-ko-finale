@@ -7,10 +7,12 @@ import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import { fadeIn } from "../../../../utility/motion.js";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
 import "../../../../layouts/book.css";
+import translateText from "../../../../database/translate.js";
 
 const CivilLaw = () => {
   const { selectedWord, definition, tooltipPosition, handleTextSelection } = useDictionary();
   const { table_of_content_civil_law } = table_of_content;
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
 
   const speakText = (word, definition) => {
     try {
@@ -60,6 +62,20 @@ const CivilLaw = () => {
       console.error("Speech synthesis error:", error);
     }
   };
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
 
   return (
     <ScrollWrapper>
@@ -163,6 +179,12 @@ const CivilLaw = () => {
             </div>
             <hr className="border-2 mb-2" />
             <p>{definition}</p>
+            {translatedWord && (
+              <div className="mt-2">
+                <strong>In Tagalog:</strong>
+                <p>{translatedWord}</p>
+              </div>
+            )}
           </div>
         )}
       </div>

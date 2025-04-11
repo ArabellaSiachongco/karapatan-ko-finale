@@ -11,10 +11,10 @@ const MagalgalitAppointment = () => {
   return (
     <div>
       <p className={styles.paragraphSubText}>
-        Instructions for booking an Appointment with
+        Mga tagubilin para sa pag-book ng appointment kay
       </p>
       <h2 className={`${styles.headText} highlight-border`}>
-        <span className="title-with-line"> {lawyerProfiles[1].nickname}</span>
+        <span className="title-with-line"> {lawyerProfiles[0].nickname}</span>
       </h2>
 
       <table className="mt-5 w-full border-collapse border border-gray-200">
@@ -23,24 +23,39 @@ const MagalgalitAppointment = () => {
             <td
               className={`${styles.appointmentSubTextLower} border border-gray-300 p-3`}
             >
-              1. Securing an appointment is <b>FREE OF CHARGE</b> and
-              Appointment Slip is <b>NON-TRANSFERABLE</b>.
+              1. Ang pag-secure ng appointment ay <b>LIBRE</b> at ang
+              Appointment Slip ay <b>HINDI MAILILIPAT</b>.
+              <br />
+              <i>
+                Securing an appointment is <b>FREE OF CHARGE</b> and Appointment
+                Slip is <b>NON-TRANSFERABLE</b>.
+              </i>
             </td>
           </tr>
           <tr>
             <td
               className={`${styles.appointmentSubTextLower} border border-gray-300 p-3`}
             >
-              2. The appointment must be named after the requester who will
-              personally apply at the Magalgalit Law Office.
+              2. Ang appointment ay dapat nakapangalan sa mismong mag-aapply
+              nang personal sa Magalgalit Law Office.
+              <br />
+              <i>
+                The appointment must be named after the requester who will
+                personally apply at the Magalgalit Law Office.
+              </i>
             </td>
           </tr>
           <tr>
             <td
               className={`${styles.appointmentSubTextLower} border border-gray-300 p-3`}
             >
-              3. Be at the Magalgalit Law Office at least fifteen minutes before
-              the appointment schedule.
+              3. Dumating sa Magalgalit Law Office ng hindi bababa sa
+              labinlimang minuto bago ang nakatakdang oras ng appointment.
+              <br />
+              <i>
+                Be at the Magalgalit Law Office at least fifteen minutes before
+                the appointment schedule.
+              </i>
             </td>
           </tr>
           <tr>
@@ -54,20 +69,20 @@ const MagalgalitAppointment = () => {
                   onChange={(e) => setIsChecked(e.target.checked)}
                   className="mr-2"
                 />
-                I agree to the collection and use of the data that I will
-                provide through this form for the purpose of booking an
-                appointment. I understand that the collection and use of this
-                data, which may include personal and sensitive personal
-                information, shall be in accordance with the Data Privacy Act of
+                Sumasang-ayon ako sa pagkolekta at paggamit ng impormasyon na
+                aking ibibigay sa form na ito para sa layunin ng pag-book ng
+                appointment. Nauunawaan ko na ang pagkolekta at paggamit ng
+                impormasyon, na maaaring kasama ang personal at sensitibong
+                personal na impormasyon, ay alinsunod sa Data Privacy Act of
                 2021.
               </label>
             </td>
           </tr>
           <tr>
             <td className="p-3 text-sm">
-              <Link to="/terms-and-conditions">
+              <Link to="/terms-and-conditions_magalgalit">
                 <button className="text-blue-300">
-                  <i>View Terms and Conditions</i>
+                  <i>Tingnan ang Mga Tuntunin at Kundisyon</i>
                 </button>
               </Link>{" "}
             </td>
@@ -81,7 +96,7 @@ const MagalgalitAppointment = () => {
           onClick={() => navigate("/lawyer-status")}
           className="px-6 py-2 border-2 border-white text-white rounded-lg hover:bg-red-900"
         >
-          Back
+          Go Back
         </button>
         <div className="w-1/4"></div>
         <Link

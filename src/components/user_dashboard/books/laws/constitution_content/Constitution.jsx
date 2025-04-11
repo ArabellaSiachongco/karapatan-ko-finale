@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { styles } from "../../../../../styles.js";
@@ -7,11 +7,12 @@ import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import { fadeIn } from "../../../../utility/motion.js";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
 import "../../../../layouts/book.css";
+import translateText from "../../../../database/translate.js";
 
 const Constitution = () => {
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
-  const itemsWithId = table_of_content_constitution;
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
 
   const speakText = (word, definition) => {
     try {
@@ -32,7 +33,7 @@ const Constitution = () => {
           voice.name.includes("Samantha")
       );
       utterance.voice = femaleVoice || voices[0] || null;
-      if (voices.lenght === 0) {
+      if (voices.length === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
           femaleVoice = voices.find(
@@ -51,6 +52,23 @@ const Constitution = () => {
       console.error("Speech error", error);
     }
   };
+
+  // Automatically translate the word when selected
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
+
   return (
     <ScrollWrapper>
       <div
@@ -171,6 +189,13 @@ const Constitution = () => {
             </div>
             <hr className="border-2 mb-2" />
             <p>{definition}</p>
+            <br />
+            {translatedWord && (
+              <div className="mt-2">
+                <strong>In Tagalog:</strong>
+                <p>{translatedWord}</p>
+              </div>
+            )}
           </div>
         )}
       </div>

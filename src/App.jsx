@@ -166,9 +166,9 @@ const App = () => {
         {role === "user" && (
           <>
             <Route path="/main" element={<MainLayout />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_evasco />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_palmer />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions_magalgalit />} />
+            <Route path="/terms-and-conditions_evasco" element={<TermsAndConditions_evasco />} />
+            <Route path="/terms-and-conditions_palmer" element={<TermsAndConditions_palmer />} />
+            <Route path="/terms-and-conditions_magalgalit" element={<TermsAndConditions_magalgalit />} />
             
             {/* User-Specific Routes & atty */}
             <Route path="/lawyer-status" element={<Lawyer />} />

@@ -5,12 +5,14 @@ import { styles } from "../../../../../styles.js";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import transitory from "../../pages/book_constitution/transitory.json";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
+import translateText from "../../../../database/translate.js";
 
 const ArticleEighteen = () => {
   const navigate = useNavigate();
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +27,7 @@ const ArticleEighteen = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to Top 
+  // Scroll to Top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -52,7 +54,7 @@ const ArticleEighteen = () => {
           voice.name.includes("Samantha")
       );
       utterance.voice = femaleVoice || voices[0] || null;
-      if (voices.lenght === 0) {
+      if (voices.length  === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
           femaleVoice = voices.find(
@@ -71,6 +73,21 @@ const ArticleEighteen = () => {
       console.error("Speech error", error);
     }
   };
+  // Automatically translate the word when selected
+  useEffect(() => {
+    const translateSelectedWord = async () => {
+      if (selectedWord) {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      }
+    };
+
+    translateSelectedWord(); // Call translation when a word is selected
+  }, [selectedWord]); // This effect runs when `selectedWord` changes
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
       <ScrollWrapper>
@@ -126,6 +143,13 @@ const ArticleEighteen = () => {
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>
+              <br />
+              {translatedWord && (
+                <div className="mt-2">
+                  <strong>In Tagalog:</strong>
+                  <p>{translatedWord}</p>
+                </div>
+              )}
             </div>
           )}
 

@@ -5,21 +5,19 @@ import { styles } from "../../../../../styles.js";
 import { SectionWrapper, ScrollWrapper } from "../../../../HOC/index.js";
 import chapterEight from "../../pages/book_peoples_right/chapterEight.json";
 import { useDictionary } from "../../../../database/dictionaryAPI.js";
+import translateText from "../../../../database/translate.js";
 
 const ChapterEight = () => {
   const navigate = useNavigate();
   const { selectedWord, definition, tooltipPosition, handleTextSelection } =
     useDictionary();
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [translatedWord, setTranslatedWord] = useState(""); // State to store the translated word
 
   // Handle Scroll Event to toggle visibility of the scroll-to-top button
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
+      setShowScrollButton(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -37,6 +35,7 @@ const ChapterEight = () => {
   if (!chapterEight || chapterEight.length === 0) {
     return <div>No data available</div>;
   }
+
   const speakText = (word, definition) => {
     try {
       if (!word) {
@@ -56,7 +55,7 @@ const ChapterEight = () => {
           voice.name.includes("Samantha")
       );
       utterance.voice = femaleVoice || voices[0] || null;
-      if (voices.lenght === 0) {
+      if (voices.length === 0) {
         speechSynthesis.onvoiceschanged = () => {
           voices = speechSynthesis.getVoices();
           femaleVoice = voices.find(
@@ -75,6 +74,23 @@ const ChapterEight = () => {
       console.error("Speech error", error);
     }
   };
+
+  // Automatically translate the word when selected
+  useEffect(() => {
+    if (selectedWord) {
+      const translateSelectedWord = async () => {
+        try {
+          const translated = await translateText(selectedWord, "tl"); // Automatically translate selected word to Tagalog
+          setTranslatedWord(translated); // Set the translated word
+        } catch (error) {
+          console.error("Translation error:", error);
+        }
+      };
+
+      translateSelectedWord(); // Call translation when a word is selected
+    }
+  }, [selectedWord]); // Ensure this effect is called every time `selectedWord` changes
+
   return (
     <div className="text-spacing-3 leading-relaxed tracking-wide">
       <ScrollWrapper>
@@ -119,6 +135,7 @@ const ChapterEight = () => {
             </div>
           ))}
 
+          {/* Tooltip for selected word */}
           {selectedWord && (
             <div
               className="absolute text-left bg-white p-4 shadow-lg rounded-lg max-w-xs text-black"
@@ -132,12 +149,6 @@ const ChapterEight = () => {
                 <p className={styles.dictionaryText}>{selectedWord}</p>
                 <button
                   onClick={() => {
-                    console.log(
-                      "🔍 Volume icon clicked! Word:",
-                      selectedWord,
-                      "| Definition:",
-                      definition
-                    );
                     speakText(selectedWord, definition);
                   }}
                   className="bg-transparent border-none p-0 m-0 cursor-pointer"
@@ -147,10 +158,16 @@ const ChapterEight = () => {
               </div>
               <hr className="border-2 mb-2" />
               <p>{definition}</p>
+              {translatedWord && (
+                <div className="mt-2">
+                  <strong>In Tagalog:</strong>
+                  <p>{translatedWord}</p>
+                </div>
+              )}
             </div>
           )}
 
-          {/* Button Section */}
+          {/* Navigation Buttons */}
           <div className="mt-10 text-center flex justify-between">
             <button
               onClick={handlePrevArticleClick}
@@ -168,6 +185,7 @@ const ChapterEight = () => {
           </div>
         </div>
       </ScrollWrapper>
+
       {/* Scroll-to-Top Button */}
       {showScrollButton && (
         <button
