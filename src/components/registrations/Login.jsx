@@ -167,7 +167,7 @@ const Login = () => {
                   onClick={() => navigate("/signup")}
                   className="secondary-btn"
                 >
-                  Don't have an account? SignUp
+                  Don't have an account? Sign Up
                 </button>
               </div>
               <footer id="main-footer" className="text-sm text-gray-500 mt-4">

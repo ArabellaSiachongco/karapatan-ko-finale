@@ -97,7 +97,7 @@ const MagalgalitAppointmentResult = () => {
         "template_rtaqjfs", // Template ID
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
-          to_name: "Siabell", // Recipient name
+          to_name: "ATTORNEY MAGALGALIT", // Recipient name
           from_email: formData.email,
           message: `Appointment confirmed for ${formData.firstName} ${formData.lastName} on ${formData.date} at ${formData.time}.`,
         },

@@ -153,12 +153,18 @@ const GeminiMain = () => {
               </div>
             </div>
           ) : (
-            <div className="Ai_greet text-orange-800">
-              <p className="mt-14">
+            <div className="Ai_greet text-orange-800 px-4 sm:px-8 md:px-12 lg:px-20 py-6 text-center">
+              <p className="mt-14 text-lg sm:text-xl md:text-2xl font-semibold">
                 Hello, {userData ? userData.firstName : "User"}
               </p>
-              <p>How can I help you today?</p>
-              <i><p className="text-[24px]">Paano kita matutulungan ngayon</p></i>
+              <p className="text-[18px] sm:text-[20px] md:text-[24px] mt-2">
+                Paano kita matutulungan ngayon
+              </p>
+              <i>
+                <p className="text-base sm:text-lg md:text-xl mt-2">
+                  How can I help you today?
+                </p>
+              </i>
             </div>
           )}
 

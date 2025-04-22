@@ -321,7 +321,7 @@ const EvascoAppointmentTable = () => {
                 className="block text-white font-medium mb-2"
                 htmlFor="middleName"
               >
-                Middle Name
+                Initial
               </label>
               <input
                 type="text"
@@ -437,15 +437,15 @@ const EvascoAppointmentTable = () => {
             {/* Weekday Labels */}
             <div className="grid grid-cols-7 gap-2 text-center font-bold text-white mb-2">
               {[
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
+                "S",
+                "M",
+                "T",
+                "W",
+                "T",
+                "F",
+                "S",
               ].map((day, index) => (
-                <div key={index} className="py-2 bg-gray-700 rounded-lg">
+                <div key={index} className="py-2 bg-gray-500 rounded-lg">
                   {day}
                 </div>
               ))}

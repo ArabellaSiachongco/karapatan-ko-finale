@@ -241,12 +241,12 @@ const Message = () => {
       console.error("No user is logged in.");
       return;
     }
-//adding email lower case to match the firebase
+    //adding email lower case to match the firebase
     try {
       const archivedRef = query(
         collection(db, "archived_appointments"),
         where("email", "==", user.email.toLowerCase())
-      );      
+      );
 
       const snapshot = await getDocs(archivedRef);
       const archives = snapshot.docs.map((doc) => ({
@@ -350,14 +350,14 @@ const Message = () => {
         console.error("User not logged in.");
         return;
       }
-//lowercase ng email
-      const userEmail = currentUser.email.toLowerCase(); 
+      //lowercase ng email
+      const userEmail = currentUser.email.toLowerCase();
       const rejectedRef = query(collection(db, "rejected_appointments"));
       const snapshot = await getDocs(rejectedRef);
 
       const userRejectedList = snapshot.docs
-      .map((doc) => ({ id: doc.id, ...doc.data() }))
-      .filter((doc) => doc.id.toLowerCase().startsWith(userEmail)) // match email at start of ID
+        .map((doc) => ({ id: doc.id, ...doc.data() }))
+        .filter((doc) => doc.id.toLowerCase().startsWith(userEmail)) // match email at start of ID
         .map((doc) => ({
           ...doc,
           isRejected: true,
@@ -406,113 +406,127 @@ const Message = () => {
         bookings.
       </motion.p>
 
-      <div className="w-full p-4 bg-gray-800 rounded-lg">
-        <table className="w-full mt-4 border-collapse border border-gray-950">
-          <thead>
-            <tr className="bg-gray-800">
-              <th className="border p-2">Current Appointments</th>
-              <th className="border p-2">Past Appointments</th>
-              <th className="border p-2">Message</th>
-              <th className="border p-2">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Render current (upcoming) appointments */}
-            {appointments.map((appointment, index) => (
-              <tr key={appointment.id || index} className="hover:bg-gray-700">
-                <td className="border p-2">
-                  {appointment.date} | {appointment.time} <br />
-                  <strong>Client:</strong> {appointment.firstName}{" "}
-                  {appointment.lastName} <br />
-                  <strong>Lawyer:</strong>{" "}
-                  {appointment.lawyer?.name || "Unknown Lawyer"} <br />
-                  <strong>Reason:</strong> {appointment.reasons}
-                </td>
-                <td className="border p-2 text-center">N/A</td>
-                <td className="border p-2 text-center">
-                  <button
-                    className="px-3 py-1 text-white rounded-lg"
-                    onClick={() => setChatAppointment(appointment)}
-                  >
-                    <FaEnvelope size={26} color="#22c55e" />
-                  </button>
-                </td>
-                <td className="border p-2 text-center">
-                  <button
-                    onClick={() => handleDelete(appointment.id)}
-                    className="px-3 py-1 rounded-lg cursor-pointer"
-                  >
-                    <FaTrash size={24} color="red" />
-                  </button>
-                </td>
+      <div className="mt-4 p-4 border rounded-lg shadow-md bg-gray-700">
+        <h3 className="text-lg font-bold mb-4 text-white">Appointments</h3>
+        <div className="overflow-x-auto max-h-full">
+          <table className="w-full border-collapse border border-gray-900">
+            <thead>
+              <tr className="bg-gray-800 text-white">
+                <th className="border p-2">Date</th>
+                <th className="border p-2">Time</th>
+                <th className="border p-2">Client</th>
+                <th className="border p-2">Lawyer</th>
+                <th className="border p-2">Reason</th>
+                <th className="border p-2">Message</th>
+                <th className="border p-2">Delete</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {/* Current (upcoming) appointments */}
+              {appointments.map((appointment, index) => (
+                <tr
+                  key={appointment.id || index}
+                  className="hover:bg-gray-600 text-white"
+                >
+                  <td className="border p-2">{appointment.date}</td>
+                  <td className="border p-2">{appointment.time}</td>
+                  <td className="border p-2">
+                    {appointment.firstName} {appointment.lastName}
+                  </td>
+                  <td className="border p-2">
+                    {appointment.lawyer?.name || "Unknown Lawyer"}
+                  </td>
+                  <td className="border p-2">{appointment.reasons}</td>
+                  <td className="border p-2 text-center">
+                    <button
+                      className="px-3 py-1 text-white rounded-lg"
+                      onClick={() => setChatAppointment(appointment)}
+                    >
+                      <FaEnvelope size={26} color="#22c55e" />
+                    </button>
+                  </td>
+                  <td className="border p-2 text-center">
+                    <button
+                      onClick={() => handleDelete(appointment.id)}
+                      className="px-3 py-1 rounded-lg"
+                    >
+                      <FaTrash size={24} color="red" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
 
-            {/* Render past appointments */}
-            {pastAppointments.map((appointment, index) => (
-              <tr key={appointment.id || index} className="hover:bg-gray-700">
-                <td className="border p-2 text-center">N/A</td>
-                <td className="border p-2">
-                  {appointment.date} | {appointment.time} <br />
-                  <strong>Client:</strong> {appointment.firstName}{" "}
-                  {appointment.lastName} <br />
-                  <strong>Lawyer:</strong>{" "}
-                  {appointment.lawyer?.name || "Unknown Lawyer"} <br />
-                  <strong>Reason:</strong> {appointment.reasons}
-                </td>
-                <td className="border p-2 text-center">
-                  <button
-                    className="px-3 py-1 text-white rounded-lg"
-                    onClick={() => setChatAppointment(appointment)}
-                  >
-                    <FaEnvelope size={26} color="#22c55e" />
-                  </button>
-                </td>
-                <td className="border p-2 text-center">
-                  <button
-                    onClick={() => handleDelete(appointment.id)}
-                    className="px-3 py-1 text-white rounded-lg"
-                  >
-                    <FaTrash size={24} color="red" />
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {appointments.length === 0 && pastAppointments.length === 0 && (
-              <tr>
-                <td colSpan="4" className="border p-4 text-center">
-                  No appointments found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              {/* Past appointments */}
+              {pastAppointments.map((appointment, index) => (
+                <tr
+                  key={appointment.id || index}
+                  className="hover:bg-gray-600 text-white"
+                >
+                  <td className="border p-2">{appointment.date}</td>
+                  <td className="border p-2">{appointment.time}</td>
+                  <td className="border p-2">
+                    {appointment.firstName} {appointment.lastName}
+                  </td>
+                  <td className="border p-2">
+                    {appointment.lawyer?.name || "Unknown Lawyer"}
+                  </td>
+                  <td className="border p-2">{appointment.reasons}</td>
+                  <td className="border p-2 text-center">
+                    <button
+                      className="px-3 py-1 text-white rounded-lg"
+                      onClick={() => setChatAppointment(appointment)}
+                    >
+                      <FaEnvelope size={26} color="#22c55e" />
+                    </button>
+                  </td>
+                  <td className="border p-2 text-center">
+                    <button
+                      onClick={() => handleDelete(appointment.id)}
+                      className="px-3 py-1 rounded-lg"
+                    >
+                      <FaTrash size={24} color="red" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+
+              {/* Empty state */}
+              {appointments.length === 0 && pastAppointments.length === 0 && (
+                <tr>
+                  <td colSpan="7" className="border p-4 text-center text-white">
+                    No appointments found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* BTN FOR ARC AND REJ  */}
       {/* Archived Appointments Button */}
 
       <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
-          {/* Archived Appointments Button */}
-          <button
-            className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
-            onClick={toggleArchived}
-          >
-            {showArchived
-              ? "Hide Archived Appointments"
-              : "Show Archived Appointments"}
-          </button>
+        {/* Archived Appointments Button */}
+        <button
+          className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
+          onClick={toggleArchived}
+        >
+          {showArchived
+            ? "Hide Archived Appointments"
+            : "Show Archived Appointments"}
+        </button>
 
-          {/* Rejected Appointments Button */}
-          <button
-            className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
-            onClick={fetchRejectedAppointments}
-          >
-            {showRejectedAppointments
-              ? "Hide Rejected Appointments"
-              : "Show Rejected Appointments"}
-          </button>
-        </div>
+        {/* Rejected Appointments Button */}
+        <button
+          className="px-4 py-2 border bg-gray-800 text-white rounded-lg hover:bg-gray-700"
+          onClick={fetchRejectedAppointments}
+        >
+          {showRejectedAppointments
+            ? "Hide Rejected Appointments"
+            : "Show Rejected Appointments"}
+        </button>
+      </div>
 
       {/* TABLE FOR THE ARHIVED AND REJECTED APPOINTMENTS */}
       {/* Archived Appointments Table */}

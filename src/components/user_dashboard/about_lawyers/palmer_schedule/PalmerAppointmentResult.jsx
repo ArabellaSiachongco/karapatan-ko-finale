@@ -96,7 +96,7 @@ const PalmerAppointmentResult = () => {
         "template_rtaqjfs", //  template ID
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
-          to_name: "Siabell", // The recipient name
+          to_name: "ATTORNEY PALMER", // The recipient name
           from_email: formData.email,
           message: `Appointment confirmed for ${formData.firstName} ${formData.lastName} on ${formData.date} at ${formData.time}.`,
         },
